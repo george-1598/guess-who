@@ -1,4 +1,5 @@
-import { Cake, ExternalLink, Film, MapPin, X } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { Cake, Film, MapPin, X } from "lucide-react";
 import type { Character } from "../characters";
 import { useSheet } from "../hooks/useSheet";
 import { CharacterImage } from "./CharacterImage";
@@ -26,14 +27,33 @@ function lifeText(character: Character) {
     : `${age} years old · born ${formatDate(born)}`;
 }
 
+export type ActorSheetAction = {
+  label: ReactNode;
+  /** When set, the first tap asks "Are you sure?" and only the confirm button runs onClick. */
+  confirm?: { message: ReactNode; confirmLabel: string; cancelLabel: string };
+  onClick: () => void | Promise<void>;
+};
+
 /** Bottom sheet (phone) / dialog (computer) with an actor's photo and facts. */
 export function ActorSheet({ character, onClose, action }: {
   character: Character;
   onClose: () => void;
-  /** Main button, e.g. "Flip down" or "Pick as my secret". */
-  action?: { label: string; onClick: () => void };
+  /** Optional main button, e.g. "That's my guess!" or "Pick as my secret". */
+  action?: ActorSheetAction;
 }) {
   const closeRef = useSheet(onClose);
+  const [confirming, setConfirming] = useState(false);
+  const [busy, setBusy] = useState(false);
+
+  async function run() {
+    if (!action) return;
+    setBusy(true);
+    try {
+      await action.onClick();
+    } finally {
+      setBusy(false);
+    }
+  }
   const details = character.details;
   const life = lifeText(character);
   const knownFor = details?.knownFor?.length ? details.knownFor : [];
@@ -63,19 +83,29 @@ export function ActorSheet({ character, onClose, action }: {
           </ul>
           {details?.bio && <p className="sheet-bio">{details.bio}</p>}
           {!hasFacts && <p className="sheet-bio">{character.subtitle}</p>}
-          <div className="sheet-actions">
-            {action && (
-              <button className="primary-button" onClick={action.onClick}>{action.label}</button>
-            )}
-            <a
-              className="secondary-button"
-              href={`https://www.themoviedb.org/person/${character.tmdb.personId}`}
-              target="_blank"
-              rel="noreferrer"
+          {action && !confirming && (
+            <button
+              className="primary-button full-button sheet-main-action"
+              disabled={busy}
+              onClick={() => (action.confirm ? setConfirming(true) : void run())}
             >
-              More on TMDB <ExternalLink size={14} />
-            </a>
-          </div>
+              {action.label}
+            </button>
+          )}
+          {action?.confirm && confirming && (
+            <div className="sheet-confirm" role="alertdialog" aria-labelledby="confirm-title">
+              <strong id="confirm-title">Are you sure?</strong>
+              <p>{action.confirm.message}</p>
+              <div className="sheet-actions">
+                <button className="primary-button" disabled={busy} onClick={() => void run()}>
+                  {action.confirm.confirmLabel}
+                </button>
+                <button className="secondary-button" disabled={busy} onClick={() => setConfirming(false)}>
+                  {action.confirm.cancelLabel}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

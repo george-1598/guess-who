@@ -1,8 +1,8 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { CircleHelp, Eye, EyeOff, RotateCcw, SlidersHorizontal, Undo2 } from "lucide-react";
+import { CircleHelp, Eye, EyeOff, RotateCcw, SlidersHorizontal, Target, Undo2 } from "lucide-react";
 import type { Character } from "../characters";
-import { ActorSheet } from "../components/ActorSheet";
+import { ActorSheet, type ActorSheetAction } from "../components/ActorSheet";
 import { CharacterImage } from "../components/CharacterImage";
 import { FiltersSheet } from "../components/FiltersSheet";
 import { GameFooter } from "../components/GameFooter";
@@ -103,14 +103,45 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
     }
   }
 
-  // The details panel's main button does the same thing a tap on that card would.
+  // Guessing (from the turn panel or the details panel). A wrong guess shows a short message.
+  const [guessResult, setGuessResult] = useState("");
+  useEffect(() => {
+    if (!guessResult) return;
+    const timer = window.setTimeout(() => setGuessResult(""), 6000);
+    return () => window.clearTimeout(timer);
+  }, [guessResult]);
+
+  async function guess(character: Character) {
+    let correct = false;
+    const ok = await act(async () => { correct = await makeGuess(client, room.id, character.id); });
+    if (ok && !correct) setGuessResult(`${character.name} isn't their actor.`);
+    return ok;
+  }
+
+  const canAsk = room.current_turn === userId && room.phase === "ask";
+  const guessPenalty = canAsk ? "If you're wrong, your turn ends." : "If you're wrong, you'll miss your next turn.";
+
+  // Details panel (press and hold a card): pick your secret in Director's Cut, or guess during play.
   const infoCharacter = byId.get(infoId);
-  let infoAction: { label: string; onClick: () => void } | undefined;
-  if (infoCharacter && room.board_ids.includes(infoCharacter.id) && !isFinished) {
-    const id = infoCharacter.id;
-    infoAction = isChoosing
-      ? { label: "Pick as my secret", onClick: () => { setPickedId(id); closeInfo(); } }
-      : { label: eliminated.has(id) ? "Flip back up" : "Flip down", onClick: () => { toggle(id); closeInfo(); } };
+  let infoAction: ActorSheetAction | undefined;
+  if (infoCharacter && room.board_ids.includes(infoCharacter.id)) {
+    const target = infoCharacter;
+    if (isChoosing) {
+      infoAction = { label: "Pick as my secret", onClick: () => { setPickedId(target.id); closeInfo(); } };
+    } else if (room.status === "playing" && target.id !== mySecret?.id) {
+      infoAction = {
+        label: <><Target size={16} /> That's my guess!</>,
+        confirm: {
+          message: <>You're guessing <b>{target.name}</b>. {guessPenalty}</>,
+          confirmLabel: `Yes, guess ${target.name}`,
+          cancelLabel: "Not yet",
+        },
+        onClick: async () => {
+          await guess(target);
+          closeInfo();
+        },
+      };
+    }
   }
 
   return (
@@ -212,11 +243,12 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
             })}
             onAsk={(question) => act(() => askQuestion(client, room.id, question))}
             onAnswer={(answer) => act(() => answerQuestion(client, room.id, answer))}
-            onGuess={(character) => act(() => makeGuess(client, room.id, character.id))}
+            onGuess={guess}
             onRematch={() => act(() => rematch(
               client, room.id, pickBoardIds(deckPool(decks, room.deck), room.board_ids.length),
             ))}
           />
+          {guessResult && <p className="guess-result" role="status">❌ {guessResult}</p>}
           {actionError && <p className="form-error" role="alert">{actionError}</p>}
         </aside>
       </section>

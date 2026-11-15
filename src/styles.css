@@ -208,6 +208,12 @@ footer span { color: var(--green-bright); padding: 0 6px; }
 .fact-list svg { flex: none; margin-top: 2px; color: var(--green-bright); }
 .sheet-bio { margin: 0 0 16px; font: 15px/1.6 var(--serif); color: var(--text-muted); }
 .sheet-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sheet-main-action { padding: 13px 16px; font-size: 14px; }
+.sheet-confirm { padding: 14px; border-radius: 8px; background: #ff800014; border: 1px solid #ff800066; animation: fade-in .15s ease-out; }
+.sheet-confirm strong { display: block; font: 600 18px var(--serif); color: #fff; }
+.sheet-confirm p { margin: 6px 0 12px; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.sheet-confirm p b { color: #fff; }
+.guess-result { margin: 0; padding: 10px 12px; border-radius: var(--radius); font-size: 13px; text-align: center; color: #ffb066; background: #ff800014; border: 1px solid #ff800055; }
 .sheet-actions > :only-child { grid-column: 1 / -1; }
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes sheet-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
