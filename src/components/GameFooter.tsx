@@ -1,10 +1,12 @@
 import { useState, type ReactNode } from "react";
-import { LogOut, ScrollText } from "lucide-react";
+import { Bell, BellOff, LogOut, ScrollText } from "lucide-react";
 
-/** Bottom of the game page: the game log (folded by default) and "Leave room". */
-export function GameFooter({ entries, onLeave }: {
+/** Bottom of the game page: game log (folded by default), alert sound toggle, and "Leave room". */
+export function GameFooter({ entries, alertsOn, onToggleAlerts, onLeave }: {
   /** Log lines, newest first. */
   entries: { id: number; content: ReactNode }[];
+  alertsOn: boolean;
+  onToggleAlerts: () => void;
   onLeave: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -14,6 +16,14 @@ export function GameFooter({ entries, onLeave }: {
       <div className="game-footer-buttons">
         <button className="secondary-button" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           <ScrollText size={16} /> {open ? "Hide game log" : `Game log (${entries.length})`}
+        </button>
+        <button
+          className="secondary-button"
+          aria-pressed={alertsOn}
+          title="Chime and vibrate when it's your move"
+          onClick={onToggleAlerts}
+        >
+          {alertsOn ? <Bell size={16} /> : <BellOff size={16} />} {alertsOn ? "Alerts on" : "Alerts off"}
         </button>
         <button
           className="danger-button"

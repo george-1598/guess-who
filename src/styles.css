@@ -168,6 +168,23 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .reveal-row p { margin: 0 0 14px; }
 .reveal-row strong { color: #fff; font-family: var(--serif); font-size: 15px; }
 
+/* Score */
+.scoreboard { display: flex; align-items: center; justify-content: center; gap: 10px; margin: -8px 0 18px; font-size: 13px; color: var(--text-muted); }
+.scoreboard strong { min-width: 28px; padding: 2px 8px; border-radius: 4px; text-align: center; font: 700 20px var(--sans); color: var(--text); background: var(--surface-2); border: 1px solid var(--line); }
+.scoreboard strong.is-leading { color: var(--green-bright); border-color: #00e05466; }
+.score-player { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.score-dash { color: var(--text-faint); }
+.final-score { margin: 4px 0 6px !important; text-align: center; font-size: 14px !important; }
+.final-score strong { color: #fff; font-size: 18px; }
+
+/* Turn alerts: the panel that needs you glows gently */
+.turn-panel.is-active { animation: turn-glow 2.4s ease-in-out infinite; }
+@keyframes turn-glow {
+  0%, 100% { box-shadow: inset 0 3px 0 var(--green); }
+  50% { box-shadow: inset 0 3px 0 var(--green), 0 0 0 4px #00e05426, 0 0 24px #00e05422; }
+}
+@media (prefers-reduced-motion: reduce) { .turn-panel.is-active { animation: none; } }
+
 /* Guess at any time */
 .guess-toggle { margin-top: 14px; }
 .guess-box { margin-top: 4px; }

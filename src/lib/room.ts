@@ -25,6 +25,8 @@ export type Player = {
   seat: 1 | 2;
   /** Wrong guesses this round; the third one loses. */
   wrong_guesses?: number;
+  /** Rounds won in this room. */
+  wins?: number;
 };
 
 /** Three wrong guesses in a round and you lose. Keep in sync with make_guess in the database. */

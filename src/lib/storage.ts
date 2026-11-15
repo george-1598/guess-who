@@ -2,6 +2,7 @@
 export const ROOM_KEY = "guesswho:room";
 export const NAME_KEY = "guesswho:name";
 export const SIZE_KEY = "guesswho:boardSize";
+export const ALERTS_KEY = "guesswho:alerts";
 export const eliminatedKey = (roomId: string, round: number) => `guesswho:elim:${roomId}:${round}`;
 
 export function storageGet(key: string): string {

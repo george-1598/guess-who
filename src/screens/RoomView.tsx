@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { LogOut } from "lucide-react";
 import type { Character } from "../characters";
 import { Shell, StateMessage } from "../components/Shell";
 import { useRoomSnapshot } from "../hooks/useRoomSnapshot";
+import { turnAlertFor, useTurnAlert } from "../hooks/useTurnAlert";
 import { difficultyLabel, modeLabel, type Decks } from "../lib/decks";
+import { ALERTS_KEY, storageGet, storageSet } from "../lib/storage";
 import { Game } from "./Game";
 import { Lobby } from "./Lobby";
 
@@ -19,6 +21,16 @@ export function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, o
   onLeave: () => void;
 }) {
   const { snapshot, missing, error, refresh } = useRoomSnapshot(client, roomId);
+
+  // Turn alerts live here (not in Game) so they keep working across rounds.
+  const [alertsOn, setAlertsOn] = useState(() => storageGet(ALERTS_KEY) !== "off");
+  const toggleAlerts = useCallback(() => {
+    setAlertsOn((on) => {
+      storageSet(ALERTS_KEY, on ? "off" : "on");
+      return !on;
+    });
+  }, []);
+  useTurnAlert(turnAlertFor(snapshot, userId), alertsOn, !!snapshot);
 
   // If the room uses actors this device doesn't know (its copy of the lists is older than
   // the other player's), fetch the lists again once; if that doesn't help, ask for a reload.
@@ -85,6 +97,8 @@ export function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, o
           byId={byId}
           onChanged={refresh}
           onLeave={onLeave}
+          alertsOn={alertsOn}
+          onToggleAlerts={toggleAlerts}
         />
       )}
     </Shell>

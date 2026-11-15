@@ -19,7 +19,7 @@ import {
 import { eliminatedKey, errorMessage } from "../lib/storage";
 
 /** The game screen: secret bar, turn panel, board with tools, and footer. */
-export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
+export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave, alertsOn, onToggleAlerts }: {
   client: SupabaseClient;
   snapshot: RoomSnapshot;
   userId: string;
@@ -27,10 +27,15 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
   byId: Map<string, Character>;
   onChanged: () => Promise<void>;
   onLeave: () => void;
+  alertsOn: boolean;
+  onToggleAlerts: () => void;
 }) {
   const { room, players, events, secrets } = snapshot;
+  const me = players.find((p) => p.user_id === userId);
   const opponent = players.find((p) => p.user_id !== userId);
   const opponentName = opponent?.name ?? "Your opponent";
+  const myWins = me?.wins ?? 0;
+  const opponentWins = opponent?.wins ?? 0;
   const mySecret = byId.get(secrets.find((s) => s.user_id === userId)?.character_id ?? "");
   const theirSecret = byId.get(secrets.find((s) => s.user_id !== userId)?.character_id ?? "");
   const board = useMemo(
@@ -120,7 +125,7 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
 
   // Guessing is only allowed on your own turn, instead of asking.
   const canGuess = room.status === "playing" && room.current_turn === userId && room.phase === "ask";
-  const myWrongGuesses = players.find((p) => p.user_id === userId)?.wrong_guesses ?? 0;
+  const myWrongGuesses = me?.wrong_guesses ?? 0;
 
   // Details panel (press and hold a card): pick your secret in Director's Cut, or guess during play.
   const infoCharacter = byId.get(infoId);
@@ -151,6 +156,14 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
   return (
     <div className="game">
       {!isFinished && <SecretBar secret={mySecret} isChoosing={isChoosing} onAbout={setInfoId} />}
+
+      <div className="scoreboard" aria-label={`Score: you ${myWins}, ${opponentName} ${opponentWins}`}>
+        <span className="score-player">You</span>
+        <strong className={myWins > opponentWins ? "is-leading" : ""}>{myWins}</strong>
+        <span className="score-dash">–</span>
+        <strong className={opponentWins > myWins ? "is-leading" : ""}>{opponentWins}</strong>
+        <span className="score-player">{opponentName}</span>
+      </div>
 
       <section className="game-layout">
         <div className="board-column">
@@ -240,6 +253,7 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
             picked={byId.get(pickedId)}
             busy={busy}
             myWrongGuesses={myWrongGuesses}
+            score={{ mine: myWins, theirs: opponentWins }}
             opponentWrongGuesses={opponent?.wrong_guesses ?? 0}
             onPass={() => act(() => passTurn(client, room.id))}
             onLockIn={(character) => act(async () => {
@@ -260,6 +274,8 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
 
       <GameFooter
         entries={[...events].reverse().map((event) => ({ id: event.id, content: describe(event) }))}
+        alertsOn={alertsOn}
+        onToggleAlerts={onToggleAlerts}
         onLeave={onLeave}
       />
 

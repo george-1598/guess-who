@@ -23,7 +23,7 @@ function ordinal(n: number) {
  */
 export function TurnPanel({
   room, userId, opponentName, mySecret, theirSecret, opponentPicked, pendingQuestion, remaining, picked, busy,
-  myWrongGuesses, opponentWrongGuesses, onLockIn, onAsk, onAnswer, onGuess, onPass, onRematch,
+  myWrongGuesses, opponentWrongGuesses, score, onLockIn, onAsk, onAnswer, onGuess, onPass, onRematch,
 }: {
   room: Room;
   userId: string;
@@ -40,6 +40,8 @@ export function TurnPanel({
   busy: boolean;
   myWrongGuesses: number;
   opponentWrongGuesses: number;
+  /** Rounds won in this room (including this one once it's finished). */
+  score: { mine: number; theirs: number };
   onLockIn: (character: Character) => Promise<boolean>;
   onAsk: (question: string) => Promise<boolean>;
   onAnswer: (answer: "yes" | "no" | "unsure") => Promise<boolean>;
@@ -93,6 +95,9 @@ export function TurnPanel({
         <div className="panel-label">Game over</div>
         <h3>{iWon ? "You won! 🎉" : `${opponentName} won!`}</h3>
         {reason && <p>{reason}</p>}
+        <p className="final-score">
+          Score: You <strong>{score.mine}</strong> – <strong>{score.theirs}</strong> {opponentName}
+        </p>
         <div className="reveal-row">
           <div><Avatar character={mySecret} size="small" /><p>You were<br /><strong>{mySecret?.name ?? "?"}</strong></p></div>
           <div><Avatar character={theirSecret} size="small" /><p>{opponentName} was<br /><strong>{theirSecret?.name ?? "?"}</strong></p></div>

@@ -34,8 +34,10 @@ supabase/        schema.sql + migrations
 
 ## Multiplayer (Supabase)
 
-- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql`, `004_fix_random_secrets.sql`, `005_cleanup.sql`, `006_guess_anytime.sql` and `007_turn_guesses_and_pass.sql` (run once each in the Supabase SQL Editor).
+- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql`, `004_fix_random_secrets.sql`, `005_cleanup.sql`, `006_guess_anytime.sql`, `007_turn_guesses_and_pass.sql` and `008_score.sql` (run once each in the Supabase SQL Editor).
 - Guessing (`007_turn_guesses_and_pass.sql`): you can only guess on your own turn, instead of asking. A correct guess wins; a wrong guess ends your turn; three wrong guesses in a round lose the game.
+- Score (`008_score.sql`): `room_players.wins`, incremented by a trigger whenever a round finishes with a winner.
+- Turn alerts (`src/hooks/useTurnAlert.ts`): chime + vibration + "🔔" tab title when it's your move; muted per device with the "Alerts" button. Works while the page is open (no push notifications).
 - Playing in person: on your turn, "Asked in person — end my turn" passes the turn without typing a question (`pass_turn`).
 - `005_cleanup.sql` schedules a nightly job (pg_cron) that deletes rooms idle for 7 days and anonymous players inactive for 30 days.
 - `.github/workflows/keep-alive.yml` pings the database every 3 days so the free Supabase project doesn't pause.
