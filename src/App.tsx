@@ -5,8 +5,9 @@ import {
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   Cake, Check, CircleHelp, Clapperboard, Copy, Dices, ExternalLink, Eye, EyeOff, Film, Lock, LogOut,
-  MapPin, RotateCcw, Send, Shuffle, Sparkles, Star, Users, X,
+  MapPin, RotateCcw, Send, Shuffle, SlidersHorizontal, Sparkles, Star, Undo2, Users, X,
 } from "lucide-react";
+import { FiltersSheet } from "./components/FiltersSheet";
 import type { Character } from "./characters";
 import { ensureSession, supabase } from "./lib/supabase";
 import { pickBoardIds } from "./lib/board";
@@ -826,6 +827,19 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
   const [infoId, setInfoId] = useState("");
   const bindPress = useLongPress(setInfoId);
   const closeInfo = useCallback(() => setInfoId(""), []);
+  // Filters panel, and the cards the last filter flipped (for "Undo filter").
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [undoIds, setUndoIds] = useState<string[]>([]);
+  const closeFilters = useCallback(() => setFiltersOpen(false), []);
+  const applyFilter = useCallback((ids: string[]) => {
+    setMany(ids, true);
+    setUndoIds(ids);
+    setFiltersOpen(false);
+  }, [setMany]);
+  const undoFilter = useCallback(() => {
+    setMany(undoIds, false);
+    setUndoIds([]);
+  }, [setMany, undoIds]);
   const isChoosing = room.status === "choosing";
   const opponentPicked = events.some((e) => e.kind === "system" && !!opponent && e.user_id === opponent.user_id);
 
@@ -1021,6 +1035,9 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
         </div>
 
         {!isChoosing && <div className="board-tools" aria-label="Board shortcuts">
+          <button className="tool-chip tool-chip-primary" onClick={() => setFiltersOpen(true)}>
+            <SlidersHorizontal size={14} /> Filters
+          </button>
           {genderGroups.map((group) => {
             const allOut = group.ids.every((id) => eliminated.has(id));
             return (
@@ -1035,7 +1052,16 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
               </button>
             );
           })}
-          <button className="tool-chip" onClick={resetBoard} disabled={eliminated.size === 0}>
+          {undoIds.some((id) => eliminated.has(id)) && (
+            <button className="tool-chip" onClick={undoFilter}>
+              <Undo2 size={14} /> Undo filter
+            </button>
+          )}
+          <button
+            className="tool-chip"
+            onClick={() => { resetBoard(); setUndoIds([]); }}
+            disabled={eliminated.size === 0}
+          >
             <RotateCcw size={14} /> Reset board
           </button>
         </div>}
@@ -1106,6 +1132,9 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
 
       {infoCharacter && (
         <ActorSheet character={infoCharacter} onClose={closeInfo} action={infoAction} />
+      )}
+      {filtersOpen && (
+        <FiltersSheet board={board} eliminated={eliminated} onFlipDown={applyFilter} onClose={closeFilters} />
       )}
     </section>
   );
