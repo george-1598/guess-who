@@ -167,7 +167,7 @@ begin
   ) as pl
   join (
     select character_id, row_number() over () as rn
-    from (select unnest(v_board) as character_id order by random() limit 2) as shuffled
+    from (select b.character_id from unnest(v_board) as b(character_id) order by random() limit 2) as shuffled
   ) as pk using (rn);
 
   update public.rooms
@@ -189,7 +189,7 @@ $$;
 
 -- Create a room. Returns the new room id.
 -- p_deck is 'famous' (curated list) or 'random' (big pool); rematches reuse it.
--- p_code is optional (e.g. 'LOVE2026'); a random 6-character code is used otherwise.
+-- p_code is optional (e.g. 'MOVIE123'); a random 6-character code is used otherwise.
 -- A custom code that belongs to a room older than 12 hours is recycled.
 create or replace function public.create_room(
   p_name text,

@@ -583,7 +583,7 @@ function Home({ client, decks, onEnter }: {
             className="text-input code-input"
             value={customCode}
             maxLength={12}
-            placeholder="LOVE2026"
+            placeholder="MOVIE123"
             onChange={(event) => setCustomCode(event.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ""))}
           />
           <button className="primary-button full-button" type="submit" disabled={busy}>

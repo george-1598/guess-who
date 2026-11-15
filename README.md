@@ -19,7 +19,7 @@ Deployment runs from `.github/workflows/deploy.yml` on every push to `main` (and
 
 ## Multiplayer (Supabase)
 
-- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql` (run once each in the Supabase SQL Editor).
+- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql` and `004_fix_random_secrets.sql` (run once each in the Supabase SQL Editor).
 - Game modes: **Famous**, **Random**, **Famous Director's Cut**, **Random Director's Cut**. The pool is the curated list (Famous) or the big random pool (Random); in *Director's Cut* each player picks the actor the opponent must find, otherwise ("Classic") secrets are dealt at random. Display names live in `POOL_NAMES` / `SECRET_NAMES` in `src/App.tsx`.
 - Anonymous sign-ins must be enabled in Supabase (Authentication → Sign In / Providers).
 - Each room deals a random board of 48 distinct faces (`src/lib/board.ts`); each player's secret is readable only by them until the game ends, and guesses are checked in the database.

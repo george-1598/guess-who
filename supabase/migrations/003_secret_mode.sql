@@ -66,7 +66,7 @@ begin
   ) as pl
   join (
     select character_id, row_number() over () as rn
-    from (select unnest(v_board) as character_id order by random() limit 2) as shuffled
+    from (select b.character_id from unnest(v_board) as b(character_id) order by random() limit 2) as shuffled
   ) as pk using (rn);
 
   perform public._begin_play(p_room_id, 'Round ' || v_round || ' started. Good luck!');
