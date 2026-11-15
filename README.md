@@ -34,7 +34,8 @@ supabase/        schema.sql + migrations
 
 ## Multiplayer (Supabase)
 
-- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql`, `004_fix_random_secrets.sql` and `005_cleanup.sql` (run once each in the Supabase SQL Editor).
+- Database schema, security rules and game functions: `supabase/schema.sql`, then `supabase/migrations/003_secret_mode.sql`, `004_fix_random_secrets.sql`, `005_cleanup.sql` and `006_guess_anytime.sql` (run once each in the Supabase SQL Editor).
+- Guessing: either player can guess at any time during play. A correct guess wins; a wrong guess on your own turn (before asking) ends your turn; a wrong guess at any other time makes you miss your next turn (penalties add up, and reset each round).
 - `005_cleanup.sql` schedules a nightly job (pg_cron) that deletes rooms idle for 7 days and anonymous players inactive for 30 days.
 - `.github/workflows/keep-alive.yml` pings the database every 3 days so the free Supabase project doesn't pause.
 - Game modes: **Famous**, **Random**, **Famous Director's Cut**, **Random Director's Cut**. The pool is the curated list (Famous) or the big random pool (Random); in *Director's Cut* each player picks the actor the opponent must find, otherwise ("Classic") secrets are dealt at random. Display names live in `POOL_NAMES` / `SECRET_NAMES` in `src/App.tsx`.

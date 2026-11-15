@@ -23,6 +23,8 @@ export type Player = {
   user_id: string;
   name: string;
   seat: 1 | 2;
+  /** Turns this player still has to miss because of wrong out-of-turn guesses. */
+  skip_turns?: number;
 };
 
 export type RoomEvent = {

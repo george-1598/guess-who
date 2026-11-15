@@ -204,6 +204,8 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
             remaining={remaining}
             picked={byId.get(pickedId)}
             busy={busy}
+            mySkips={players.find((p) => p.user_id === userId)?.skip_turns ?? 0}
+            opponentSkips={opponent?.skip_turns ?? 0}
             onLockIn={(character) => act(async () => {
               await chooseSecret(client, room.id, character.id);
               setPickedId("");
