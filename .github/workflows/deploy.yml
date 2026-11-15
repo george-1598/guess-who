@@ -33,12 +33,18 @@ jobs:
       # without anyone having to run npm locally.
       - run: npm install --no-audit --no-fund
 
+      # Gives us the site's public address (for the link-preview tags).
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Render icons and link-preview image
+        run: npm run images
+
       - run: npm run build
         env:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-
-      - uses: actions/configure-pages@v5
+          VITE_SITE_URL: ${{ steps.pages.outputs.base_url }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
