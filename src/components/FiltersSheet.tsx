@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { Cake, ChevronDown, Globe, HeartPulse, MapPin, Sparkles, X } from "lucide-react";
 import type { Character } from "../characters";
+import { useSheet } from "../hooks/useSheet";
 import { LIFE_OPTIONS, REGIONS, ZODIAC, ageOf, countryOf, lifeStatusOf, regionOf, zodiacOf } from "../lib/filters";
 
 type FlipDown = (ids: string[]) => void;
@@ -22,21 +23,9 @@ export function FiltersSheet({ board, eliminated, onFlipDown, onClose }: {
   onClose: () => void;
 }) {
   const [open, setOpen] = useState<SectionKey | null>("age");
-  const closeRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useSheet(onClose);
   // Only cards that are still face-up can be flipped.
   const up = useMemo(() => board.filter((c) => !eliminated.has(c.id)), [board, eliminated]);
-
-  useEffect(() => {
-    closeRef.current?.focus();
-    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
-    document.addEventListener("keydown", onKey);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [onClose]);
 
   const countryOptions = useMemo(() => {
     const counts = new Map<string, number>();

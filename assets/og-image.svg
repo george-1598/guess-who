@@ -1,0 +1,27 @@
+<!-- Link preview image (WhatsApp, Messenger, iMessage…). Rendered to public/og-image.png by scripts/make-images.mjs. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4b6584"/><stop offset="1" stop-color="#14181c"/></linearGradient>
+    <linearGradient id="p2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a66a5b"/><stop offset="1" stop-color="#14181c"/></linearGradient>
+    <linearGradient id="p3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c5b7b"/><stop offset="1" stop-color="#14181c"/></linearGradient>
+    <linearGradient id="p4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f6d58"/><stop offset="1" stop-color="#14181c"/></linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#14181c"/>
+
+  <!-- A little board of poster cards: some flipped down, one highlighted -->
+  <g>
+    <rect x="720" y="115" width="120" height="180" rx="8" fill="url(#p1)" stroke="#ffffff22" stroke-width="2"/>
+    <rect x="860" y="115" width="120" height="180" rx="8" fill="#242c34" opacity="0.45"/>
+    <rect x="1000" y="115" width="120" height="180" rx="8" fill="url(#p2)" stroke="#ffffff22" stroke-width="2"/>
+    <rect x="720" y="335" width="120" height="180" rx="8" fill="#242c34" opacity="0.45"/>
+    <rect x="860" y="335" width="120" height="180" rx="8" fill="url(#p3)" stroke="#00e054" stroke-width="6"/>
+    <text x="920" y="462" text-anchor="middle" font-family="'DejaVu Serif', Georgia, serif" font-weight="700" font-size="110" fill="#ffffff">?</text>
+    <rect x="1000" y="335" width="120" height="180" rx="8" fill="url(#p4)" stroke="#ffffff22" stroke-width="2"/>
+  </g>
+
+  <text x="80" y="250" font-family="'DejaVu Serif', Georgia, serif" font-weight="700" font-size="92" fill="#ffffff">Guess Who?</text>
+  <text x="80" y="322" font-family="'DejaVu Serif', Georgia, serif" font-style="italic" font-size="42" fill="#00e054">The movie actor edition</text>
+  <text x="80" y="400" font-family="'DejaVu Sans', Arial, sans-serif" font-size="28" fill="#99aabb">Join my room and guess my actor.</text>
+  <rect x="80" y="450" width="150" height="4" rx="2" fill="#00e054"/>
+</svg>

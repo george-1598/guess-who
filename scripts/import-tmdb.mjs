@@ -171,7 +171,6 @@ function makeRecord(personId, name, knownFor, profilePath, tmdbGender) {
   return {
     id,
     name,
-    kind: 'ACTOR',
     subtitle: knownFor.length > 0 ? `Known for ${knownFor[0]}` : 'Actor',
     initials: initials(name),
     color: colorFor(id),
@@ -181,10 +180,11 @@ function makeRecord(personId, name, knownFor, profilePath, tmdbGender) {
   };
 }
 
+/** Writes one actor per line: about half the size of indented JSON, and still easy to diff. */
 async function writeRecords(path, records) {
   records.sort((a, b) => a.name.localeCompare(b.name));
   await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, `${JSON.stringify(records, null, 2)}\n`, 'utf8');
+  await writeFile(path, `[\n${records.map((record) => JSON.stringify(record)).join(',\n')}\n]\n`, 'utf8');
 }
 
 async function buildRandomPool() {

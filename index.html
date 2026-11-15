@@ -4,7 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#14181c" />
-    <title>Guess Who?</title>
+    <title>Guess Who? — Movie Actor Edition</title>
+    <meta name="description" content="A two-player Guess Who game with movie actors. Create a room, send the code, and take turns asking yes/no questions." />
+
+    <!-- Icons and "Add to Home Screen" -->
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%BASE_URL%icon-192.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Guess Who" />
+
+    <!-- Link preview when the invite is shared (VITE_SITE_URL is set by the deploy workflow) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Guess Who?" />
+    <meta property="og:title" content="Guess Who? — Movie Actor Edition" />
+    <meta property="og:description" content="Join my room and guess the actor I'm thinking of. A two-player game for movie fans." />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Guess Who? — the movie actor edition" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>
