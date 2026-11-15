@@ -1,6 +1,7 @@
 -- Guess Who multiplayer schema.
 -- Paste this whole file into Supabase → SQL Editor → New query, then press Run.
--- Safe to run once on a fresh project.
+-- Safe to run once on a fresh project. Afterwards, also run supabase/migrations/003_secret_mode.sql
+-- (002_deck.sql is already included below).
 --
 -- Security model:
 --   * Every visitor signs in anonymously (no email/password), so each phone has a user id.

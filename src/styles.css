@@ -114,6 +114,8 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .deck-option span { font-size: 10px; color: #8390a1; }
 .deck-option.is-selected { border-color: #e8b66a; background: #e8b66a14; box-shadow: 0 0 0 3px #e8b66a1f; }
 .deck-option.is-selected svg, .deck-option.is-selected strong { color: #e8b66a; }
+.mode-pill { display: inline-block; margin: 0 0 6px; padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #e8c48e; background: #e8b66a12; border: 1px solid #e8b66a55; }
+.character-card.is-picked { border-color: #e8b66a; box-shadow: 0 0 0 3px #e8b66a55; transform: translateY(-3px); }
 .board-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 14px; }
 .tool-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #c9d1dc; background: #171f2b; border: 1px solid #ffffff20; }
 .tool-chip.is-on { color: #e8b66a; border-color: #e8b66a88; background: #e8b66a14; }

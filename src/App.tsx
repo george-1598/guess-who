@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { Check, CircleHelp, Clapperboard, Copy, Eye, EyeOff, LogOut, RotateCcw, Send, Shuffle, Sparkles, Star, Users } from "lucide-react";
+import { Check, CircleHelp, Clapperboard, Copy, Dices, Eye, EyeOff, Lock, LogOut, RotateCcw, Send, Shuffle, Sparkles, Star, Users } from "lucide-react";
 import type { Character } from "./characters";
 import { ensureSession, supabase } from "./lib/supabase";
 import { pickBoardIds } from "./lib/board";
 import {
   answerQuestion,
   askQuestion,
+  chooseSecret,
   createRoom,
   fetchSnapshot,
   joinRoom,
@@ -16,11 +17,20 @@ import {
   type Deck,
   type RoomEvent,
   type RoomSnapshot,
+  type SecretMode,
 } from "./lib/room";
 
 type Decks = Record<Deck, Character[]>;
 
-const DECK_LABELS: Record<Deck, string> = { famous: "FAMOUS ACTORS", random: "RANDOM ACTORS" };
+// Display names for the room options. Rename freely: only these strings change.
+const POOL_NAMES: Record<Deck, string> = { famous: "Famous", random: "Random" };
+const SECRET_NAMES: Record<SecretMode, string> = { random: "Classic", choose: "Director's Cut" };
+
+/** "Famous", "Random", "Famous Director's Cut", "Random Director's Cut". */
+function modeLabel(deck: Deck | undefined, secretMode: SecretMode | undefined) {
+  const pool = POOL_NAMES[deck ?? "famous"];
+  return secretMode === "choose" ? `${pool} ${SECRET_NAMES.choose}` : pool;
+}
 
 /** The pool a room deals from; falls back to the famous list if the random one isn't available. */
 function deckPool(decks: Decks, deck: Deck | undefined): Character[] {
@@ -272,6 +282,7 @@ function Home({ client, decks, onEnter }: {
   onEnter: (roomId: string) => void;
 }) {
   const [deck, setDeck] = useState<Deck>("famous");
+  const [secretMode, setSecretMode] = useState<SecretMode>("random");
   const [name, setName] = useState(() => storageGet(NAME_KEY));
   const [joinCode, setJoinCode] = useState(
     () => (new URLSearchParams(window.location.search).get("room") ?? "").toUpperCase(),
@@ -298,7 +309,7 @@ function Home({ client, decks, onEnter }: {
 
   function handleCreate(event: FormEvent) {
     event.preventDefault();
-    void run(() => createRoom(client, name.trim(), pickBoardIds(deckPool(decks, deck)), customCode, deck));
+    void run(() => createRoom(client, name.trim(), pickBoardIds(deckPool(decks, deck)), customCode, deck, secretMode));
   }
 
   function handleJoin(event: FormEvent) {
@@ -334,7 +345,7 @@ function Home({ client, decks, onEnter }: {
         <form className="panel" onSubmit={handleCreate}>
           <div className="panel-label">NEW GAME</div>
           <h3>Create a room</h3>
-          <p>Choose who's on the board:</p>
+          <p>Who's on the board?</p>
           <div className="deck-picker" role="radiogroup" aria-label="Actor pool">
             <button
               type="button"
@@ -344,7 +355,7 @@ function Home({ client, decks, onEnter }: {
               onClick={() => setDeck("famous")}
             >
               <Star size={16} />
-              <strong>Famous</strong>
+              <strong>{POOL_NAMES.famous}</strong>
               <span>{decks.famous.length} well-known stars</span>
             </button>
             <button
@@ -356,8 +367,33 @@ function Home({ client, decks, onEnter }: {
               onClick={() => setDeck("random")}
             >
               <Shuffle size={16} />
-              <strong>Random</strong>
+              <strong>{POOL_NAMES.random}</strong>
               <span>{decks.random.length > 0 ? `${decks.random.length} actors from top movies` : "Not imported yet"}</span>
+            </button>
+          </div>
+          <p>Who picks the secret actors?</p>
+          <div className="deck-picker" role="radiogroup" aria-label="Secret mode">
+            <button
+              type="button"
+              role="radio"
+              aria-checked={secretMode === "random"}
+              className={`deck-option ${secretMode === "random" ? "is-selected" : ""}`}
+              onClick={() => setSecretMode("random")}
+            >
+              <Dices size={16} />
+              <strong>{SECRET_NAMES.random}</strong>
+              <span>The game deals them at random</span>
+            </button>
+            <button
+              type="button"
+              role="radio"
+              aria-checked={secretMode === "choose"}
+              className={`deck-option ${secretMode === "choose" ? "is-selected" : ""}`}
+              onClick={() => setSecretMode("choose")}
+            >
+              <Clapperboard size={16} />
+              <strong>{SECRET_NAMES.choose}</strong>
+              <span>You pick who they hunt for</span>
             </button>
           </div>
           <p>You'll get a code to send to the other player. Want your own code? Type it here (optional).</p>
@@ -510,7 +546,12 @@ function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, onLeave 
         </p>
       )}
       {room.status === "waiting" ? (
-        <Lobby code={room.code} players={snapshot.players.map((p) => p.name)} onLeave={onLeave} />
+        <Lobby
+          code={room.code}
+          mode={modeLabel(room.deck, room.secret_mode)}
+          players={snapshot.players.map((p) => p.name)}
+          onLeave={onLeave}
+        />
       ) : (
         <Game
           key={room.round}
@@ -531,7 +572,7 @@ function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, onLeave 
 // Lobby: share the code, wait for player two
 // ---------------------------------------------------------------------------
 
-function Lobby({ code, players, onLeave }: { code: string; players: string[]; onLeave: () => void }) {
+function Lobby({ code, mode, players, onLeave }: { code: string; mode: string; players: string[]; onLeave: () => void }) {
   const [copied, setCopied] = useState(false);
   const link = shareLink(code);
 
@@ -554,6 +595,7 @@ function Lobby({ code, players, onLeave }: { code: string; players: string[]; on
       <div className="eyebrow"><Users size={14} /> WAITING FOR PLAYER TWO</div>
       <h1>Your room code</h1>
       <div className="room-code">{code}</div>
+      <div className="mode-pill">{mode}</div>
       <p>Send this code (or the link) to the other player. The game starts automatically when they join.</p>
       <button className="primary-button" onClick={() => void share()}>
         {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Link copied" : "Share invite link"}
@@ -633,6 +675,11 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
   const [busy, setBusy] = useState(false);
   const [actionError, setActionError] = useState("");
 
+  // Director's Cut: the actor currently highlighted (not yet locked in).
+  const [pickedId, setPickedId] = useState("");
+  const isChoosing = room.status === "choosing";
+  const opponentPicked = events.some((e) => e.kind === "system" && !!opponent && e.user_id === opponent.user_id);
+
   const isFinished = room.status === "finished";
   const myTurn = room.current_turn === userId;
   const pendingQuestion = room.phase === "answer"
@@ -689,7 +736,37 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
   }
 
   let turnPanel: ReactNode;
-  if (isFinished) {
+  if (isChoosing) {
+    const picked = byId.get(pickedId);
+    let status: string;
+    if (!mySecret) {
+      status = `Tap an actor on the board, then lock them in.${opponentPicked ? ` ${opponentName} has already picked.` : ""}`;
+    } else if (opponentPicked) {
+      status = "Both picked — starting…";
+    } else {
+      status = `Waiting for ${opponentName} to pick. You can still change yours.`;
+    }
+    turnPanel = (
+      <section className="panel turn-panel is-active">
+        <div className="panel-label">{SECRET_NAMES.choose.toUpperCase()}</div>
+        <h3>{mySecret ? `You picked ${mySecret.name}` : `Pick who ${opponentName} has to find`}</h3>
+        <p>{status}</p>
+        <button
+          className="primary-button full-button"
+          disabled={busy || !picked || picked.id === mySecret?.id}
+          onClick={() => {
+            if (!picked) return;
+            void act(async () => {
+              await chooseSecret(client, room.id, picked.id);
+              setPickedId("");
+            });
+          }}
+        >
+          <Lock size={16} /> {picked ? `Lock in ${picked.name}` : "Tap an actor first"}
+        </button>
+      </section>
+    );
+  } else if (isFinished) {
     const iWon = room.winner_id === userId;
     turnPanel = (
       <section className="panel turn-panel finished-panel">
@@ -774,14 +851,14 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
         <div className="board-heading">
           <div>
             <div className="section-kicker">
-              ROUND {room.round} · {DECK_LABELS[room.deck] ?? DECK_LABELS.famous} · YOU VS {opponentName.toUpperCase()}
+              ROUND {room.round} · {modeLabel(room.deck, room.secret_mode).toUpperCase()} · YOU VS {opponentName.toUpperCase()}
             </div>
-            <h2>Meet the suspects</h2>
+            <h2>{isChoosing ? "Pick your secret actor" : "Meet the suspects"}</h2>
           </div>
           <div className="remaining-count"><strong>{remaining.length}</strong><span> / {board.length} left</span></div>
         </div>
 
-        <div className="board-tools" aria-label="Board shortcuts">
+        {!isChoosing && <div className="board-tools" aria-label="Board shortcuts">
           {genderGroups.map((group) => {
             const allOut = group.ids.every((id) => eliminated.has(id));
             return (
@@ -799,18 +876,19 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
           <button className="tool-chip" onClick={resetBoard} disabled={eliminated.size === 0}>
             <RotateCcw size={14} /> Reset board
           </button>
-        </div>
+        </div>}
 
         <div className="character-grid">
           {board.map((character) => {
-            const isOut = eliminated.has(character.id);
+            const isOut = !isChoosing && eliminated.has(character.id);
+            const isPicked = isChoosing && (pickedId ? pickedId === character.id : mySecret?.id === character.id);
             return (
               <button
-                className={`character-card ${isOut ? "is-eliminated" : ""}`}
+                className={`character-card ${isOut ? "is-eliminated" : ""} ${isPicked ? "is-picked" : ""}`}
                 key={character.id}
-                onClick={() => toggleEliminated(character.id)}
-                aria-pressed={isOut}
-                title={isOut ? "Restore character" : "Eliminate character"}
+                onClick={() => (isChoosing ? setPickedId(character.id) : toggleEliminated(character.id))}
+                aria-pressed={isChoosing ? isPicked : isOut}
+                title={isChoosing ? `Pick ${character.name}` : isOut ? "Restore character" : "Eliminate character"}
               >
                 <span className="portrait" style={{ background: `linear-gradient(145deg, ${character.color}, #182333)` }}>
                   <CharacterImage character={character} className="portrait-image" />
@@ -822,7 +900,12 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
             );
           })}
         </div>
-        <p className="board-hint"><CircleHelp size={14} /> Tap a card to eliminate it. Tap again to bring it back. Only you see your board.</p>
+        <p className="board-hint">
+          <CircleHelp size={14} />
+          {isChoosing
+            ? `Tap the actor ${opponentName} will have to find. They can't see your pick.`
+            : "Tap a card to eliminate it. Tap again to bring it back. Only you see your board."}
+        </p>
       </div>
 
       <aside className="side-column">
@@ -833,7 +916,7 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
           <section className="panel secret-panel">
             <div className="panel-label">YOUR SECRET CHARACTER</div>
             <Avatar character={showSecret ? mySecret : undefined} />
-            <h3>{showSecret ? mySecret?.name ?? "Unknown" : "Hidden"}</h3>
+            <h3>{showSecret ? mySecret?.name ?? (isChoosing ? "Not picked yet" : "Unknown") : "Hidden"}</h3>
             <p>{showSecret ? mySecret?.subtitle : "Tap to peek."}</p>
             <button className="secondary-button full-button" onClick={() => setShowSecret((v) => !v)}>
               {showSecret ? <EyeOff size={16} /> : <Eye size={16} />}

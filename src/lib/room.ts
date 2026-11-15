@@ -1,15 +1,18 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 export type Deck = "famous" | "random";
+/** "random": secrets are dealt at random. "choose": each player picks the actor the opponent must find. */
+export type SecretMode = "random" | "choose";
 
 export type Room = {
   id: string;
   code: string;
   host_id: string;
-  status: "waiting" | "playing" | "finished";
+  status: "waiting" | "choosing" | "playing" | "finished";
   phase: "ask" | "answer";
   board_ids: string[];
   deck: Deck;
+  secret_mode: SecretMode;
   round: number;
   current_turn: string | null;
   winner_id: string | null;
@@ -49,15 +52,28 @@ function fail(error: { message: string } | null): void {
   if (error) throw new Error(error.message);
 }
 
-export async function createRoom(client: SupabaseClient, name: string, boardIds: string[], code: string, deck: Deck) {
+export async function createRoom(
+  client: SupabaseClient,
+  name: string,
+  boardIds: string[],
+  code: string,
+  deck: Deck,
+  secretMode: SecretMode,
+) {
   const { data, error } = await client.rpc("create_room", {
     p_name: name,
     p_board_ids: boardIds,
     p_code: code.trim() || null,
     p_deck: deck,
+    p_secret_mode: secretMode,
   });
   fail(error);
   return data as string;
+}
+
+export async function chooseSecret(client: SupabaseClient, roomId: string, characterId: string) {
+  const { error } = await client.rpc("choose_secret", { p_room_id: roomId, p_character_id: characterId });
+  fail(error);
 }
 
 export async function joinRoom(client: SupabaseClient, code: string, name: string) {
