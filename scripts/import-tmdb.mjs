@@ -119,16 +119,17 @@ async function main() {
     if (!person) { problems.push(`${name}: not found on TMDB`); continue; }
     if (!person.profile_path) { problems.push(`${name}: no photo on TMDB, skipped`); continue; }
     if (seenPeople.has(person.id)) { problems.push(`${name}: duplicate of another entry, skipped`); continue; }
-    if (!exact) problems.push(`${name}: no exact match, used "${person.name}" — check this is right`);
+    if (!exact) problems.push(`${name}: no exact match on TMDB, used the photo of "${person.name}" — check this is right`);
     seenPeople.add(person.id);
 
+    // Show the name as written in actors.txt (e.g. "Salma Hayek", not TMDB's "Salma Hayek Pinault").
     const id = `tmdb:actor:${person.id}`;
     records.push({
       id,
-      name: person.name,
+      name,
       kind: 'ACTOR',
       subtitle: knownFor(person),
-      initials: initials(person.name),
+      initials: initials(name),
       color: colorFor(id),
       tmdb: { personId: person.id, profilePath: person.profile_path },
     });
