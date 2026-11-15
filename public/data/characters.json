@@ -1645,10 +1645,10 @@
   },
   {
     "id": "tmdb:actor:3136",
-    "name": "Salma Hayek Pinault",
+    "name": "Salma Hayek",
     "kind": "ACTOR",
     "subtitle": "Known for Eternals",
-    "initials": "SP",
+    "initials": "SH",
     "color": "#414b5b",
     "tmdb": {
       "personId": 3136,
