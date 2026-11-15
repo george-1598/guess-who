@@ -1,0 +1,173 @@
+# Actors that can appear on the board. One name per line.
+# Lines starting with # are ignored. Edit this file on GitHub, then run the
+# "Import actors" workflow (Actions tab) to rebuild public/data/characters.json.
+# Each room shows a random 48 of these, so ~100+ names keeps games varied.
+
+# --- Actresses ---
+Meryl Streep
+Julia Roberts
+Sandra Bullock
+Nicole Kidman
+Cate Blanchett
+Scarlett Johansson
+Jennifer Lawrence
+Emma Stone
+Natalie Portman
+Anne Hathaway
+Kate Winslet
+Charlize Theron
+Angelina Jolie
+Jennifer Aniston
+Reese Witherspoon
+Margot Robbie
+Zendaya
+Emma Watson
+Keira Knightley
+Penélope Cruz
+Salma Hayek
+Halle Berry
+Viola Davis
+Lupita Nyong'o
+Zoe Saldaña
+Gal Gadot
+Florence Pugh
+Saoirse Ronan
+Amy Adams
+Jessica Chastain
+Emily Blunt
+Helen Mirren
+Judi Dench
+Maggie Smith
+Julianne Moore
+Cameron Diaz
+Drew Barrymore
+Kristen Stewart
+Anya Taylor-Joy
+Jenna Ortega
+Sydney Sweeney
+Millie Bobby Brown
+Emma Thompson
+Olivia Colman
+Michelle Pfeiffer
+Uma Thurman
+Sigourney Weaver
+Jamie Lee Curtis
+Michelle Yeoh
+Octavia Spencer
+Elizabeth Olsen
+Brie Larson
+Rachel McAdams
+Emilia Clarke
+Sophie Turner
+Jodie Comer
+Hailee Steinfeld
+Gwyneth Paltrow
+Kate Hudson
+Melissa McCarthy
+Jennifer Lopez
+Ana de Armas
+Lily Collins
+Rebecca Ferguson
+Tilda Swinton
+Kirsten Dunst
+Mila Kunis
+Kerry Washington
+Taraji P. Henson
+Tessa Thompson
+Dakota Johnson
+Elle Fanning
+Diane Keaton
+Glenn Close
+Sarah Jessica Parker
+Lisa Kudrow
+Courteney Cox
+
+# --- Actors ---
+Tom Hanks
+Leonardo DiCaprio
+Brad Pitt
+Johnny Depp
+Tom Cruise
+Denzel Washington
+Will Smith
+Morgan Freeman
+Robert De Niro
+Al Pacino
+Keanu Reeves
+Robert Downey Jr.
+Chris Evans
+Chris Hemsworth
+Chris Pratt
+Mark Ruffalo
+Samuel L. Jackson
+Ryan Reynolds
+Ryan Gosling
+Hugh Jackman
+Matt Damon
+Ben Affleck
+George Clooney
+Christian Bale
+Heath Ledger
+Joaquin Phoenix
+Daniel Craig
+Daniel Radcliffe
+Rupert Grint
+Tom Holland
+Timothée Chalamet
+Pedro Pascal
+Oscar Isaac
+Adam Driver
+Cillian Murphy
+Benedict Cumberbatch
+Tom Hiddleston
+Idris Elba
+Dwayne Johnson
+Vin Diesel
+Jason Statham
+Harrison Ford
+Mark Hamill
+Arnold Schwarzenegger
+Sylvester Stallone
+Bruce Willis
+Jim Carrey
+Adam Sandler
+Ben Stiller
+Owen Wilson
+Steve Carell
+Jack Black
+Eddie Murphy
+Jackie Chan
+Anthony Hopkins
+Ian McKellen
+Patrick Stewart
+Gary Oldman
+Michael Caine
+Liam Neeson
+Russell Crowe
+Jake Gyllenhaal
+Andrew Garfield
+Tobey Maguire
+Zac Efron
+Michael B. Jordan
+Chadwick Boseman
+Jared Leto
+Austin Butler
+Paul Mescal
+Jacob Elordi
+Henry Cavill
+Jason Momoa
+Orlando Bloom
+Ewan McGregor
+Javier Bardem
+Antonio Banderas
+Paul Rudd
+Bradley Cooper
+Matthew McConaughey
+Woody Harrelson
+Jeff Goldblum
+Kevin Hart
+Mahershala Ali
+Rami Malek
+Eddie Redmayne
+Colin Firth
+Hugh Grant

@@ -1,6 +1,6 @@
-# Guess Who? — starter prototype
+# Guess Who? — the movie actor edition
 
-A React + TypeScript + Vite starter for a movie/actor Guess Who game.
+A two-player, real-time Guess Who game with famous actors. React + TypeScript + Vite, Supabase for rooms and realtime, hosted on GitHub Pages.
 
 ## Run locally (macOS)
 
@@ -9,23 +9,13 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite (usually http://localhost:5173).
-
-## Current prototype
-
-- Responsive character board
-- Random secret character
-- Eliminate/restore cards
-- Guess selection and feedback
-- Small local sample dataset
-
-The portrait blocks are intentional placeholders, not final character photography. The next milestone is a dataset import pipeline (TMDB) and a larger curated pool, followed by Supabase rooms and realtime multiplayer.
+Open the local URL printed by Vite (usually http://localhost:5173). For local multiplayer, put `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env.local` (see `.env.example`).
 
 ## GitHub Pages
 
-The Vite base path is currently `/guess-who/`. Change it in `vite.config.ts` if your repository has a different name.
+The Vite base path is `/guess-who/`. Change it in `vite.config.ts` if your repository has a different name.
 
-Deployment runs from `.github/workflows/deploy.yml` on every push to `main`. It needs two repository **variables** (Settings → Secrets and variables → Actions → Variables): `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+Deployment runs from `.github/workflows/deploy.yml` on every push to `main` (and after the "Import actors" workflow). It needs two repository **variables** (Settings → Secrets and variables → Actions → Variables): `VITE_SUPABASE_URL` (just `https://<ref>.supabase.co`, no path) and `VITE_SUPABASE_PUBLISHABLE_KEY`.
 
 ## Multiplayer (Supabase)
 
@@ -35,42 +25,21 @@ Deployment runs from `.github/workflows/deploy.yml` on every push to `main`. It 
 
 Never deploy Supabase secret/service-role keys to GitHub Pages. Only the publishable (or legacy anon) key belongs in a browser app.
 
-## Import a starter character dataset from TMDB
+## The actor list
 
-The importer is a local Node.js script. It fetches a bounded set of popular movies and TV shows, reads their cast credits, and writes `public/data/characters.json`. The deployed app does not need a TMDB token and does not call the TMDB API at runtime.
+The board uses a hand-picked list of actors in `scripts/actors.txt` (one name per line, `#` for comments).
 
-1. Create a TMDB account and obtain an API **Read Access Token** from your TMDB account's API settings.
-2. In the project root, copy `.env.example` to `.env.local` and add your token:
+To change it:
 
-   ```bash
-   cp .env.example .env.local
-   ```
+1. Edit `scripts/actors.txt` on GitHub and commit.
+2. Actions tab → **Import actors** → **Run workflow**.
 
-3. Run the importer. On macOS, this loads the local token into the command's environment without adding a dotenv dependency:
+The workflow (`.github/workflows/import-actors.yml`) runs `scripts/import-tmdb.mjs`, which looks each name up on TMDB for a stable person id, a profile photo path and a "Known for" title, and commits the result to `public/data/characters.json`. The run page lists any names that weren't found, had no photo, or matched a different person. The site then redeploys automatically.
 
-   ```bash
-   set -a
-   source .env.local
-   set +a
-   npm run import:tmdb
-   ```
+It needs the repository **secret** `TMDB_READ_ACCESS_TOKEN` (your TMDB API Read Access Token). Locally: `set -a && source .env.local && set +a && npm run import:tmdb`.
 
-   The generated file is `public/data/characters.json`. The game fetches this file at runtime using Vite’s configured base path, so the same code works locally and on the GitHub Pages project site. Commit the generated JSON file to your repository so GitHub Pages can serve it; never commit `.env.local`.
-
-After importing, start the app with `npm run dev`. If the board says it cannot load the dataset, check that `public/data/characters.json` exists and is non-empty. The UI validates the record shape before starting a round. TMDB profile images are loaded from TMDB’s image CDN; if an image is missing or unavailable, the card falls back to the character’s initials.
-
-Optional bounds can be changed in `.env.local`:
-
-- `TMDB_MOVIE_PAGES` and `TMDB_TV_PAGES`: 1–5 popular-title pages each (20 titles per page).
-- `TMDB_CAST_LIMIT`: 1–30 cast entries per title.
-- `TMDB_MAX_CHARACTERS`: maximum output records (1–5000).
-
-The importer retries temporary network, rate-limit, and server errors, requests credits sequentially, and uses stable IDs based on TMDB person/title/role IDs. It emits actor records and credited role records. A role uses the credited performer's `profile_path` as image metadata; this is an actor portrait, not an independently sourced character image.
-
-### Attribute accuracy and curation
-
-TMDB cast credits provide names, role/character credit strings, person IDs, and profile image paths. They do **not** provide reliable hair colour, a character's gender, or a franchise/universe field. Imported records therefore omit `attributes`; the frontend `Character` type makes those attributes optional. Keep manually researched values separate in a curated enrichment file keyed by the generated stable `id`, and merge only verified values. Do not infer a fictional character's attributes from the actor who portrays them.
+The deployed site never calls TMDB's API; it only loads photos from TMDB's image CDN and falls back to initials if one is missing.
 
 ### TMDB attribution and usage
 
-This product uses the TMDB API but is not endorsed or certified by TMDB. Include the required TMDB attribution in the app's About/Credits area and review the current [TMDB API terms](https://www.themoviedb.org/api-terms-of-use) and [API documentation](https://developer.themoviedb.org/docs) before publishing. TMDB data and images remain subject to TMDB's terms; do not assume that a public API response grants unrestricted redistribution rights. The importer stores TMDB image paths, not copied image files. Keep your API Read Access Token in `.env.local`; never commit it or put it in frontend code.
+This product uses the TMDB API but is not endorsed or certified by TMDB. Include the required TMDB attribution in the app's About/Credits area and review the current [TMDB API terms](https://www.themoviedb.org/api-terms-of-use) and [API documentation](https://developer.themoviedb.org/docs) before publishing. TMDB data and images remain subject to TMDB's terms; do not assume that a public API response grants unrestricted redistribution rights. The importer stores TMDB image paths, not copied image files. Keep your API Read Access Token in `.env.local` or GitHub secrets; never commit it or put it in frontend code.
