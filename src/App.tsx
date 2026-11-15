@@ -5,7 +5,7 @@ import {
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   Cake, Check, CircleHelp, Clapperboard, Copy, Dices, ExternalLink, Eye, EyeOff, Film, Lock, LogOut,
-  MapPin, RotateCcw, Send, Shuffle, SlidersHorizontal, Sparkles, Star, Undo2, Users, X,
+  MapPin, RotateCcw, ScrollText, Send, Shuffle, SlidersHorizontal, Sparkles, Star, Undo2, Users, X,
 } from "lucide-react";
 import { FiltersSheet } from "./components/FiltersSheet";
 import type { Character } from "./characters";
@@ -37,6 +37,19 @@ const SECRET_NAMES: Record<SecretMode, string> = { random: "Classic", choose: "D
 function modeLabel(deck: Deck | undefined, secretMode: SecretMode | undefined) {
   const pool = POOL_NAMES[deck ?? "famous"];
   return secretMode === "choose" ? `${pool} ${SECRET_NAMES.choose}` : pool;
+}
+
+const BOARD_SIZES = [
+  { size: 24, label: "Easy" },
+  { size: 36, label: "Medium" },
+  { size: 48, label: "Hard" },
+] as const;
+const SIZE_KEY = "guesswho:boardSize";
+
+/** "Easy · 24 cards" — picks the nearest label for any board size. */
+function difficultyLabel(cards: number) {
+  const level = cards <= 24 ? "Easy" : cards <= 36 ? "Medium" : "Hard";
+  return `${level} · ${cards} cards`;
 }
 
 /** The pool a room deals from; falls back to the famous list if the random one isn't available. */
@@ -133,7 +146,7 @@ function Avatar({ character, size = "large" }: { character?: Character; size?: "
   return (
     <div
       className={`secret-avatar ${size === "small" ? "secret-avatar-small" : ""}`}
-      style={{ background: `linear-gradient(145deg, ${character?.color ?? "#355c7d"}, #182333)` }}
+      style={{ background: `linear-gradient(145deg, ${character?.color ?? "#355c7d"}, #14181c)` }}
     >
       {character ? <CharacterImage character={character} className="secret-image" /> : <span>?</span>}
     </div>
@@ -200,7 +213,7 @@ function ActorSheet({ character, onClose, action }: {
         <button ref={closeRef} className="sheet-close" onClick={onClose} aria-label="Close">
           <X size={18} />
         </button>
-        <div className="sheet-photo" style={{ background: `linear-gradient(145deg, ${character.color}, #182333)` }}>
+        <div className="sheet-photo" style={{ background: `linear-gradient(145deg, ${character.color}, #14181c)` }}>
           <CharacterImage character={character} className="portrait-image" />
         </div>
         <div className="sheet-body">
@@ -429,6 +442,10 @@ function Home({ client, decks, onEnter }: {
 }) {
   const [deck, setDeck] = useState<Deck>("famous");
   const [secretMode, setSecretMode] = useState<SecretMode>("random");
+  const [boardSize, setBoardSize] = useState<number>(() => {
+    const saved = Number(storageGet(SIZE_KEY));
+    return BOARD_SIZES.some((s) => s.size === saved) ? saved : 36;
+  });
   const [name, setName] = useState(() => storageGet(NAME_KEY));
   const [joinCode, setJoinCode] = useState(
     () => (new URLSearchParams(window.location.search).get("room") ?? "").toUpperCase(),
@@ -455,7 +472,10 @@ function Home({ client, decks, onEnter }: {
 
   function handleCreate(event: FormEvent) {
     event.preventDefault();
-    void run(() => createRoom(client, name.trim(), pickBoardIds(deckPool(decks, deck)), customCode, deck, secretMode));
+    storageSet(SIZE_KEY, String(boardSize));
+    void run(() => createRoom(
+      client, name.trim(), pickBoardIds(deckPool(decks, deck), boardSize), customCode, deck, secretMode,
+    ));
   }
 
   function handleJoin(event: FormEvent) {
@@ -541,6 +561,22 @@ function Home({ client, decks, onEnter }: {
               <strong>{SECRET_NAMES.choose}</strong>
               <span>You pick who they hunt for</span>
             </button>
+          </div>
+          <p>How many cards on the board?</p>
+          <div className="deck-picker cols-3" role="radiogroup" aria-label="Difficulty">
+            {BOARD_SIZES.map((option) => (
+              <button
+                key={option.size}
+                type="button"
+                role="radio"
+                aria-checked={boardSize === option.size}
+                className={`deck-option ${boardSize === option.size ? "is-selected" : ""}`}
+                onClick={() => setBoardSize(option.size)}
+              >
+                <strong>{option.label}</strong>
+                <span>{option.size} cards</span>
+              </button>
+            ))}
           </div>
           <p>You'll get a code to send to the other player. Want your own code? Type it here (optional).</p>
           <input
@@ -694,7 +730,7 @@ function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, onLeave 
       {room.status === "waiting" ? (
         <Lobby
           code={room.code}
-          mode={modeLabel(room.deck, room.secret_mode)}
+          mode={`${modeLabel(room.deck, room.secret_mode)} · ${difficultyLabel(room.board_ids.length)}`}
           players={snapshot.players.map((p) => p.name)}
           onLeave={onLeave}
         />
@@ -816,6 +852,7 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
     { key: "men", label: "men", ids: board.filter((c) => c.attributes?.gender === "MAN").map((c) => c.id) },
   ]).filter((group) => group.ids.length > 0), [board]);
   const [showSecret, setShowSecret] = useState(true);
+  const [logOpen, setLogOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [guessId, setGuessId] = useState("");
   const [busy, setBusy] = useState(false);
@@ -955,7 +992,9 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
         <button
           className="primary-button full-button"
           disabled={busy}
-          onClick={() => void act(() => rematch(client, room.id, pickBoardIds(deckPool(decks, room.deck))))}
+          onClick={() => void act(() => rematch(
+            client, room.id, pickBoardIds(deckPool(decks, room.deck), room.board_ids.length),
+          ))}
         >
           <RotateCcw size={16} /> Play again with a new board
         </button>
@@ -1022,6 +1061,29 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
   }
 
   return (
+    <div className="game">
+      {/* Your secret actor, always at the top of the page */}
+      {!isFinished && (
+        <section className="secret-bar" aria-label="Your secret actor">
+          <Avatar character={showSecret ? mySecret : undefined} size="small" />
+          <div className="secret-bar-text">
+            <span className="panel-label">Your secret actor</span>
+            <strong>{showSecret ? mySecret?.name ?? (isChoosing ? "Not picked yet" : "Unknown") : "Hidden"}</strong>
+            {showSecret && mySecret && <span>{mySecret.subtitle}</span>}
+          </div>
+          <div className="secret-bar-actions">
+            {showSecret && mySecret && (
+              <button className="tool-chip" onClick={() => setInfoId(mySecret.id)}>
+                <CircleHelp size={14} /> About
+              </button>
+            )}
+            <button className="tool-chip" onClick={() => setShowSecret((v) => !v)}>
+              {showSecret ? <EyeOff size={14} /> : <Eye size={14} />} {showSecret ? "Hide" : "Show"}
+            </button>
+          </div>
+        </section>
+      )}
+
     <section className="game-layout">
       <div className="board-column">
         <div className="board-heading">
@@ -1078,7 +1140,7 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
                 aria-pressed={isChoosing ? isPicked : isOut}
                 title={isChoosing ? `Pick ${character.name}` : isOut ? "Restore character" : "Eliminate character"}
               >
-                <span className="portrait" style={{ background: `linear-gradient(145deg, ${character.color}, #182333)` }}>
+                <span className="portrait" style={{ background: `linear-gradient(145deg, ${character.color}, #14181c)` }}>
                   <CharacterImage character={character} className="portrait-image" />
                   {isOut && <span className="eliminated-overlay"><EyeOff size={23} /></span>}
                 </span>
@@ -1102,33 +1164,30 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
       <aside className="side-column">
         {turnPanel}
         {actionError && <p className="form-error" role="alert">{actionError}</p>}
+      </aside>
+    </section>
 
-        {!isFinished && (
-          <section className="panel secret-panel">
-            <div className="panel-label">YOUR SECRET CHARACTER</div>
-            <Avatar character={showSecret ? mySecret : undefined} />
-            <h3>{showSecret ? mySecret?.name ?? (isChoosing ? "Not picked yet" : "Unknown") : "Hidden"}</h3>
-            <p>{showSecret ? mySecret?.subtitle : "Tap to peek."}</p>
-            {showSecret && mySecret && (
-              <button className="text-button about-link" onClick={() => setInfoId(mySecret.id)}>
-                <CircleHelp size={14} /> About {mySecret.name}
-              </button>
-            )}
-            <button className="secondary-button full-button" onClick={() => setShowSecret((v) => !v)}>
-              {showSecret ? <EyeOff size={16} /> : <Eye size={16} />}
-              {showSecret ? "Hide" : "Show"}
-            </button>
-          </section>
-        )}
-
-        <section className="panel log-panel">
-          <div className="panel-label">GAME LOG</div>
-          <ol>
+      {/* Bottom of the page: game log (folded by default) and leave room */}
+      <section className="game-footer">
+        <div className="game-footer-buttons">
+          <button className="secondary-button" aria-expanded={logOpen} onClick={() => setLogOpen((v) => !v)}>
+            <ScrollText size={16} /> {logOpen ? "Hide game log" : `Game log (${events.length})`}
+          </button>
+          <button
+            className="danger-button"
+            onClick={() => {
+              if (window.confirm("Leave this room? You can come back later with the same room code.")) onLeave();
+            }}
+          >
+            <LogOut size={16} /> Leave room
+          </button>
+        </div>
+        {logOpen && (
+          <ol className="log-list">
             {[...events].reverse().map((event) => <li key={event.id}>{describe(event)}</li>)}
           </ol>
-          <button className="text-button" onClick={onLeave}><LogOut size={14} /> Leave room</button>
-        </section>
-      </aside>
+        )}
+      </section>
 
       {infoCharacter && (
         <ActorSheet character={infoCharacter} onClose={closeInfo} action={infoAction} />
@@ -1136,7 +1195,7 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
       {filtersOpen && (
         <FiltersSheet board={board} eliminated={eliminated} onFlipDown={applyFilter} onClose={closeFilters} />
       )}
-    </section>
+    </div>
   );
 }
 
