@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from "react";
-import { Lock, Megaphone, RotateCcw, Send, SkipForward, Target } from "lucide-react";
+import { Lock, RotateCcw, Send, SkipForward, Target } from "lucide-react";
 import type { Character } from "../characters";
 import { SECRET_NAMES } from "../lib/decks";
 import { MAX_WRONG_GUESSES, type Room, type RoomEvent } from "../lib/room";
@@ -140,11 +140,7 @@ export function TurnPanel({
             if (window.confirm(`Pass the turn to ${opponentName}?`)) void onPass();
           }}
         >
-          <Megaphone size={20} className="pass-icon" />
-          <span className="pass-text">
-            <strong>I asked out loud</strong>
-            <small>Pass the turn to {opponentName}</small>
-          </span>
+          <span className="pass-text"><strong>Pass the turn to {opponentName}</strong></span>
           <SkipForward size={18} />
         </button>
       </>
