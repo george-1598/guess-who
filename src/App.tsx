@@ -1,6 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import {
+  useCallback, useEffect, useMemo, useRef, useState,
+  type FormEvent, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode,
+} from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { Check, CircleHelp, Clapperboard, Copy, Dices, Eye, EyeOff, Lock, LogOut, RotateCcw, Send, Shuffle, Sparkles, Star, Users } from "lucide-react";
+import {
+  Cake, Check, CircleHelp, Clapperboard, Copy, Dices, ExternalLink, Eye, EyeOff, Film, Lock, LogOut,
+  MapPin, RotateCcw, Send, Shuffle, Sparkles, Star, Users, X,
+} from "lucide-react";
 import type { Character } from "./characters";
 import { ensureSession, supabase } from "./lib/supabase";
 import { pickBoardIds } from "./lib/board";
@@ -131,6 +137,145 @@ function Avatar({ character, size = "large" }: { character?: Character; size?: "
       {character ? <CharacterImage character={character} className="secret-image" /> : <span>?</span>}
     </div>
   );
+}
+
+function parseDate(value?: string) {
+  if (!value) return undefined;
+  const date = new Date(`${value}T00:00:00`);
+  return Number.isNaN(date.getTime()) ? undefined : date;
+}
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** "62 years old · born 2 Sep 1964", or "Born … · died … (aged 28)". */
+function lifeText(character: Character) {
+  const born = parseDate(character.details?.birthday);
+  if (!born) return undefined;
+  const died = parseDate(character.details?.deathday);
+  const end = died ?? new Date();
+  let age = end.getFullYear() - born.getFullYear();
+  if (end < new Date(end.getFullYear(), born.getMonth(), born.getDate())) age -= 1;
+  return died
+    ? `Born ${formatDate(born)} · died ${formatDate(died)} (aged ${age})`
+    : `${age} years old · born ${formatDate(born)}`;
+}
+
+/** Bottom sheet (phone) / dialog (computer) with an actor's photo and facts. */
+function ActorSheet({ character, onClose, action }: {
+  character: Character;
+  onClose: () => void;
+  action?: { label: string; onClick: () => void };
+}) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden"; // keep the board from scrolling behind the sheet
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [onClose]);
+
+  const details = character.details;
+  const life = lifeText(character);
+  const knownFor = details?.knownFor?.length ? details.knownFor : [];
+  const hasFacts = !!(life || details?.placeOfBirth || knownFor.length || details?.bio);
+
+  return (
+    <div className="sheet-backdrop" onClick={onClose}>
+      <div
+        className="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sheet-title"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button ref={closeRef} className="sheet-close" onClick={onClose} aria-label="Close">
+          <X size={18} />
+        </button>
+        <div className="sheet-photo" style={{ background: `linear-gradient(145deg, ${character.color}, #182333)` }}>
+          <CharacterImage character={character} className="portrait-image" />
+        </div>
+        <div className="sheet-body">
+          <h2 id="sheet-title">{character.name}</h2>
+          <ul className="fact-list">
+            {life && <li><Cake size={15} /> <span>{life}</span></li>}
+            {details?.placeOfBirth && <li><MapPin size={15} /> <span>{details.placeOfBirth}</span></li>}
+            {knownFor.length > 0 && <li><Film size={15} /> <span>{knownFor.join(", ")}</span></li>}
+          </ul>
+          {details?.bio && <p className="sheet-bio">{details.bio}</p>}
+          {!hasFacts && <p className="sheet-bio">{character.subtitle}</p>}
+          <div className="sheet-actions">
+            {action && (
+              <button className="primary-button" onClick={action.onClick}>{action.label}</button>
+            )}
+            <a
+              className="secondary-button"
+              href={`https://www.themoviedb.org/person/${character.tmdb?.personId ?? ""}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              More on TMDB <ExternalLink size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Press-and-hold (phone) or right-click (computer) opens details; a normal tap still
+ * does the card's usual action. One shared timer is enough since only one finger presses.
+ */
+function useLongPress(onLongPress: (id: string) => void) {
+  const state = useRef({ timer: 0, x: 0, y: 0, fired: false });
+
+  const cancel = useCallback(() => window.clearTimeout(state.current.timer), []);
+
+  const bind = useCallback((id: string, onTap: () => void) => ({
+    onPointerDown: (event: ReactPointerEvent) => {
+      if (event.button !== 0) return;
+      const s = state.current;
+      s.fired = false;
+      s.x = event.clientX;
+      s.y = event.clientY;
+      window.clearTimeout(s.timer);
+      s.timer = window.setTimeout(() => {
+        s.fired = true;
+        navigator.vibrate?.(15);
+        onLongPress(id);
+      }, 450);
+    },
+    onPointerMove: (event: ReactPointerEvent) => {
+      const s = state.current;
+      if (Math.hypot(event.clientX - s.x, event.clientY - s.y) > 10) window.clearTimeout(s.timer);
+    },
+    onPointerUp: cancel,
+    onPointerLeave: cancel,
+    onPointerCancel: cancel,
+    onContextMenu: (event: ReactMouseEvent) => {
+      event.preventDefault(); // no "save image" menu on phones; right-click opens details on computers
+      cancel();
+      state.current.fired = true;
+      onLongPress(id);
+    },
+    onClick: () => {
+      if (state.current.fired) {
+        state.current.fired = false; // this click is the end of a long-press, not a tap
+        return;
+      }
+      onTap();
+    },
+  }), [cancel, onLongPress]);
+
+  return bind;
 }
 
 function Shell({ pill, children }: { pill: string; children: ReactNode }) {
@@ -677,6 +822,10 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
 
   // Director's Cut: the actor currently highlighted (not yet locked in).
   const [pickedId, setPickedId] = useState("");
+  // Actor whose details panel is open.
+  const [infoId, setInfoId] = useState("");
+  const bindPress = useLongPress(setInfoId);
+  const closeInfo = useCallback(() => setInfoId(""), []);
   const isChoosing = room.status === "choosing";
   const opponentPicked = events.some((e) => e.kind === "system" && !!opponent && e.user_id === opponent.user_id);
 
@@ -733,6 +882,19 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
       }
       default: return <em>{event.body}</em>;
     }
+  }
+
+  // The details panel's main button does the same thing a tap on that card would.
+  const infoCharacter = byId.get(infoId);
+  let infoAction: { label: string; onClick: () => void } | undefined;
+  if (infoCharacter && room.board_ids.includes(infoCharacter.id) && !isFinished) {
+    const id = infoCharacter.id;
+    infoAction = isChoosing
+      ? { label: "Pick as my secret", onClick: () => { setPickedId(id); closeInfo(); } }
+      : {
+          label: eliminated.has(id) ? "Flip back up" : "Flip down",
+          onClick: () => { toggleEliminated(id); closeInfo(); },
+        };
   }
 
   let turnPanel: ReactNode;
@@ -886,7 +1048,7 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
               <button
                 className={`character-card ${isOut ? "is-eliminated" : ""} ${isPicked ? "is-picked" : ""}`}
                 key={character.id}
-                onClick={() => (isChoosing ? setPickedId(character.id) : toggleEliminated(character.id))}
+                {...bindPress(character.id, () => (isChoosing ? setPickedId(character.id) : toggleEliminated(character.id)))}
                 aria-pressed={isChoosing ? isPicked : isOut}
                 title={isChoosing ? `Pick ${character.name}` : isOut ? "Restore character" : "Eliminate character"}
               >
@@ -902,9 +1064,12 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
         </div>
         <p className="board-hint">
           <CircleHelp size={14} />
-          {isChoosing
-            ? `Tap the actor ${opponentName} will have to find. They can't see your pick.`
-            : "Tap a card to eliminate it. Tap again to bring it back. Only you see your board."}
+          <span>
+            {isChoosing
+              ? `Tap the actor ${opponentName} will have to find. They can't see your pick.`
+              : "Tap a card to eliminate it. Tap again to bring it back. Only you see your board."}
+            {" "}Press and hold a card (right-click on a computer) to see who they are.
+          </span>
         </p>
       </div>
 
@@ -918,6 +1083,11 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
             <Avatar character={showSecret ? mySecret : undefined} />
             <h3>{showSecret ? mySecret?.name ?? (isChoosing ? "Not picked yet" : "Unknown") : "Hidden"}</h3>
             <p>{showSecret ? mySecret?.subtitle : "Tap to peek."}</p>
+            {showSecret && mySecret && (
+              <button className="text-button about-link" onClick={() => setInfoId(mySecret.id)}>
+                <CircleHelp size={14} /> About {mySecret.name}
+              </button>
+            )}
             <button className="secondary-button full-button" onClick={() => setShowSecret((v) => !v)}>
               {showSecret ? <EyeOff size={16} /> : <Eye size={16} />}
               {showSecret ? "Hide" : "Show"}
@@ -933,6 +1103,10 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
           <button className="text-button" onClick={onLeave}><LogOut size={14} /> Leave room</button>
         </section>
       </aside>
+
+      {infoCharacter && (
+        <ActorSheet character={infoCharacter} onClose={closeInfo} action={infoAction} />
+      )}
     </section>
   );
 }

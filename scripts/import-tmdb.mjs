@@ -99,29 +99,84 @@ function pickPerson(name, results) {
   return { person: [...pool].sort((a, b) => (b.popularity ?? 0) - (a.popularity ?? 0))[0], exact: exact.length > 0 };
 }
 
-function knownFor(person) {
-  const titles = (person.known_for ?? [])
+/** Up to 3 best-known titles from a search result's known_for list, most-voted first. */
+function knownForTitles(person) {
+  return (person.known_for ?? [])
     .filter((item) => item && (item.title || item.name))
-    .sort((a, b) => (b.vote_count ?? 0) - (a.vote_count ?? 0));
-  const top = titles[0];
-  return top ? `Known for ${top.title ?? top.name}` : 'Actor';
+    .sort((a, b) => (b.vote_count ?? 0) - (a.vote_count ?? 0))
+    .map((item) => item.title ?? item.name)
+    .slice(0, 3);
+}
+
+/** First 2–3 sentences of a TMDB biography, at most ~320 characters. */
+function shortBio(text) {
+  const clean = String(text ?? '').replace(/\s+/g, ' ').trim();
+  if (!clean) return undefined;
+  if (clean.length <= 320) return clean;
+  const cut = clean.slice(0, 320);
+  const lastStop = cut.lastIndexOf('. ');
+  if (lastStop > 120) return cut.slice(0, lastStop + 1);
+  return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+}
+
+/** Runs fn over items with at most `limit` requests in flight. */
+async function mapLimit(items, limit, fn) {
+  let next = 0;
+  await Promise.all(Array.from({ length: limit }, async () => {
+    while (next < items.length) {
+      const index = next;
+      next += 1;
+      await fn(items[index]);
+    }
+  }));
+}
+
+/** Adds birthday, birthplace and a short bio from each actor's TMDB profile. */
+async function addPersonDetails(allRecords) {
+  const ids = [...new Set(allRecords.map((r) => r.tmdb.personId))];
+  console.log(`\nFetching details for ${ids.length} actors...`);
+  const people = new Map();
+  let done = 0;
+  await mapLimit(ids, 4, async (id) => {
+    try {
+      people.set(id, await tmdb(`/person/${id}`));
+    } catch (error) {
+      console.warn(`No details for person ${id}: ${error.message}`);
+    }
+    done += 1;
+    if (done % 100 === 0) console.log(`  ${done}/${ids.length}`);
+  });
+
+  for (const record of allRecords) {
+    const person = people.get(record.tmdb.personId);
+    if (!person) continue;
+    const details = {
+      ...record.details,
+      ...(person.birthday ? { birthday: person.birthday } : {}),
+      ...(person.deathday ? { deathday: person.deathday } : {}),
+      ...(person.place_of_birth ? { placeOfBirth: person.place_of_birth.trim() } : {}),
+      ...(shortBio(person.biography) ? { bio: shortBio(person.biography) } : {}),
+    };
+    if (Object.keys(details).length > 0) record.details = details;
+  }
 }
 
 // TMDB person gender codes: 0 = not set, 1 = female, 2 = male, 3 = non-binary.
 // Only 1 and 2 are stored; anyone else is never affected by the "hide women/men" buttons.
 const TMDB_GENDERS = { 1: 'WOMAN', 2: 'MAN' };
 
-function makeRecord(personId, name, subtitle, profilePath, tmdbGender) {
+function makeRecord(personId, name, knownFor, profilePath, tmdbGender) {
   const id = `tmdb:actor:${personId}`;
   const gender = TMDB_GENDERS[tmdbGender];
   return {
     id,
     name,
     kind: 'ACTOR',
-    subtitle,
+    subtitle: knownFor.length > 0 ? `Known for ${knownFor[0]}` : 'Actor',
     initials: initials(name),
     color: colorFor(id),
     ...(gender ? { attributes: { gender } } : {}),
+    ...(knownFor.length > 0 ? { details: { knownFor } } : {}),
     tmdb: { personId, profilePath },
   };
 }
@@ -144,9 +199,12 @@ async function buildRandomPool() {
       for (const person of cast) {
         if (!Number.isInteger(person.id) || !person.name || !person.profile_path) continue;
         if (person.adult || person.known_for_department !== 'Acting') continue;
-        // Movies arrive most-voted first, so the first movie we see is the best "Known for".
-        if (!people.has(person.id)) {
-          people.set(person.id, makeRecord(person.id, person.name.trim(), `Known for ${movie.title}`, person.profile_path, person.gender));
+        // Movies arrive most-voted first, so the first movies we see are the best "Known for".
+        const existing = people.get(person.id);
+        if (!existing) {
+          people.set(person.id, makeRecord(person.id, person.name.trim(), [movie.title], person.profile_path, person.gender));
+        } else if (existing.details.knownFor.length < 3 && !existing.details.knownFor.includes(movie.title)) {
+          existing.details.knownFor.push(movie.title);
         }
       }
       await sleep(60);
@@ -177,14 +235,16 @@ async function main() {
     seenPeople.add(person.id);
 
     // Show the name as written in actors.txt (e.g. "Salma Hayek", not TMDB's "Salma Hayek Pinault").
-    records.push(makeRecord(person.id, name, knownFor(person), person.profile_path, person.gender));
+    records.push(makeRecord(person.id, name, knownForTitles(person), person.profile_path, person.gender));
   }
 
   if (records.length < 12) throw new Error(`Only ${records.length} actors were found; a board needs at least 12.`);
-  await writeRecords(OUTPUT, records);
 
   const randomRecords = await buildRandomPool();
   if (randomRecords.length < 12) throw new Error(`Only ${randomRecords.length} random actors were found.`);
+
+  await addPersonDetails([...records, ...randomRecords]);
+  await writeRecords(OUTPUT, records);
   await writeRecords(RANDOM_OUTPUT, randomRecords);
 
   const summary = [

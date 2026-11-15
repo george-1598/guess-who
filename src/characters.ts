@@ -19,6 +19,14 @@ export type Character = {
   // TMDB does not provide most Guess Who attributes. Imported records omit this
   // field until values have been manually curated.
   attributes?: CharacterAttributes;
+  // Shown in the actor details panel. Filled in by the importer from TMDB.
+  details?: {
+    birthday?: string; // YYYY-MM-DD
+    deathday?: string; // YYYY-MM-DD
+    placeOfBirth?: string;
+    bio?: string;
+    knownFor?: string[];
+  };
   tmdb?: {
     personId: number;
     profilePath?: string;
