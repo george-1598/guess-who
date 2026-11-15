@@ -1,9 +1,21 @@
 import { useState, type FormEvent, type ReactNode } from "react";
-import { Lock, RotateCcw, Send, Target } from "lucide-react";
+import { Lock, RotateCcw, Send, SkipForward, Target } from "lucide-react";
 import type { Character } from "../characters";
 import { SECRET_NAMES } from "../lib/decks";
-import type { Room, RoomEvent } from "../lib/room";
+import { MAX_WRONG_GUESSES, type Room, type RoomEvent } from "../lib/room";
 import { Avatar } from "./CharacterImage";
+
+/** Warning shown before a guess, depending on how many wrong guesses are left. */
+export function guessWarning(myWrongGuesses: number) {
+  const left = MAX_WRONG_GUESSES - myWrongGuesses;
+  return left <= 1
+    ? `This is your last chance: a ${ordinal(MAX_WRONG_GUESSES)} wrong guess loses the game.`
+    : `If you're wrong, your turn ends (${left} wrong guesses left before you lose).`;
+}
+
+function ordinal(n: number) {
+  return n === 1 ? "1st" : n === 2 ? "2nd" : n === 3 ? "3rd" : `${n}th`;
+}
 
 /**
  * The "what do I do now?" panel. Each action returns true when it succeeded
@@ -11,7 +23,7 @@ import { Avatar } from "./CharacterImage";
  */
 export function TurnPanel({
   room, userId, opponentName, mySecret, theirSecret, opponentPicked, pendingQuestion, remaining, picked, busy,
-  mySkips, opponentSkips, onLockIn, onAsk, onAnswer, onGuess, onRematch,
+  myWrongGuesses, opponentWrongGuesses, onLockIn, onAsk, onAnswer, onGuess, onPass, onRematch,
 }: {
   room: Room;
   userId: string;
@@ -26,13 +38,13 @@ export function TurnPanel({
   /** Director's Cut: the card currently highlighted on the board. */
   picked?: Character;
   busy: boolean;
-  /** Turns each player still has to miss after wrong out-of-turn guesses. */
-  mySkips: number;
-  opponentSkips: number;
+  myWrongGuesses: number;
+  opponentWrongGuesses: number;
   onLockIn: (character: Character) => Promise<boolean>;
   onAsk: (question: string) => Promise<boolean>;
   onAnswer: (answer: "yes" | "no" | "unsure") => Promise<boolean>;
   onGuess: (character: Character) => Promise<boolean>;
+  onPass: () => Promise<boolean>;
   onRematch: () => Promise<boolean>;
 }) {
   const [question, setQuestion] = useState("");
@@ -71,10 +83,16 @@ export function TurnPanel({
 
   if (room.status === "finished") {
     const iWon = room.winner_id === userId;
+    // Did the loser run out of guesses rather than being found?
+    const loserWrong = iWon ? opponentWrongGuesses : myWrongGuesses;
+    const outOfGuesses = loserWrong >= MAX_WRONG_GUESSES;
+    let reason = "";
+    if (outOfGuesses) reason = iWon ? `${opponentName} ran out of guesses.` : `You ran out of guesses.`;
     return (
       <section className="panel turn-panel finished-panel">
         <div className="panel-label">Game over</div>
         <h3>{iWon ? "You won! 🎉" : `${opponentName} won!`}</h3>
+        {reason && <p>{reason}</p>}
         <div className="reveal-row">
           <div><Avatar character={mySecret} size="small" /><p>You were<br /><strong>{mySecret?.name ?? "?"}</strong></p></div>
           <div><Avatar character={theirSecret} size="small" /><p>{opponentName} was<br /><strong>{theirSecret?.name ?? "?"}</strong></p></div>
@@ -109,6 +127,15 @@ export function TurnPanel({
             <Send size={16} />
           </button>
         </form>
+        <button
+          className="text-button pass-button"
+          disabled={busy}
+          onClick={() => {
+            if (window.confirm(`End your turn? ${opponentName} goes next.`)) void onPass();
+          }}
+        >
+          <SkipForward size={14} /> Asked in person — end my turn
+        </button>
       </>
     );
   } else if (myTurn) {
@@ -148,71 +175,65 @@ export function TurnPanel({
       <div className="panel-label">{label}</div>
       {body}
 
-      {(mySkips > 0 || opponentSkips > 0) && (
-        <div className="penalty-note">
-          {mySkips > 0 && <p>⏭ You'll miss your next {mySkips === 1 ? "turn" : `${mySkips} turns`} (wrong guess).</p>}
-          {opponentSkips > 0 && (
-            <p>⏭ {opponentName} will miss their next {opponentSkips === 1 ? "turn" : `${opponentSkips} turns`} (wrong guess).</p>
-          )}
-        </div>
-      )}
-
       <GuessBox
+        key={canAsk ? "my-turn" : "not-my-turn"}
         remaining={remaining}
         busy={busy}
-        // On your own turn, guessing is part of the normal choice; otherwise it's tucked away.
-        startOpen={canAsk}
-        penalty={canAsk ? "If you're wrong, your turn ends." : "If you're wrong, you'll miss your next turn."}
+        enabled={canAsk}
+        warning={guessWarning(myWrongGuesses)}
         onGuess={onGuess}
       />
+
+      {(myWrongGuesses > 0 || opponentWrongGuesses > 0) && (
+        <p className="wrong-count">
+          Wrong guesses: You {myWrongGuesses}/{MAX_WRONG_GUESSES} · {opponentName} {opponentWrongGuesses}/{MAX_WRONG_GUESSES}
+        </p>
+      )}
     </section>
   );
 }
 
-/** "I know who it is!" — pick a face-up actor and lock in a guess, at any time during play. */
-function GuessBox({ remaining, busy, startOpen, penalty, onGuess }: {
+/** Pick a face-up actor and lock in a guess — only on your own turn. */
+function GuessBox({ remaining, busy, enabled, warning, onGuess }: {
   remaining: Character[];
   busy: boolean;
-  startOpen: boolean;
-  penalty: string;
+  enabled: boolean;
+  warning: string;
   onGuess: (character: Character) => Promise<boolean>;
 }) {
   const [open, setOpen] = useState(false);
   const [guessId, setGuessId] = useState("");
-  const isOpen = open || startOpen;
 
   async function submit() {
     const guessed = remaining.find((c) => c.id === guessId);
     if (!guessed) return;
-    if (!window.confirm(`Guess ${guessed.name}? ${penalty}`)) return;
+    if (!window.confirm(`Guess ${guessed.name}? ${warning}`)) return;
     if (await onGuess(guessed)) {
       setGuessId("");
       setOpen(false);
     }
   }
 
-  if (!isOpen) {
+  if (!enabled || !open) {
     return (
-      <button className="secondary-button full-button guess-toggle" onClick={() => setOpen(true)}>
-        <Target size={16} /> I know who it is — guess now
+      <button className="secondary-button full-button guess-toggle" disabled={!enabled} onClick={() => setOpen(true)}>
+        <Target size={16} /> {enabled ? "I know who it is — guess" : "You can guess on your turn"}
       </button>
     );
   }
 
   return (
     <div className="guess-box">
-      <div className="divider">{startOpen ? "or make your final guess" : "make your guess"}</div>
+      <div className="divider">make your guess</div>
       <select value={guessId} onChange={(event) => setGuessId(event.target.value)} aria-label="Your guess">
         <option value="">Choose an actor…</option>
         {[...remaining].sort((a, b) => a.name.localeCompare(b.name)).map((c) => (
           <option key={c.id} value={c.id}>{c.name}</option>
         ))}
       </select>
-      <p className="guess-warning">{penalty}</p>
+      <p className="guess-warning">{warning}</p>
       <div className="guess-actions">
-        {!startOpen && (
-          <button className="text-button" onClick={() => { setOpen(false); setGuessId(""); }}>Cancel</button>
-        )}
+        <button className="text-button" onClick={() => { setOpen(false); setGuessId(""); }}>Cancel</button>
         <button className="secondary-button" disabled={busy || !guessId} onClick={() => void submit()}>
           <Target size={16} /> Lock in my guess
         </button>

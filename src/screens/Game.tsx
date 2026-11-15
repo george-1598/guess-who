@@ -7,13 +7,13 @@ import { CharacterImage } from "../components/CharacterImage";
 import { FiltersSheet } from "../components/FiltersSheet";
 import { GameFooter } from "../components/GameFooter";
 import { SecretBar } from "../components/SecretBar";
-import { TurnPanel } from "../components/TurnPanel";
+import { TurnPanel, guessWarning } from "../components/TurnPanel";
 import { useEliminated } from "../hooks/useEliminated";
 import { useLongPress } from "../hooks/useLongPress";
 import { pickBoardIds } from "../lib/board";
 import { deckPool, modeLabel, type Decks } from "../lib/decks";
 import {
-  answerQuestion, askQuestion, chooseSecret, makeGuess, rematch,
+  answerQuestion, askQuestion, chooseSecret, makeGuess, passTurn, rematch,
   type RoomEvent, type RoomSnapshot,
 } from "../lib/room";
 import { eliminatedKey, errorMessage } from "../lib/storage";
@@ -118,8 +118,9 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
     return ok;
   }
 
-  const canAsk = room.current_turn === userId && room.phase === "ask";
-  const guessPenalty = canAsk ? "If you're wrong, your turn ends." : "If you're wrong, you'll miss your next turn.";
+  // Guessing is only allowed on your own turn, instead of asking.
+  const canGuess = room.status === "playing" && room.current_turn === userId && room.phase === "ask";
+  const myWrongGuesses = players.find((p) => p.user_id === userId)?.wrong_guesses ?? 0;
 
   // Details panel (press and hold a card): pick your secret in Director's Cut, or guess during play.
   const infoCharacter = byId.get(infoId);
@@ -130,9 +131,12 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
       infoAction = { label: "Pick as my secret", onClick: () => { setPickedId(target.id); closeInfo(); } };
     } else if (room.status === "playing" && target.id !== mySecret?.id) {
       infoAction = {
-        label: <><Target size={16} /> That's my guess!</>,
+        label: canGuess
+          ? <><Target size={16} /> That's my guess!</>
+          : <><Target size={16} /> You can guess on your turn</>,
+        disabled: !canGuess,
         confirm: {
-          message: <>You're guessing <b>{target.name}</b>. {guessPenalty}</>,
+          message: <>You're guessing <b>{target.name}</b>. {guessWarning(myWrongGuesses)}</>,
           confirmLabel: `Yes, guess ${target.name}`,
           cancelLabel: "Not yet",
         },
@@ -235,8 +239,9 @@ export function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave
             remaining={remaining}
             picked={byId.get(pickedId)}
             busy={busy}
-            mySkips={players.find((p) => p.user_id === userId)?.skip_turns ?? 0}
-            opponentSkips={opponent?.skip_turns ?? 0}
+            myWrongGuesses={myWrongGuesses}
+            opponentWrongGuesses={opponent?.wrong_guesses ?? 0}
+            onPass={() => act(() => passTurn(client, room.id))}
             onLockIn={(character) => act(async () => {
               await chooseSecret(client, room.id, character.id);
               setPickedId("");

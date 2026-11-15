@@ -175,8 +175,8 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .guess-actions { display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
 .guess-actions .secondary-button { flex: 1; }
 .guess-actions .text-button { color: var(--text-muted); }
-.penalty-note { margin: 12px 0 0; padding: 8px 10px; border-radius: var(--radius); background: #ff80001a; border: 1px solid #ff800055; }
-.penalty-note p { margin: 2px 0 !important; color: #ffb066 !important; font-size: 12px !important; }
+.pass-button { margin-top: 12px; }
+.wrong-count { margin: 12px 0 0 !important; font-size: 12px !important; text-align: center; color: #ffb066 !important; }
 
 /* ---------- Bottom of the game: log + leave ---------- */
 .game-footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); }

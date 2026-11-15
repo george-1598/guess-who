@@ -23,9 +23,12 @@ export type Player = {
   user_id: string;
   name: string;
   seat: 1 | 2;
-  /** Turns this player still has to miss because of wrong out-of-turn guesses. */
-  skip_turns?: number;
+  /** Wrong guesses this round; the third one loses. */
+  wrong_guesses?: number;
 };
+
+/** Three wrong guesses in a round and you lose. Keep in sync with make_guess in the database. */
+export const MAX_WRONG_GUESSES = 3;
 
 export type RoomEvent = {
   id: number;
@@ -98,6 +101,12 @@ export async function makeGuess(client: SupabaseClient, roomId: string, characte
   const { data, error } = await client.rpc("make_guess", { p_room_id: roomId, p_character_id: characterId });
   fail(error);
   return data as boolean;
+}
+
+/** End your turn without asking in the app (the question was asked out loud). */
+export async function passTurn(client: SupabaseClient, roomId: string) {
+  const { error } = await client.rpc("pass_turn", { p_room_id: roomId });
+  fail(error);
 }
 
 export async function rematch(client: SupabaseClient, roomId: string, boardIds: string[]) {

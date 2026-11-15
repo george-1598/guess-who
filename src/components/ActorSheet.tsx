@@ -29,6 +29,8 @@ function lifeText(character: Character) {
 
 export type ActorSheetAction = {
   label: ReactNode;
+  /** Shown greyed out (e.g. guessing when it isn't your turn). */
+  disabled?: boolean;
   /** When set, the first tap asks "Are you sure?" and only the confirm button runs onClick. */
   confirm?: { message: ReactNode; confirmLabel: string; cancelLabel: string };
   onClick: () => void | Promise<void>;
@@ -86,7 +88,7 @@ export function ActorSheet({ character, onClose, action }: {
           {action && !confirming && (
             <button
               className="primary-button full-button sheet-main-action"
-              disabled={busy}
+              disabled={busy || action.disabled}
               onClick={() => (action.confirm ? setConfirming(true) : void run())}
             >
               {action.label}
