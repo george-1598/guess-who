@@ -69,8 +69,10 @@ function isCharacter(value: unknown): value is Character {
     && Number.isInteger(item.tmdb.personId);
 }
 
-async function loadDeck(file: string, signal: AbortSignal): Promise<Character[]> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/${file}`, { signal });
+async function loadDeck(file: string, signal?: AbortSignal): Promise<Character[]> {
+  // "no-cache" = always ask the server if there's a newer list (cheap when nothing changed),
+  // so phones don't keep playing with an outdated copy after an import.
+  const response = await fetch(`${import.meta.env.BASE_URL}data/${file}`, { signal, cache: "no-cache" });
   if (!response.ok) throw new Error(`Could not load ${file} (HTTP ${response.status}).`);
   const data: unknown = await response.json();
   if (!Array.isArray(data) || data.length === 0 || !data.every(isCharacter)) {
@@ -163,26 +165,25 @@ function App() {
   const [fatalError, setFatalError] = useState("");
   const [roomId, setRoomId] = useState(() => storageGet(ROOM_KEY));
 
+  const loadDecks = useCallback(async (signal?: AbortSignal) => {
+    const [famous, random] = await Promise.all([
+      loadDeck("characters.json", signal),
+      // The random pool is optional: until it's imported, only "Famous" is offered.
+      loadDeck("random-actors.json", signal).catch((error: unknown) => {
+        if (signal?.aborted) throw error;
+        return [] as Character[];
+      }),
+    ]);
+    if (!signal?.aborted) setDecks({ famous, random });
+  }, []);
+
   useEffect(() => {
     const controller = new AbortController();
-    (async () => {
-      try {
-        const [famous, random] = await Promise.all([
-          loadDeck("characters.json", controller.signal),
-          // The random pool is optional: until it's imported, only "Famous" is offered.
-          loadDeck("random-actors.json", controller.signal).catch((error: unknown) => {
-            if (controller.signal.aborted) throw error;
-            return [] as Character[];
-          }),
-        ]);
-        setDecks({ famous, random });
-      } catch (error) {
-        if (controller.signal.aborted) return;
-        setFatalError(errorMessage(error));
-      }
-    })();
+    loadDecks(controller.signal).catch((error) => {
+      if (!controller.signal.aborted) setFatalError(errorMessage(error));
+    });
     return () => controller.abort();
-  }, []);
+  }, [loadDecks]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -255,6 +256,7 @@ function App() {
       userId={userId}
       decks={decks}
       byId={byId}
+      onReloadDecks={loadDecks}
       onLeave={leaveRoom}
     />
   );
@@ -449,15 +451,32 @@ function useRoomSnapshot(client: SupabaseClient, roomId: string) {
   return { snapshot, missing, error, refresh };
 }
 
-function RoomView({ client, roomId, userId, decks, byId, onLeave }: {
+function RoomView({ client, roomId, userId, decks, byId, onReloadDecks, onLeave }: {
   client: SupabaseClient;
   roomId: string;
   userId: string;
   decks: Decks;
   byId: Map<string, Character>;
+  onReloadDecks: () => Promise<void>;
   onLeave: () => void;
 }) {
   const { snapshot, missing, error, refresh } = useRoomSnapshot(client, roomId);
+
+  // If the room uses actors this device doesn't know (its copy of the lists is older than
+  // the other player's), fetch the lists again once; if that doesn't help, ask for a reload.
+  const hasUnknownActors = !!snapshot && [
+    ...snapshot.room.board_ids,
+    ...snapshot.secrets.map((s) => s.character_id),
+  ].some((id) => !byId.has(id));
+  const [reloadState, setReloadState] = useState<"idle" | "reloading" | "failed">("idle");
+
+  useEffect(() => {
+    if (!hasUnknownActors || reloadState !== "idle") return;
+    setReloadState("reloading");
+    onReloadDecks()
+      .catch(() => undefined)
+      .finally(() => setReloadState("failed"));
+  }, [hasUnknownActors, reloadState, onReloadDecks]);
 
   if (missing) {
     return (
@@ -484,6 +503,12 @@ function RoomView({ client, roomId, userId, decks, byId, onLeave }: {
   return (
     <Shell pill={`ROOM ${room.code}`}>
       {error && <p className="form-error" role="alert">Connection problem: {error}</p>}
+      {hasUnknownActors && reloadState === "failed" && (
+        <p className="form-error" role="alert">
+          This device has an outdated actor list, so some cards are missing.{" "}
+          <button className="text-button" onClick={() => window.location.reload()}>Reload the page</button>
+        </p>
+      )}
       {room.status === "waiting" ? (
         <Lobby code={room.code} players={snapshot.players.map((p) => p.name)} onLeave={onLeave} />
       ) : (
