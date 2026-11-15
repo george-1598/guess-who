@@ -9,6 +9,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Star Wars: The Force Awakens",
+        "Star Wars: The Last Jedi",
+        "Marriage Story"
+      ],
+      "birthday": "1983-11-19",
+      "placeOfBirth": "San Diego, California, USA",
+      "bio": "Adam Douglas Driver (born November 19, 1983) is an American actor. His breakout performance as Adam Sackler in the HBO television series Girls(2012–2017) earned him three consecutive Primetime Emmy nominations."
+    },
     "tmdb": {
       "personId": 1023139,
       "profilePath": "/fsbGQ1eZFgdsG1XnKlhNSvHsiGo.jpg"
@@ -23,6 +33,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Hotel Transylvania",
+        "Pixels",
+        "50 First Dates"
+      ],
+      "birthday": "1966-09-09",
+      "placeOfBirth": "Brooklyn, New York, USA",
+      "bio": "Adam Richard Sandler (born September 9, 1966) is an American comedian, actor, and filmmaker. He was a cast member on Saturday Night Live from 1990 to 1995, before going on to star in many Hollywood films, which have combined to earn more than $2 billion at the box office."
     },
     "tmdb": {
       "personId": 19292,
@@ -39,6 +59,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Godfather",
+        "The Godfather Part II",
+        "Scarface"
+      ],
+      "birthday": "1940-04-25",
+      "placeOfBirth": "New York City, New York, USA",
+      "bio": "Alfredo James Pacino (born April 25, 1940) is an American actor and filmmaker. In a career spanning over five decades, he has received many awards and nominations, including an Academy Award, two Tony Awards, and two Primetime Emmy Awards. He is one of the few performers to have received the Triple Crown of Acting."
+    },
     "tmdb": {
       "personId": 1158,
       "profilePath": "/m8HAAjq1T75JypKk0v1FFQn4ysZ.jpg"
@@ -53,6 +83,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Arrival",
+        "Man of Steel",
+        "Nocturnal Animals"
+      ],
+      "birthday": "1974-08-20",
+      "placeOfBirth": "Vicenza, Veneto, Italy",
+      "bio": "Amy Lou Adams (born August 20, 1974) is an American actress. Known for both her comedic and dramatic roles, she has been featured three times in annual rankings of the world's highest-paid actresses. She has received various accolades, including two Golden Globe Awards."
     },
     "tmdb": {
       "personId": 9273,
@@ -69,6 +109,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Blade Runner 2049",
+        "Knives Out",
+        "Ballerina"
+      ],
+      "birthday": "1988-04-30",
+      "placeOfBirth": "Santa Cruz del Norte, Cuba",
+      "bio": "Ana Celia de Armas Caso (born 30 April 1988) is a Cuban-Spanish actress. She began her career in Cuba at age 16 with a leading role in the romantic crime drama Virgin Rose (2006). At 18 she obtained her Spanish passport through her maternal grandparents, which allowed her to legally relocate to Spain to pursue acting."
+    },
     "tmdb": {
       "personId": 224513,
       "profilePath": "/ngHnBOofQzCO3AvMyuW3UMRWg1B.jpg"
@@ -83,6 +133,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Amazing Spider-Man",
+        "Hacksaw Ridge",
+        "The Amazing Spider-Man 2"
+      ],
+      "birthday": "1983-08-20",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Andrew Russell Garfield (born 20 August 1983) is an English and American actor. He is known for his work across a variety of genres, from superhero films to musicals, in independent films."
     },
     "tmdb": {
       "personId": 37625,
@@ -99,6 +159,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Maleficent",
+        "Mr. & Mrs. Smith",
+        "Lara Croft: Tomb Raider"
+      ],
+      "birthday": "1975-06-04",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Angelina Jolie DCMG (/dʒoʊˈliː/ joh-LEE; born Angelina Jolie Voight [/vɔɪt/ VOYT] on June 4, 1975) is an American actress, filmmaker, and humanitarian. She is the recipient of numerous accolades, including an Academy Award, a Tony Award and three Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 11701,
       "profilePath": "/bXNxIKcJ5cNNW8QFrBPWcfTSu9x.jpg"
@@ -113,6 +183,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Interstellar",
+        "The Devil Wears Prada",
+        "The Princess Diaries"
+      ],
+      "birthday": "1982-11-12",
+      "placeOfBirth": "Brooklyn, New York City, New York, USA",
+      "bio": "Anne Jacqueline Hathaway (born November 12, 1982) is an American actress. She has received numerous accolades, most notably an Academy Award for Best Supporting Actress, a Golden Globe, a BAFTA Award, and a Screen Actors Guild Award for her performance as Fantine in Les Misérables (2012)."
     },
     "tmdb": {
       "personId": 1813,
@@ -129,6 +209,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Thor",
+        "The Silence of the Lambs",
+        "Hannibal"
+      ],
+      "birthday": "1937-12-31",
+      "placeOfBirth": "Margam, Port Talbot, Glamorgan, Wales, UK",
+      "bio": "Sir Philip Anthony Hopkins CBE (born December 31, 1937) is a Welsh actor, film director, and film producer. He is the recipient of numerous accolades, including two Academy Awards, four British Academy Film Awards, two Primetime Emmy Awards and a British Academy Television Award."
+    },
     "tmdb": {
       "personId": 4173,
       "profilePath": "/iaf7SHSkGDpnyrDh1Jolilwk2TD.jpg"
@@ -143,6 +233,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Puss in Boots: The Last Wish",
+        "Puss in Boots",
+        "The Skin I Live In"
+      ],
+      "birthday": "1960-08-10",
+      "placeOfBirth": "Málaga, Andalusia, Spain",
+      "bio": "José Antonio Domínguez Bandera (born 10 August 1960), known professionally as Antonio Banderas, is a Spanish actor and singer."
     },
     "tmdb": {
       "personId": 3131,
@@ -159,6 +259,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Split",
+        "The Witch",
+        "The Menu"
+      ],
+      "birthday": "1996-04-16",
+      "placeOfBirth": "Miami, Florida, USA",
+      "bio": "Anya-Josephine Marie Taylor-Joy (/ˈænjə/; born 16 April 1996) is an actress. Born in Miami and raised in Buenos Aires and London, she left school at 16 to pursue an acting career. After several minor television roles, her breakthrough came with a leading role in the horror film The Witch (2015)."
+    },
     "tmdb": {
       "personId": 1397778,
       "profilePath": "/qYNofOjlRke2MlJVihmJmEdQI4v.jpg"
@@ -173,6 +283,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Terminator",
+        "Terminator 2: Judgment Day",
+        "Predator"
+      ],
+      "birthday": "1947-07-30",
+      "placeOfBirth": "Thal, Styria, Austria",
+      "bio": "Arnold Alois Schwarzenegger (born July 30, 1947) is an Austrian and American actor, businessman, former politician, and former professional bodybuilder, known for his roles in high-profile action films. He served as the 38th governor of California from 2003 to 2011."
     },
     "tmdb": {
       "personId": 1100,
@@ -189,6 +309,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Once Upon a Time in... Hollywood",
+        "Dune: Part Two",
+        "Elvis"
+      ],
+      "birthday": "1991-08-17",
+      "placeOfBirth": "Anaheim, California, USA",
+      "bio": "Austin Robert Butler (born August 17, 1991) is an American actor. Known for his performances on stage and screen, he has received a British Academy Film Award and Golden Globe Award as well as nominations for an Academy Award, two Critics' Choice Awards, and two Screen Actors Guild Awards."
+    },
     "tmdb": {
       "personId": 86654,
       "profilePath": "/atdAs4pFGjUQ4m2W8kJYly7N6cC.jpg"
@@ -203,6 +333,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Gone Girl",
+        "Batman v Superman: Dawn of Justice",
+        "Justice League"
+      ],
+      "birthday": "1972-08-15",
+      "placeOfBirth": "Berkeley, California, USA",
+      "bio": "Benjamin Géza Affleck (born August 15, 1972) is an American actor and filmmaker. His accolades include two Academy Awards and three Golden Globe Awards. He began his career as a child when he starred in the PBS educational series The Voyage of the Mimi (1984, 1988)."
     },
     "tmdb": {
       "personId": 880,
@@ -219,6 +359,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Madagascar",
+        "Night at the Museum",
+        "The Secret Life of Walter Mitty"
+      ],
+      "birthday": "1965-11-30",
+      "placeOfBirth": "New York City, New York, USA",
+      "bio": "Benjamin Edward Meara Stiller (born November 30, 1965) is an American actor, comedian, and filmmaker. Known for his blend of slapstick humor and sharp wit, Stiller rose to fame through comedies such as There's Something About Mary (1998), Zoolander (2001), and Tropic Thunder (2008)."
+    },
     "tmdb": {
       "personId": 7399,
       "profilePath": "/scgpxhI05JpdNXXfmpK6z0rPOWN.jpg"
@@ -233,6 +383,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Doctor Strange",
+        "The Imitation Game",
+        "Doctor Strange in the Multiverse of Madness"
+      ],
+      "birthday": "1976-07-19",
+      "placeOfBirth": "Hammersmith, London, England, UK",
+      "bio": "Benedict Timothy Carlton Cumberbatch (born July 19, 1976) is an English actor. Known for his roles on the screen and stage, he has received various accolades throughout his career, including a Primetime Emmy Award, a British Academy Television Award, and a Laurence Olivier Award."
     },
     "tmdb": {
       "personId": 71580,
@@ -249,6 +409,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Fight Club",
+        "Inglourious Basterds",
+        "World War Z"
+      ],
+      "birthday": "1963-12-18",
+      "placeOfBirth": "Shawnee, Oklahoma, USA",
+      "bio": "William Bradley Pitt (born December 18, 1963) is an American actor and film producer. In a film career spanning more than thirty-five years, Pitt has received numerous accolades, including two Academy Awards, two British Academy Film Awards, two Golden Globe Awards, two Primetime Emmy Awards, and one Volpi Cup."
+    },
     "tmdb": {
       "personId": 287,
       "profilePath": "/ajNaPmXVVMJFg9GWmu6MJzTaXdV.jpg"
@@ -263,6 +433,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Hangover",
+        "American Sniper",
+        "Silver Linings Playbook"
+      ],
+      "birthday": "1975-01-05",
+      "placeOfBirth": "Philadelphia, Pennsylvania, USA",
+      "bio": "Bradley Charles Cooper (born January 5, 1975) is an American actor and filmmaker. He is the recipient of various accolades, including a British Academy Film Award and three Grammy Awards. In addition, he has been nominated for twelve Academy Awards, six Golden Globe Awards, and a Tony Award."
     },
     "tmdb": {
       "personId": 51329,
@@ -279,6 +459,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Captain Marvel",
+        "21 Jump Street",
+        "Room"
+      ],
+      "birthday": "1989-10-01",
+      "placeOfBirth": "Sacramento, California, USA",
+      "bio": "Brianne Sidonie Desaulniers (born October 1, 1989), known professionally as Brie Larson, is an American actress. She played supporting roles in comedies as a teenager and has since expanded to leading roles in independent films and blockbusters."
+    },
     "tmdb": {
       "personId": 60073,
       "profilePath": "/xSGvMwNNJcEQvVcjiIUTyxyMfkZ.jpg"
@@ -293,6 +483,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Sixth Sense",
+        "Die Hard",
+        "The Fifth Element"
+      ],
+      "birthday": "1955-03-19",
+      "placeOfBirth": "Idar-Oberstein, West Germany [now Germany]",
+      "bio": "Walter Bruce Willis (born March 19, 1955) is a retired American actor. His career began on the off-Broadway stage in the 1970s, and he then achieved fame with a leading role on the comedy-drama series “Moonlighting” (1985–1989)."
     },
     "tmdb": {
       "personId": 62,
@@ -309,6 +509,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Shrek",
+        "The Holiday",
+        "There's Something About Mary"
+      ],
+      "birthday": "1972-08-30",
+      "placeOfBirth": "San Diego, California, USA",
+      "bio": "Cameron Michelle Diaz (born August 30, 1972) is an American actress. Prolific in both comedy and drama, her films have grossed over $3 billion in the U.S. box-office."
+    },
     "tmdb": {
       "personId": 6941,
       "profilePath": "/tIWUyvmJayu8gtbrzCWC0L3H8kH.jpg"
@@ -323,6 +533,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Thor: Ragnarok",
+        "The Curious Case of Benjamin Button",
+        "How to Train Your Dragon 2"
+      ],
+      "birthday": "1969-05-14",
+      "placeOfBirth": "Melbourne, Victoria, Australia",
+      "bio": "Catherine Elise Blanchett (born May 14, 1969) is an Australian actor and producer. Regarded as one of the best actresses of her generation, she is known for her versatile work across independent films, blockbusters, and the stage."
     },
     "tmdb": {
       "personId": 112,
@@ -339,6 +559,17 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Avengers: Infinity War",
+        "Captain America: Civil War",
+        "Black Panther"
+      ],
+      "birthday": "1976-11-29",
+      "deathday": "2020-08-28",
+      "placeOfBirth": "Anderson, South Carolina, USA",
+      "bio": "Chadwick Boseman was an American actor, playwright, and screenwriter hailing from Anderson, South Carolina. He graduated from Howard University and went on to study at the British American Dramatic Academy in Oxford. Boseman's play \"Deep Azure\" was nominated for a 2006 Joseph Jefferson Award for New Work."
+    },
     "tmdb": {
       "personId": 172069,
       "profilePath": "/nL16SKfyP1b7Hk6LsuWiqMfbdb8.jpg"
@@ -353,6 +584,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Mad Max: Fury Road",
+        "Hancock",
+        "Atomic Blonde"
+      ],
+      "birthday": "1975-08-07",
+      "placeOfBirth": "Benoni, Gauteng, South Africa",
+      "bio": "Charlize Theron (/ʃɑːrˈliːz ˈθɛrən/ shar-LEEZ THERR-ən; Afrikaans: [ʃarˈlis ˈtrɔn]; born 7 August 1975) is a South African and American actress and producer."
     },
     "tmdb": {
       "personId": 6885,
@@ -369,6 +610,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Captain America: Civil War",
+        "Captain America: The First Avenger",
+        "Captain America: The Winter Soldier"
+      ],
+      "birthday": "1981-06-13",
+      "placeOfBirth": "Boston, Massachusetts, USA",
+      "bio": "Christopher Robert Evans (born June 13, 1981) is an American actor. He gained worldwide recognition for portraying Steve Rogers / Captain America in various Marvel Cinematic Universe films, from Captain America: The First Avenger (2011) to Avengers: Secret Wars (2027)."
+    },
     "tmdb": {
       "personId": 16828,
       "profilePath": "/3bOGNsHlrswhyW79uvIHH1V43JI.jpg"
@@ -383,6 +634,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Thor",
+        "Thor: Ragnarok",
+        "Thor: The Dark World"
+      ],
+      "birthday": "1983-08-11",
+      "placeOfBirth": "Melbourne, Victoria, Australia",
+      "bio": "Christopher Hemsworth AM (born 11 August 1983) is an Australian actor and film producer. Born and raised in Melbourne, Victoria, and Bulman, Northern Territory, he rose to prominence playing Kim Hyde in the Australian television series Home and Away (2004–2007) before beginning a film career in Hollywood."
     },
     "tmdb": {
       "personId": 74568,
@@ -399,6 +660,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Guardians of the Galaxy",
+        "Guardians of the Galaxy Vol. 2",
+        "Jurassic World"
+      ],
+      "birthday": "1979-06-21",
+      "placeOfBirth": "Virginia, Minnesota, USA",
+      "bio": "Christopher Michael Pratt (born 21 June 1979) is an American actor, known for starring in both television and action films."
+    },
     "tmdb": {
       "personId": 73457,
       "profilePath": "/cRH6HPAQ98PlOwwEvhYO4CM9lwu.jpg"
@@ -413,6 +684,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Dark Knight",
+        "The Dark Knight Rises",
+        "Batman Begins"
+      ],
+      "birthday": "1974-01-30",
+      "placeOfBirth": "Haverfordwest, Pembrokeshire, Wales, UK",
+      "bio": "Christian Charles Philip Bale (born 30 January 1974) is an English actor. Known for his versatility and physical transformations for his roles, he has been a leading man in films of several genres. He has received various accolades, including an Academy Award and two Golden Globe Awards."
     },
     "tmdb": {
       "personId": 3894,
@@ -429,6 +710,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Oppenheimer",
+        "Peaky Blinders",
+        "28 Days Later"
+      ],
+      "birthday": "1976-05-25",
+      "placeOfBirth": "Douglas, Cork, Ireland",
+      "bio": "Cillian Murphy (born May 25, 1976) is an Irish actor. He made his professional debut in Enda Walsh's 1996 play Disco Pigs, a role he later reprised in the 2001 screen adaptation."
+    },
     "tmdb": {
       "personId": 2037,
       "profilePath": "/2lKs67r7FI4bPu0AXxMUJZxmUXn.jpg"
@@ -443,6 +734,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Kingsman: The Secret Service",
+        "Kingsman: The Golden Circle",
+        "The King's Speech"
+      ],
+      "birthday": "1960-09-10",
+      "placeOfBirth": "Grayshott, Hampshire, England, UK",
+      "bio": "Colin Andrew Firth (born 10 September 1960) is an English actor and producer. He is the recipient of several accolades, including an Academy Award, two BAFTA Awards, and a Golden Globe Award, as well as nominations for two Primetime Emmy Awards."
     },
     "tmdb": {
       "personId": 5472,
@@ -459,6 +760,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Friends",
+        "Ace Ventura: Pet Detective",
+        "Scream 2"
+      ],
+      "birthday": "1964-06-15",
+      "placeOfBirth": "Birmingham, Alabama, USA",
+      "bio": "Courteney Bass Cox (born June 15, 1964) is an American actress, director, and producer. She gained recognition for her starring role as Monica Geller on the NBC sitcom Friends, which aired from 1994 to 2004."
+    },
     "tmdb": {
       "personId": 14405,
       "profilePath": "/cSOORhCRPJiwKghozXVXrOBi3Tp.jpg"
@@ -473,6 +784,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Fifty Shades of Grey",
+        "Fifty Shades Freed",
+        "Fifty Shades Darker"
+      ],
+      "birthday": "1989-10-04",
+      "placeOfBirth": "Austin, Texas, USA",
+      "bio": "Dakota Mayi Johnson (born October 4, 1989) is an American actress. The daughter of actors Don Johnson and Melanie Griffith, Johnson made her film debut at age ten with a minor role in Crazy in Alabama (1999), directed by her then-stepfather Antonio Banderas and starring her mother."
     },
     "tmdb": {
       "personId": 118545,
@@ -489,6 +810,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Skyfall",
+        "Knives Out",
+        "Casino Royale"
+      ],
+      "birthday": "1968-03-02",
+      "placeOfBirth": "Chester, Cheshire, England, UK",
+      "bio": "Daniel Wroughton Craig (born March 2, 1968) is an English actor. He gained international fame by playing the fictional secret agent James Bond for five installments in the film series: Casino Royale (2006), Quantum of Solace (2008), Skyfall (2012), Spectre (2015), and No Time to Die (2021)."
+    },
     "tmdb": {
       "personId": 8784,
       "profilePath": "/iFerDZUmC5Fu26i4qI8xnUVEHc7.jpg"
@@ -503,6 +834,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Harry Potter and the Philosopher's Stone",
+        "Harry Potter and the Chamber of Secrets",
+        "Harry Potter and the Prisoner of Azkaban"
+      ],
+      "birthday": "1989-07-23",
+      "placeOfBirth": "Hammersmith, London, England, UK",
+      "bio": "Daniel Jacob Radcliffe (born July 23, 1989) is an English actor. He rose to fame at age twelve, when he began portraying Harry Potter in the film series of the same name; and has held various other film and theatre roles. Over his career, Radcliffe has received various awards and nominations."
     },
     "tmdb": {
       "personId": 10980,
@@ -519,6 +860,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Equalizer",
+        "Training Day",
+        "The Book of Eli"
+      ],
+      "birthday": "1954-12-28",
+      "placeOfBirth": "Mount Vernon, New York, USA",
+      "bio": "Denzel Hayes Washington Jr. (born December 28, 1954) is an American actor. Known for his dramatic roles on stage and screen, he has received numerous accolades, including two Academy Awards, an Actor Award, two Golden Globes, two Silver Bears and a Tony Award, as well as nominations for a Grammy Award and two…"
+    },
     "tmdb": {
       "personId": 5292,
       "profilePath": "/jj2Gcobpopokal0YstuCQW0ldJ4.jpg"
@@ -533,6 +884,17 @@
     "color": "#806344",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Godfather",
+        "The Godfather Part II",
+        "Annie Hall"
+      ],
+      "birthday": "1946-01-05",
+      "deathday": "2025-10-11",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Diane Hall Keaton (born Diane Hall; January 5, 1946 – October 11, 2025) was an American actress, director and producer. Known for her idiosyncratic personality and fashion style, she received various accolades throughout her career spanning over six decades, including an Academy Award, a British Academy Film Award,…"
     },
     "tmdb": {
       "personId": 3092,
@@ -549,6 +911,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Donnie Darko",
+        "E.T. the Extra-Terrestrial",
+        "50 First Dates"
+      ],
+      "birthday": "1975-02-22",
+      "placeOfBirth": "Culver City, California, USA",
+      "bio": "Drew Blythe Barrymore (born February 22, 1975) is an American actress, director, producer, businesswoman, and talk show host. She is the recipient of numerous accolades, including a Golden Globe and a Screen Actors Guild Award, as well as five Emmy Award nominations and a BAFTA nomination."
+    },
     "tmdb": {
       "personId": 69597,
       "profilePath": "/8qvMFslwrC3w1OwJYqE3mHPvffr.jpg"
@@ -563,6 +935,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Jumanji: Welcome to the Jungle",
+        "Jumanji: The Next Level",
+        "San Andreas"
+      ],
+      "birthday": "1972-05-02",
+      "placeOfBirth": "Hayward, California, USA",
+      "bio": "Dwayne Douglas Johnson (born May 2, 1972), also known by his ring name \"The Rock\", is an American and Canadian actor, producer and semi-retired professional wrestler, signed with WWE. Johnson is half-Black and half-Samoan."
     },
     "tmdb": {
       "personId": 18918,
@@ -579,6 +961,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Shrek",
+        "Shrek 2",
+        "Mulan"
+      ],
+      "birthday": "1961-04-03",
+      "placeOfBirth": "Brooklyn, New York City, New York, USA",
+      "bio": "Edward \"Eddie\" Regan Murphy (born April 3, 1961) is an American actor, voice actor, film director, producer, comedian, and singer. He is the second-highest grossing actor in motion picture history. He was a regular cast member on Saturday Night Live from 1980 to 1984, and has worked as a stand-up comedian."
+    },
     "tmdb": {
       "personId": 776,
       "profilePath": "/qgjMfefsKwSYsyCaIX46uyOXIpy.jpg"
@@ -593,6 +985,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Fantastic Beasts and Where to Find Them",
+        "Fantastic Beasts: The Crimes of Grindelwald",
+        "The Theory of Everything"
+      ],
+      "birthday": "1982-01-06",
+      "placeOfBirth": "London, England, UK",
+      "bio": "Edward John David Redmayne OBE (born 6 January 1982) is an English actor and model. He is the recipient of various accolades, including an Academy Award, a Tony Award, a Golden Globe Award, a Screen Actors Guild Award, and a British Academy Film Award."
     },
     "tmdb": {
       "personId": 37632,
@@ -609,6 +1011,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "WandaVision",
+        "Doctor Strange in the Multiverse of Madness",
+        "Godzilla"
+      ],
+      "birthday": "1989-02-16",
+      "placeOfBirth": "Sherman Oaks, California, USA",
+      "bio": "Elizabeth Chase Olsen (born February 16, 1989) is an American actress. Known for her roles in blockbusters and independent dramas, she has received nominations for a BAFTA Award, an Emmy Award, and two Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 550843,
       "profilePath": "/vXz0E5lQKZS1RnlmcHSGbdR0CzG.jpg"
@@ -623,6 +1035,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Maleficent",
+        "The Neon Demon",
+        "Predator: Badlands"
+      ],
+      "birthday": "1998-04-09",
+      "placeOfBirth": "Conyers, Georgia, USA",
+      "bio": "Mary Elle Fanning (born April 9, 1998) is an American actress. As a child, she made her film debut as the younger version of her sister Dakota Fanning's character in the drama film I Am Sam (2001)."
     },
     "tmdb": {
       "personId": 18050,
@@ -639,6 +1061,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Game of Thrones",
+        "Me Before You",
+        "Terminator Genisys"
+      ],
+      "birthday": "1986-10-23",
+      "placeOfBirth": "London, England, UK",
+      "bio": "Emilia Isobel Euphemia Rose Clarke, MBE (born 23 October 1986), is an English actress. She is best known for her role as Daenerys Targaryen in the HBO fantasy series Game of Thrones (2011–2019), for which she received nominations for four Primetime Emmy Awards."
+    },
     "tmdb": {
       "personId": 1223786,
       "profilePath": "/iFY6t7Ux9r70WB7Sp0TTVz6eGtm.jpg"
@@ -653,6 +1085,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "A Quiet Place",
+        "Edge of Tomorrow",
+        "Sicario"
+      ],
+      "birthday": "1983-02-23",
+      "placeOfBirth": "Wandsworth, London, England, UK",
+      "bio": "Emily Olivia Laura Blunt (born 23 February 1983) is a British actress. She has received several accolades, including a Golden Globe Award and two Screen Actors Guild Awards, in addition to nominations for an Academy Award and four British Academy Film Awards."
     },
     "tmdb": {
       "personId": 5081,
@@ -669,6 +1111,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "The Amazing Spider-Man",
+        "Cruella",
+        "The Help"
+      ],
+      "birthday": "1988-11-06",
+      "placeOfBirth": "Scottsdale, Arizona, USA",
+      "bio": "Emily Jean \"Emma\" Stone (born November 6, 1988) is an American actress and film producer. Her accolades include two Academy Awards, two British Academy Film Awards, two Golden Globe Awards and a Volpi Cup."
+    },
     "tmdb": {
       "personId": 54693,
       "profilePath": "/ak2Y9wOI3wi2pNQU6OWSvVvWPj5.jpg"
@@ -683,6 +1135,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Brave",
+        "Cruella",
+        "Saving Mr. Banks"
+      ],
+      "birthday": "1959-04-15",
+      "placeOfBirth": "Paddington, London, England, UK",
+      "bio": "Dame Emma Thompson (born 15 April 1959) is an English actress and screenwriter. Her work spans four decades of screen and stage, and her accolades include two Academy Awards, three BAFTA Awards, two Golden Globe Awards, and a Primetime Emmy Award, as well as a nomination for two Grammy Awards."
     },
     "tmdb": {
       "personId": 7056,
@@ -699,6 +1161,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Harry Potter and the Deathly Hallows: Part 2",
+        "Harry Potter and the Deathly Hallows: Part 1",
+        "Beauty and the Beast"
+      ],
+      "birthday": "1990-04-15",
+      "placeOfBirth": "Paris, France",
+      "bio": "Emma Charlotte Duerre Watson (born 15 April 1990) is an English actress and activist. She has gained recognition for her roles in both blockbusters and independent films, as well as her women's rights work."
+    },
     "tmdb": {
       "personId": 10990,
       "profilePath": "/mf0OANvWYSzU1d8yggrhyw8IbIz.jpg"
@@ -713,6 +1185,16 @@
     "color": "#4b6584",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Star Wars: Episode I - The Phantom Menace",
+        "Trainspotting",
+        "Big Fish"
+      ],
+      "birthday": "1971-03-31",
+      "placeOfBirth": "Perth, Scotland, UK",
+      "bio": "Ewan Gordon McGregor (born March 31, 1971) is a Scottish actor. His accolades include a Golden Globe Award and a Primetime Emmy Award. In 2013, he was appointed Officer of the Order of the British Empire (OBE) for his services to drama and charity."
     },
     "tmdb": {
       "personId": 3061,
@@ -729,6 +1211,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Black Widow",
+        "Midsommar",
+        "Thunderbolts*"
+      ],
+      "birthday": "1996-01-03",
+      "placeOfBirth": "Oxford, Oxfordshire, England UK",
+      "bio": "Florence Pugh (born 3 January 1996) is an English actress. Her accolades include a British Independent Film Award, in addition to nominations for an Academy Award and three BAFTA Awards."
+    },
     "tmdb": {
       "personId": 1373737,
       "profilePath": "/nyRW28rq1PJhygm25D4gJKFfPjc.jpg"
@@ -743,6 +1235,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Wonder Woman",
+        "Batman v Superman: Dawn of Justice",
+        "Wonder Woman 1984"
+      ],
+      "birthday": "1985-04-30",
+      "placeOfBirth": "Petah Tikva, Israel",
+      "bio": "Gal Gadot (Hebrew: גל גדות, born 30 April 1985) is an Israeli actress, producer, and former model. She gained worldwide recognition for portraying Wonder Woman in the DC Extended Universe, a performance widely praised for redefining the iconic superhero for a new generation and establishing her as one of Hollywood’s…"
     },
     "tmdb": {
       "personId": 90633,
@@ -759,6 +1261,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Dark Knight",
+        "The Dark Knight Rises",
+        "Bram Stoker's Dracula"
+      ],
+      "birthday": "1958-03-21",
+      "placeOfBirth": "London, England, UK",
+      "bio": "Sir Gary Leonard Oldman (born 21 March 1958) is an English actor and filmmaker. Regarded as one of the best actors of his generation, he is known for his versatility and intense acting style."
+    },
     "tmdb": {
       "personId": 64,
       "profilePath": "/yhaSM5habNNI1Tf4ALRwRk3VvSZ.jpg"
@@ -773,6 +1285,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Gravity",
+        "Ocean's Eleven",
+        "Ocean's Twelve"
+      ],
+      "birthday": "1961-05-06",
+      "placeOfBirth": "Lexington, Kentucky, USA",
+      "bio": "George Timothy Clooney (born May 6, 1961) is an American actor and filmmaker. Known for his leading man roles on screen in both blockbuster and independent films, Clooney has received numerous accolades, including two Academy Awards, a BAFTA Award and four Golden Globe Awards, as well as nominations for three…"
     },
     "tmdb": {
       "personId": 1461,
@@ -789,6 +1311,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "What Happened to Monday",
+        "Mars Attacks!",
+        "101 Dalmatians"
+      ],
+      "birthday": "1947-03-19",
+      "placeOfBirth": "Greenwich, Connecticut, USA",
+      "bio": "Glenn Close (born March 19, 1947) is an American actress and singer. In a career spanning five decades on screen and stage, she has received numerous accolades, including three Primetime Emmy Awards, three Tony Awards, and three Golden Globe Awards, as well as nominations for eight Academy Awards, three Grammy Awards,…"
+    },
     "tmdb": {
       "personId": 515,
       "profilePath": "/4VHZ1GfLwN7MUgApy0LCBzdDF9L.jpg"
@@ -803,6 +1335,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Se7en",
+        "Iron Man 3",
+        "Iron Man 2"
+      ],
+      "birthday": "1972-09-27",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Gwyneth Kate Paltrow (/ˈpæltroʊ/ PAL-troh; born September 27, 1972) is an American actress and businesswoman. The daughter of filmmaker Bruce Paltrow and actress Blythe Danner, she established herself as a leading lady, appearing primarily in mid-budget and period films during the 1990s and early 2000s, before…"
     },
     "tmdb": {
       "personId": 12052,
@@ -819,6 +1361,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man: Into the Spider-Verse",
+        "Spider-Man: Across the Spider-Verse",
+        "Arcane"
+      ],
+      "birthday": "1996-12-11",
+      "placeOfBirth": "Tarzana, Los Angeles, California, USA",
+      "bio": "Hailee Steinfeld (born December 11, 1996) is an American actress and singer. She had her breakthrough with the western film True Grit (2010), which earned her various accolades, including nominations for an Academy Award and a BAFTA Award."
+    },
     "tmdb": {
       "personId": 130640,
       "profilePath": "/qDInsG0cxWNxS1X4t59TBZ5S6x5.jpg"
@@ -833,6 +1385,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "John Wick: Chapter 3 - Parabellum",
+        "X-Men: The Last Stand",
+        "Cloud Atlas"
+      ],
+      "birthday": "1966-08-14",
+      "placeOfBirth": "Cleveland, Ohio, USA",
+      "bio": "Halle Maria Berry (/ˈhæli/ HAL-ee; born Maria Halle Berry; August 14, 1966) is an American actress. She began her career as a model and entered several beauty contests, becoming Miss Ohio in 1986, finishing as the first runner-up in the Miss USA pageant of 1986, and placing sixth in Miss World 1986."
     },
     "tmdb": {
       "personId": 4587,
@@ -849,6 +1411,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Star Wars",
+        "Blade Runner",
+        "Raiders of the Lost Ark"
+      ],
+      "birthday": "1942-07-13",
+      "placeOfBirth": "Chicago, Illinois, USA",
+      "bio": "Legendary Hollywood Icon Harrison Ford was born on July 13, 1942 in Chicago, Illinois. His family history includes a strong lineage of actors, radio personalities, and models. Ford attended public high school in Park Ridge, Illinois where he was a member of the school Radio Station WMTH."
+    },
     "tmdb": {
       "personId": 3,
       "profilePath": "/pjBMJVPpcZK23Vt1nzr1zEBTWrP.jpg"
@@ -863,6 +1435,17 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Dark Knight",
+        "10 Things I Hate About You",
+        "Brokeback Mountain"
+      ],
+      "birthday": "1979-04-04",
+      "deathday": "2008-01-22",
+      "placeOfBirth": "Perth, Western Australia, Australia",
+      "bio": "Heath Andrew Ledger (April 4, 1979 – January 22, 2008) was an Australian actor and music video director. After playing roles in several Australian television and film productions during the 1990s, Ledger moved to the United States in 1998 to develop his film career further."
     },
     "tmdb": {
       "personId": 1810,
@@ -879,6 +1462,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Monsters University",
+        "RED",
+        "Winchester"
+      ],
+      "birthday": "1945-07-26",
+      "placeOfBirth": "Hammersmith, London, England, UK",
+      "bio": "Dame Helen Mirren (/ˈmɪrən/; born Ilyena Lydia Vasilievna Mironov; July 26, 1945) is an English actor. The recipient of numerous accolades, she is the only person to achieve the Triple Crown of Acting in both the United States and the United Kingdom."
+    },
     "tmdb": {
       "personId": 15735,
       "profilePath": "/1reKRrsdsHXJaRVHVyOEg4oPTcZ.jpg"
@@ -893,6 +1486,16 @@
     "color": "#4b6584",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Batman v Superman: Dawn of Justice",
+        "Man of Steel",
+        "The Man from U.N.C.L.E."
+      ],
+      "birthday": "1983-05-05",
+      "placeOfBirth": "St. Helier, Jersey, Channel Islands",
+      "bio": "Henry William Dalgliesh Cavill (born May 5, 1983) is a British actor. He is known for his portrayal of Charles Brandon in Showtime's The Tudors (2007–2010), DC Comics character Superman in the DC Extended Universe, Geralt of Rivia in the Netflix fantasy series The Witcher (2019–present), as well as Sherlock Holmes in…"
     },
     "tmdb": {
       "personId": 73968,
@@ -909,6 +1512,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Love Actually",
+        "Notting Hill",
+        "Four Weddings and a Funeral"
+      ],
+      "birthday": "1960-09-09",
+      "placeOfBirth": "London, England, UK",
+      "bio": "Hugh John Mungo Grant (born 9 September 1960) is an English actor. He established himself early in his career as a charming, vulnerable romantic leading man and has since transitioned into a character actor."
+    },
     "tmdb": {
       "personId": 3291,
       "profilePath": "/dvV843fOuzsEPXHtFvdzsHpy1rC.jpg"
@@ -923,6 +1536,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Logan",
+        "The Prestige",
+        "X-Men: Days of Future Past"
+      ],
+      "birthday": "1968-10-12",
+      "placeOfBirth": "Sydney, New South Wales, Australia",
+      "bio": "Hugh Michael Jackman (born 12 October 1968) is an Australian actor, singer, and producer. Beginning in theatre and television, Jackman landed his breakthrough role as Wolverine, playing it across the X-Men film franchise and in the Marvel Cinematic Universe from X-Men (2000) to Deadpool & Wolverine (2024)."
     },
     "tmdb": {
       "personId": 6968,
@@ -939,6 +1562,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "The Hobbit: The Battle of the Five Armies",
+        "The Hobbit: The Desolation of Smaug"
+      ],
+      "birthday": "1939-05-25",
+      "placeOfBirth": "Burnley, Lancashire, England, UK",
+      "bio": "Sir Ian Murray McKellen (born 25 May 1939) is an English actor. He has played roles on the screen and stage in genres ranging from Shakespearean dramas and modern theatre to popular fantasy and science fiction. He is regarded as a British cultural icon and was knighted by Queen Elizabeth II in 1991."
+    },
     "tmdb": {
       "personId": 1327,
       "profilePath": "/5cnnnpnJG6TiYUSS7qgJheUZgnv.jpg"
@@ -953,6 +1586,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Zootopia",
+        "The Suicide Squad",
+        "The Dark Tower"
+      ],
+      "birthday": "1972-09-06",
+      "placeOfBirth": "Hackney, London, England, UK",
+      "bio": "Idris Elba (born September 6, 1972) is a British television, theatre, and film actor who has starred in both British and American productions. One of his first acting roles was in the soap opera Family Affairs."
     },
     "tmdb": {
       "personId": 17605,
@@ -969,6 +1612,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Kung Fu Panda",
+        "Kung Fu Panda 2",
+        "Kung Fu Panda 3"
+      ],
+      "birthday": "1969-08-28",
+      "placeOfBirth": "Santa Monica, California, USA",
+      "bio": "Thomas Jacob Black (born August 28, 1969) is an American actor, comedian, and musician. He is known for his roles in family and comedy films and his voice work in animated films. His awards include a Children's and Family Emmy Award, a Grammy Award, and three Golden Globe Award nominations."
+    },
     "tmdb": {
       "personId": 70851,
       "profilePath": "/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg"
@@ -983,6 +1636,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Rush Hour",
+        "Rush Hour 2",
+        "Rush Hour 3"
+      ],
+      "birthday": "1954-04-07",
+      "placeOfBirth": "Victoria Peak, Hong Kong",
+      "bio": "Jackie Chan (Chinese: 成龍; born 7 April 1954), Chan Kong-sang, is a Hong Kong actor, action choreographer, filmmaker, comedian, producer, martial artist, screenwriter, entrepreneur, singer and stunt performer."
     },
     "tmdb": {
       "personId": 18897,
@@ -999,6 +1662,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Euphoria",
+        "The Kissing Booth",
+        "The Kissing Booth 2"
+      ],
+      "birthday": "1997-06-26",
+      "placeOfBirth": "Brisbane, Queensland, Australia",
+      "bio": "Jacob Nathaniel Elordi (born 26 June 1997) is an Australian actor. His accolades include a Critics' Choice Award and three AACTA Awards, in addition to nominations for an Academy Award, three British Academy Film Awards and two Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 2034418,
       "profilePath": "/9FGS8AGjVNtpWuUeoipYWR23sRZ.jpg"
@@ -1013,6 +1686,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Donnie Darko",
+        "Nightcrawler",
+        "Zodiac"
+      ],
+      "birthday": "1980-12-19",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Jake Gyllenhaal (born December 19, 1980) is an American actor and producer. Born into the Gyllenhaal family, he is the son of director Stephen Gyllenhaal and screenwriter Naomi Foner; his older sister is actress Maggie Gyllenhaal."
     },
     "tmdb": {
       "personId": 131,
@@ -1029,6 +1712,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Knives Out",
+        "Halloween",
+        "Halloween"
+      ],
+      "birthday": "1958-11-22",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Jamie Lee Curtis (born November 22, 1958) is an American actress, producer, and children's author. Known for her performances in the horror and slasher genres, as well as in multiple comedies, she is regarded as a \"scream queen\". As of 2023, her films have grossed over $2.5 billion at the box office."
+    },
     "tmdb": {
       "personId": 8944,
       "profilePath": "/eWKubKAAssRzmFwCZKh1mdYqGCH.jpg"
@@ -1043,6 +1736,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Fight Club",
+        "Suicide Squad",
+        "Mr. Nobody"
+      ],
+      "birthday": "1971-12-26",
+      "placeOfBirth": "Bossier City, Louisiana, USA",
+      "bio": "Jared Joseph Leto (/ˈlɛtoʊ/; born December 26, 1971) is an American actor and musician. After starting his career with television appearances in the early 1990s, he achieved recognition for his role as Jordan Catalano on the television series My So-Called Life (1994)."
     },
     "tmdb": {
       "personId": 7499,
@@ -1059,6 +1762,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Dune",
+        "Aquaman",
+        "Aquaman and the Lost Kingdom"
+      ],
+      "birthday": "1979-08-01",
+      "placeOfBirth": "Honolulu, Hawaii, USA",
+      "bio": "Joseph Jason Namakaeha Momoa (born August 1, 1979) is an American actor and filmmaker. He made his acting debut as Jason Ioane on the syndicated action drama series Baywatch: Hawaii (1999–2001), which was followed by his portrayal of Ronon Dex on the Syfy science fiction series Stargate Atlantis (2005–2009), Khal…"
+    },
     "tmdb": {
       "personId": 117642,
       "profilePath": "/3troAR6QbSb6nUFMDu61YCCWLKa.jpg"
@@ -1073,6 +1786,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Snatch",
+        "The Meg",
+        "Wrath of Man"
+      ],
+      "birthday": "1967-07-26",
+      "placeOfBirth": "Shirebrook, Derbyshire, England, UK",
+      "bio": "Jason Statham (/ˈsteɪθəm/ STAY-thəm; born 26 July 1967) is an English actor and producer. He is known for portraying tough, gritty, or violent characters in various action thriller films and has been credited for leading the resurgence of action films during the 2000s and 2010s."
     },
     "tmdb": {
       "personId": 976,
@@ -1089,6 +1812,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Skyfall",
+        "No Country for Old Men",
+        "Pirates of the Caribbean: Dead Men Tell No Tales"
+      ],
+      "birthday": "1969-03-01",
+      "placeOfBirth": "Las Palmas de Gran Canaria, Gran Canaria, Canary Islands, Spain",
+      "bio": "Javier Ángel Encinas Bardem (born 1 March 1969) is a Spanish actor. In a career spanning over three decades, he has received various accolades, including an Academy Award, a BAFTA Award, a Golden Globe Award, a Critics' Choice Movie Award, two Screen Actors Guild Awards, and seven Goya Awards, in addition to a Cannes…"
+    },
     "tmdb": {
       "personId": 3810,
       "profilePath": "/zfRID0jx8DKBluPGU9xtk9sZWUt.jpg"
@@ -1103,6 +1836,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Jurassic Park",
+        "The Lost World: Jurassic Park",
+        "The Fly"
+      ],
+      "birthday": "1952-10-22",
+      "placeOfBirth": "Pittsburgh, Pennsylvania, USA",
+      "bio": "Jeffrey Lynn Goldblum (born October 22, 1952) is an American actor and musician. He has starred in some of the highest-grossing films of his era, such as Jurassic Park (1993) and Independence Day (1996), as well as their respective sequels, The Lost World: Jurassic Park (1997) and Jurassic World: Fallen Kingdom…"
     },
     "tmdb": {
       "personId": 4785,
@@ -1119,6 +1862,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Wednesday",
+        "X",
+        "Scream"
+      ],
+      "birthday": "2002-09-27",
+      "placeOfBirth": "Rancho Mirage, California, USA",
+      "bio": "Jenna Marie Ortega (born September 27, 2002) is an American actress. She began her career as a child and received recognition for her role as a younger version of Jane in The CW comedy-drama series Jane the Virgin (2014–2019)."
+    },
     "tmdb": {
       "personId": 974169,
       "profilePath": "/yiL1tWLHwYrJznkjT2NKmR2YLMs.jpg"
@@ -1133,6 +1886,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "We're the Millers",
+        "Friends",
+        "The Iron Giant"
+      ],
+      "birthday": "1969-02-11",
+      "placeOfBirth": "Sherman Oaks, Los Angeles, California, USA",
+      "bio": "Jennifer Joanna Aniston (born February 11, 1969) is an American actress. Her accolades include a Primetime Emmy Award, a Golden Globe Award, and two Screen Actors Guild Awards. Aniston has consistently ranked among the world's highest-paid actresses, as of 2023."
     },
     "tmdb": {
       "personId": 4491,
@@ -1149,6 +1912,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "The Hunger Games",
+        "The Hunger Games: Catching Fire",
+        "The Hunger Games: Mockingjay - Part 1"
+      ],
+      "birthday": "1990-08-15",
+      "placeOfBirth": "Indian Hills, Kentucky, USA",
+      "bio": "Jennifer Shrader Maroney (née Lawrence, born August 15, 1990) is an American actress and producer. She has starred in both action film franchises and independent dramas, and her films have grossed over $6 billion worldwide. She was the world's highest-paid actress in 2015 and 2016."
+    },
     "tmdb": {
       "personId": 72129,
       "profilePath": "/6WTY6HjXMGxnHilJRVC3eLnu43F.jpg"
@@ -1163,6 +1936,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Anaconda",
+        "The Boy Next Door",
+        "Maid in Manhattan"
+      ],
+      "birthday": "1969-07-24",
+      "placeOfBirth": "The Bronx, New York City, New York, USA",
+      "bio": "Jennifer Lynn Lopez (born July 24, 1969), also known as J.Lo, is an American singer, songwriter, actress, dancer and businesswoman."
     },
     "tmdb": {
       "personId": 16866,
@@ -1179,6 +1962,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Interstellar",
+        "The Martian",
+        "It Chapter Two"
+      ],
+      "birthday": "1977-03-24",
+      "placeOfBirth": "Southern California, California, USA",
+      "bio": "Jessica Michelle Chastain (born March 24, 1977) is an American actress and film producer. Known for her roles in films with feminist themes, she has received various accolades, including an Academy Award, a Golden Globe Award, in addition to nominations for two British Academy Film Awards."
+    },
     "tmdb": {
       "personId": 83002,
       "profilePath": "/lodMzLKSdrPcBry6TdoDsMN3Vge.jpg"
@@ -1193,6 +1986,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Truman Show",
+        "Eternal Sunshine of the Spotless Mind",
+        "Bruce Almighty"
+      ],
+      "birthday": "1962-01-17",
+      "placeOfBirth": "Newmarket, Ontario, Canada",
+      "bio": "James Eugene Carrey (/ˈkæri/; born January 17, 1962) is a Canadian and American actor and comedian. Known primarily for his energetic slapstick performances, he has received two Golden Globe Awards, in addition to nominations for BAFTA Awards and Screen Actors Guild Awards."
     },
     "tmdb": {
       "personId": 206,
@@ -1209,6 +2012,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Joker",
+        "Gladiator",
+        "Her"
+      ],
+      "birthday": "1974-10-28",
+      "placeOfBirth": "San Juan, Puerto Rico",
+      "bio": "Joaquin Rafael Phoenix (/hwɑːˈkiːn/ whah-KEEN; né Bottom; October 28, 1974) is an American actor. Widely described as one of the preeminent actors of his generation and known for his roles as dark, unconventional and eccentric characters in independent film, he has received various accolades, including an Academy…"
+    },
     "tmdb": {
       "personId": 73421,
       "profilePath": "/u38k3hQBDwNX0VA22aQceDp9Iyv.jpg"
@@ -1223,6 +2036,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Free Guy",
+        "The Last Duel",
+        "The Bikeriders"
+      ],
+      "birthday": "1993-03-11",
+      "placeOfBirth": "Liverpool, Merseyside, England, UK",
+      "bio": "Jodie Marie Comer (/ˈkoʊmər/ KOH-mər; born 11 March 1993) is an English actress of screen and stage. She began her career in an episode of The Royal Today in 2008."
     },
     "tmdb": {
       "personId": 1388593,
@@ -1239,6 +2062,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Pirates of the Caribbean: Dead Man's Chest",
+        "Charlie and the Chocolate Factory"
+      ],
+      "birthday": "1963-06-09",
+      "placeOfBirth": "Owensboro, Kentucky, USA",
+      "bio": "John Christopher Depp II (born June 9, 1963) is an American actor, producer and musician. He is the recipient of various accolades, including a Golden Globe Award and a Screen Actors Guild Award, in addition to nominations for three Academy Awards and two British Academy Film Awards."
+    },
     "tmdb": {
       "personId": 85,
       "profilePath": "/k2xt6EUxQDwYRKIyI4IBdZxfs8n.jpg"
@@ -1253,6 +2086,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Skyfall",
+        "Casino Royale",
+        "Miss Peregrine's Home for Peculiar Children"
+      ],
+      "birthday": "1934-12-09",
+      "placeOfBirth": "York, North Yorkshire, England",
+      "bio": "Dame Judith Olivia \"Judi\" Dench, CH, DBE, FRSA (born 9 December 1934) is a retired English film, stage and television actress. Dench made her professional debut in 1957 with the Old Vic Company."
     },
     "tmdb": {
       "personId": 5309,
@@ -1269,6 +2112,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Pretty Woman",
+        "Wonder",
+        "Notting Hill"
+      ],
+      "birthday": "1967-10-28",
+      "placeOfBirth": "Smyrna, Georgia, USA",
+      "bio": "Julia Fiona Roberts (born October 28, 1967) is an American actress. Known for her leading roles across several genres, she has received various accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 1204,
       "profilePath": "/fQacAdIa1WUNChQ6FgEko13eqOA.jpg"
@@ -1283,6 +2136,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Big Lebowski",
+        "Kingsman: The Golden Circle",
+        "The Lost World: Jurassic Park"
+      ],
+      "birthday": "1960-12-03",
+      "placeOfBirth": "Fayetteville, North Carolina, USA",
+      "bio": "Julianne Moore (born Julie Anne Smith; December 3, 1960) is an American actress and children's author. Prolific in film since the early 1990s, she is known for her portrayals of emotionally troubled women in independent films and her roles in blockbusters."
     },
     "tmdb": {
       "personId": 1231,
@@ -1299,6 +2162,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "How to Lose a Guy in 10 Days",
+        "Bride Wars",
+        "The Skeleton Key"
+      ],
+      "birthday": "1979-04-19",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Kate Garry Hudson (born April 19, 1979) is an American actress and singer-songwriter. Born to singer Bill Hudson and actress Goldie Hawn, Hudson made her film debut in the 1998 drama Desert Blue, which was followed by supporting roles in several films."
+    },
     "tmdb": {
       "personId": 11661,
       "profilePath": "/s79lH1QzEg2fkXULKBxRmU9aNr8.jpg"
@@ -1313,6 +2186,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Titanic",
+        "Eternal Sunshine of the Spotless Mind",
+        "Avatar: The Way of Water"
+      ],
+      "birthday": "1975-10-05",
+      "placeOfBirth": "Reading, Berkshire, England, UK",
+      "bio": "Kate Elizabeth Winslet (/ˈwɪnzlət/; born 5 October 1975) is an English actress. Primarily known for her roles as headstrong and complicated women in independent films, particularly period dramas, she has received numerous accolades, including an Academy Award, two Primetime Emmy Awards, five BAFTA Awards and five…"
     },
     "tmdb": {
       "personId": 204,
@@ -1329,6 +2212,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Matrix",
+        "John Wick",
+        "John Wick: Chapter 2"
+      ],
+      "birthday": "1964-09-02",
+      "placeOfBirth": "Beirut, Lebanon",
+      "bio": "Keanu Charles Reeves is a Canadian actor. Reeves is known for his roles in Bill & Ted's Excellent Adventure, Speed, Point Break, and The Matrix franchise as Neo."
+    },
     "tmdb": {
       "personId": 6384,
       "profilePath": "/8RZLOyYGsoRe9p44q3xin9QkMHv.jpg"
@@ -1343,6 +2236,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Imitation Game",
+        "Pirates of the Caribbean: Dead Man's Chest",
+        "Pride & Prejudice"
+      ],
+      "birthday": "1985-03-26",
+      "placeOfBirth": "Teddington, London, England, UK",
+      "bio": "Keira Christina Knightley (born 26 March 1985) is an English actress. She has starred in both independent films and big-budget blockbusters and is particularly noted for her roles in period dramas."
     },
     "tmdb": {
       "personId": 116,
@@ -1359,6 +2262,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Django Unchained",
+        "Mr. & Mrs. Smith",
+        "Fantastic Four"
+      ],
+      "birthday": "1977-01-31",
+      "placeOfBirth": "The Bronx, New York City, New York, USA",
+      "bio": "Kerry Marisa Washington (born January 31, 1977) is an American actress. She has received several accolades, including a Primetime Emmy Award and nominations for two Golden Globe Awards and a Tony Award."
+    },
     "tmdb": {
       "personId": 11703,
       "profilePath": "/zgyjYlxmHG6Ntbg16JcTp8Vu8M3.jpg"
@@ -1373,6 +2286,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Jumanji: Welcome to the Jungle",
+        "Jumanji: The Next Level",
+        "Central Intelligence"
+      ],
+      "birthday": "1979-07-06",
+      "placeOfBirth": "Philadelphia, Pennsylvania, USA",
+      "bio": "Kevin Darnell Hart (born July 6, 1979) is an American stand-up comedian, actor, and producer. Born and raised in Philadelphia, Pennsylvania, Hart began his career by winning several amateur comedy competitions at clubs throughout New England, culminating in his first real break in 2001 when he was cast by Judd Apatow…"
     },
     "tmdb": {
       "personId": 55638,
@@ -1389,6 +2312,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man",
+        "Spider-Man 2",
+        "Spider-Man 3"
+      ],
+      "birthday": "1982-04-30",
+      "placeOfBirth": "Point Pleasant, New Jersey, USA",
+      "bio": "Kirsten Caroline Dunst (/ˈkɪərstən/ KEER-stən; born April 30, 1982) is an American actress. She made her acting debut in the anthology film New York Stories (1989) and has since starred in several films and television productions."
+    },
     "tmdb": {
       "personId": 205,
       "profilePath": "/yhLKGjuiMMdbGnFrR8AREkCZcVF.jpg"
@@ -1403,6 +2336,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Twilight",
+        "The Twilight Saga: New Moon",
+        "The Twilight Saga: Breaking Dawn - Part 2"
+      ],
+      "birthday": "1990-04-09",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Kristen Jaymes Stewart (born April 9, 1990) is an American actress and filmmaker. The world's highest-paid actress in 2012, she has received various accolades, including a British Academy Film Award and a César Award, in addition to nominations for an Academy Award and a Golden Globe Award."
     },
     "tmdb": {
       "personId": 37917,
@@ -1419,6 +2362,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Inception",
+        "Titanic",
+        "The Wolf of Wall Street"
+      ],
+      "birthday": "1974-11-11",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Leonardo Wilhelm DiCaprio (born November 11, 1974) is an American actor and film producer. Known for his work in biopics and period films, DiCaprio is the recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 6193,
       "profilePath": "/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg"
@@ -1433,6 +2386,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Schindler's List",
+        "Star Wars: Episode I - The Phantom Menace",
+        "Taken"
+      ],
+      "birthday": "1952-06-07",
+      "placeOfBirth": "Ballymena, County Antrim, Northern Ireland, UK",
+      "bio": "William John Neeson (born 7 June 1952) is an Irish actor. He was born in Ballymena, County Antrim, Northern Ireland and educated at Saint Patrick's College, Ballymena Technical College and Queen's University Belfast. He moved to Dublin after university to further his acting career, joining the renowned Abbey Theatre."
     },
     "tmdb": {
       "personId": 3896,
@@ -1449,6 +2412,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Love, Rosie",
+        "The Mortal Instruments: City of Bones",
+        "To the Bone"
+      ],
+      "birthday": "1989-03-18",
+      "placeOfBirth": "Guildford, Surrey, England, UK",
+      "bio": "Lily Jane Collins (born 18 March 1989) is a British and American actress and model. Born in Guildford, Surrey and raised in Los Angeles, Collins began performing on screen at the age of two in the BBC comedy drama Growing Pains."
+    },
     "tmdb": {
       "personId": 112561,
       "profilePath": "/5bhcp0CyTdHgfW8x45ZKewDnjMc.jpg"
@@ -1463,6 +2436,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Friends",
+        "The Boss Baby",
+        "P.S. I Love You"
+      ],
+      "birthday": "1963-07-30",
+      "placeOfBirth": "Encino, California, USA",
+      "bio": "Lisa Valerie Kudrow (KOO-droh; born July 30, 1963) is an American actress. She rose to international fame for her role as Phoebe Buffay in the American television sitcom Friends, which aired from 1994 to 2004. The series earned her Primetime Emmy, Screen Actors Guild, Satellite, American Comedy and TV Guide awards."
     },
     "tmdb": {
       "personId": 14406,
@@ -1479,6 +2462,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Black Panther",
+        "Us",
+        "The Wild Robot"
+      ],
+      "birthday": "1983-03-01",
+      "placeOfBirth": "Mexico City, Mexico",
+      "bio": "Lupita Amondi Nyong'o (born 1 March 1983) is a Kenyan-Mexican actress and author. She began her career in Hollywood as a production assistant. In 2008, she made her acting debut with the short film East River and subsequently returned to Kenya to star in the television series Shuga (2009–2012)."
+    },
     "tmdb": {
       "personId": 1267329,
       "profilePath": "/y40Wu1T742kynOqtwXASc5Qgm49.jpg"
@@ -1493,6 +2486,17 @@
     "color": "#744b54",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Harry Potter and the Philosopher's Stone",
+        "Harry Potter and the Prisoner of Azkaban",
+        "Sister Act"
+      ],
+      "birthday": "1934-12-28",
+      "deathday": "2024-09-27",
+      "placeOfBirth": "Ilford, Essex, England, UK",
+      "bio": "Dame Margaret Natalie Smith CH DBE (December 28, 1934 − September 27, 2024) was a British actress. Known for her wit in comedic roles, she had an extensive career on stage and screen over seven decades and was one of Britain's most recognisable and prolific actresses."
     },
     "tmdb": {
       "personId": 10978,
@@ -1509,6 +2513,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man: Into the Spider-Verse",
+        "Green Book",
+        "Alita: Battle Angel"
+      ],
+      "birthday": "1974-02-16",
+      "placeOfBirth": "Oakland, California, USA",
+      "bio": "Mahershala Ali (/məˈhɜːrʃələ/ mə-HUR-shə-lə; born Mahershalalhashbaz Gilmore on February 16, 1974) is an American actor. He has received multiple accolades, including two Academy Awards, a British Academy Film Award, a Golden Globe Award, and a Primetime Emmy Award."
+    },
     "tmdb": {
       "personId": 932967,
       "profilePath": "/9ZmSejm5lnUVY5IJ1iNx2QEjnHb.jpg"
@@ -1523,6 +2537,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Barbie",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "The Suicide Squad"
+      ],
+      "birthday": "1990-07-02",
+      "placeOfBirth": "Dalby, Queensland, Australia",
+      "bio": "Margot Elise Robbie (/ˈmɑːrɡoʊ ˈrɒbi/ MAR-goh ROB-ee; born 2 July 1990) is an Australian actress and producer. The world's highest-paid actress in 2023, she is known for her performances in both blockbuster and independent films."
     },
     "tmdb": {
       "personId": 234352,
@@ -1539,6 +2563,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Star Wars",
+        "The Empire Strikes Back",
+        "Return of the Jedi"
+      ],
+      "birthday": "1951-09-25",
+      "placeOfBirth": "Oakland, California, USA",
+      "bio": "Mark Richard Hamill (born September 25, 1951) is an American actor. He is best known for starring as Luke Skywalker in the Star Wars franchise and the Joker in various animated DC Comics projects, starting with Batman: The Animated Series in 1992."
+    },
     "tmdb": {
       "personId": 2,
       "profilePath": "/zMQ93JTLW8KxusKhOlHFZhih3YQ.jpg"
@@ -1553,6 +2587,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Avengers",
+        "Shutter Island",
+        "Thor: Ragnarok"
+      ],
+      "birthday": "1967-11-22",
+      "placeOfBirth": "Kenosha, Wisconsin, USA",
+      "bio": "Mark Alan Ruffalo (/ˈrʌfəloʊ/; born November 22, 1967) is an American actor and producer who began his career in the late 1980s and first gained recognition for his work in Kenneth Lonergan's play This Is Our Youth (1996) and drama film You Can Count on Me (2000)."
     },
     "tmdb": {
       "personId": 103,
@@ -1569,6 +2613,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Martian",
+        "Good Will Hunting",
+        "The Bourne Identity"
+      ],
+      "birthday": "1970-10-08",
+      "placeOfBirth": "Boston, Massachusetts, USA",
+      "bio": "Matthew Paige Damon (born October 8, 1970) is a multifaceted American actor, producer, and screenwriter. In 2007, he was highlighted as one of Forbes' most bankable stars, and by 2010, he emerged as one of the highest-grossing actors in cinematic history."
+    },
     "tmdb": {
       "personId": 1892,
       "profilePath": "/aCvBXTAR9B1qRjIRzMBYhhbm1fR.jpg"
@@ -1583,6 +2637,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Interstellar",
+        "Dallas Buyers Club",
+        "Sing"
+      ],
+      "birthday": "1969-11-04",
+      "placeOfBirth": "Uvalde, Texas, USA",
+      "bio": "Matthew David McConaughey (/məˈkɒnəheɪ/ mə-KON-ə-hay; born November 4, 1969) is an American actor. He achieved his breakthrough with a supporting performance in the coming-of-age comedy Dazed and Confused (1993)."
     },
     "tmdb": {
       "personId": 10297,
@@ -1599,6 +2663,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Ghostbusters",
+        "Spy",
+        "The Heat"
+      ],
+      "birthday": "1970-08-26",
+      "placeOfBirth": "Plainfield, Illinois, USA",
+      "bio": "Melissa Ann McCarthy (born August 26, 1970) is an American actress, screenwriter, and producer. She has received numerous accolades, including two Primetime Emmy Awards and nominations for two Academy Awards and two Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 55536,
       "profilePath": "/yl0qva0O4u92fvtItakdvKmKrW9.jpg"
@@ -1613,6 +2687,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Devil Wears Prada",
+        "Mamma Mia!",
+        "The Post"
+      ],
+      "birthday": "1949-06-22",
+      "placeOfBirth": "Summit, New Jersey, USA",
+      "bio": "Mary Louise \"Meryl\" Streep (born June 22, 1949) is an American actress. Often described as the best actress of her generation, Streep is particularly known for her versatility and accent adaptability."
     },
     "tmdb": {
       "personId": 5064,
@@ -1629,6 +2713,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Black Panther",
+        "Creed",
+        "Creed II"
+      ],
+      "birthday": "1987-02-09",
+      "placeOfBirth": "Santa Ana, California, USA",
+      "bio": "Michael Bakari Jordan (/bɑːˈkɑːri/ bah-KAR-ee; born February 9, 1987) is an American actor, producer, and director. His accolades include an Academy Award, three Actor Awards, and a Producers Guild Award, in addition to nominations for a British Academy Film Award, a Golden Globe Award and two Emmy Awards."
+    },
     "tmdb": {
       "personId": 135651,
       "profilePath": "/sMBpav8cK7t7Nk0yf4tuNOqNUyW.jpg"
@@ -1643,6 +2737,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Interstellar",
+        "The Dark Knight",
+        "Batman Begins"
+      ],
+      "birthday": "1933-03-14",
+      "placeOfBirth": "Rotherhithe, London, England, UK",
+      "bio": "Sir Michael Caine CBE (born Maurice Joseph Micklewhite Jr.; 14 March 1933) is a retired English actor. Known for his distinctive South London accent, he has appeared in more than 160 films in a career spanning seven decades, and is considered a British film icon."
     },
     "tmdb": {
       "personId": 3895,
@@ -1659,6 +2763,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Scarface",
+        "Murder on the Orient Express",
+        "Dark Shadows"
+      ],
+      "birthday": "1958-04-29",
+      "placeOfBirth": "Santa Ana, California, USA",
+      "bio": "Michelle Marie Pfeiffer (/ˈfaɪfər/ FY-fər; born April 29, 1958) is an American actress. One of Hollywood's most bankable stars during the 1980s and 1990s, her performances have earned her numerous accolades including a Golden Globe Award and a British Academy Film Award, as well as nominations for three Academy Awards…"
+    },
     "tmdb": {
       "personId": 1160,
       "profilePath": "/8qwNMFzmM3BxGKIj1iIqiHHBpx3.jpg"
@@ -1673,6 +2787,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Shang-Chi and the Legend of the Ten Rings",
+        "Everything Everywhere All at Once",
+        "Crouching Tiger, Hidden Dragon"
+      ],
+      "birthday": "1962-08-06",
+      "placeOfBirth": "Ipoh, Perak, Malaysia",
+      "bio": "Yeoh Choo Kheng PSM SPMP (Chinese: 楊紫瓊; born 6 August 1962), known professionally as Michelle Yeoh (/joʊ/), is a Malaysian actress."
     },
     "tmdb": {
       "personId": 1620,
@@ -1689,6 +2813,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Black Swan",
+        "Ted",
+        "Bad Moms"
+      ],
+      "birthday": "1983-08-14",
+      "placeOfBirth": "Chernovtsy, Ukrainian SSR, USSR [now Chernivtsi, Ukraine]",
+      "bio": "Milena Markovna \"Mila\" Kunis (born August 14, 1983) is a Ukrainian and American actress. Born in Chernivtsi, Ukraine, and raised in Los Angeles, Kunis began playing Jackie Burkhart on the Fox television series That '70s Show (1998–2006) at the age of 15."
+    },
     "tmdb": {
       "personId": 18973,
       "profilePath": "/cJAHQWX9hVadDFx5WTSBIW0VjvP.jpg"
@@ -1703,6 +2837,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Stranger Things",
+        "Enola Holmes",
+        "Enola Holmes 2"
+      ],
+      "birthday": "2004-02-19",
+      "placeOfBirth": "Marbella, Málaga, Andalusia, Spain",
+      "bio": "Millie Bonnie Bongiovi (born 19 February 2004), a British actress, is professionally known as Millie Bobby Brown. She gained recognition for playing Eleven in the Netflix science fiction series Stranger Things (2016–2025), for which she received nominations for two Primetime Emmy Awards."
     },
     "tmdb": {
       "personId": 1356210,
@@ -1719,6 +2863,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Shawshank Redemption",
+        "Se7en",
+        "Lucy"
+      ],
+      "birthday": "1937-06-01",
+      "placeOfBirth": "Memphis, Tennessee, USA",
+      "bio": "Morgan Freeman (born June 1, 1937) is an American actor, director, and narrator. Noted for his distinctive deep voice, Freeman is known for his various roles in a wide variety of film genres."
+    },
     "tmdb": {
       "personId": 192,
       "profilePath": "/jPsLqiYGSofU4s6BjrxnefMfabb.jpg"
@@ -1733,6 +2887,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Thor",
+        "V for Vendetta",
+        "Black Swan"
+      ],
+      "birthday": "1981-06-09",
+      "placeOfBirth": "Jerusalem, Israel",
+      "bio": "Natalie Hershlag (born June 9, 1981), known professionally as Natalie Portman, is an Israeli actress, film producer and director."
     },
     "tmdb": {
       "personId": 524,
@@ -1749,6 +2913,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Aquaman",
+        "The Others",
+        "Eyes Wide Shut"
+      ],
+      "birthday": "1967-06-20",
+      "placeOfBirth": "Honolulu, Hawaii, USA",
+      "bio": "Nicole Mary Kidman (born 20 June 1967) is an Australian and American actress and producer. Known for her work in film and television productions across many genres, she has consistently ranked among the world's highest-paid actresses since the late 1990s."
+    },
     "tmdb": {
       "personId": 2227,
       "profilePath": "/4KSQDodyBtTDMaREYgMdWD1LbH1.jpg"
@@ -1763,6 +2937,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Shape of Water",
+        "Hidden Figures",
+        "Ma"
+      ],
+      "birthday": "1970-05-25",
+      "placeOfBirth": "Montgomery, Alabama, USA",
+      "bio": "Octavia Lenora Spencer (born May 25, 1970) is an American actress. She has received various accolades, including an Academy Award, a British Academy Film Award, and a Golden Globe Award, in addition to nominations for two Primetime Emmy Awards. Spencer made her film debut in the 1996 drama A Time to Kill."
     },
     "tmdb": {
       "personId": 6944,
@@ -1779,6 +2963,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "The Lobster",
+        "The Favourite",
+        "The Father"
+      ],
+      "birthday": "1974-01-30",
+      "placeOfBirth": "Norwich, Norfolk, England, UK",
+      "bio": "Sarah Caroline Sinclair CBE (born January 30, 1974), known professionally as Olivia Colman, is an English actress. Known for her comedic and dramatic roles in film and television, she has received various accolades, including an Academy Award, a British Academy Film Award, two Emmy Awards, three British Academy…"
+    },
     "tmdb": {
       "personId": 39187,
       "profilePath": "/lawJUdbLb1YW0niaYjiVGR9IBG8.jpg"
@@ -1793,6 +2987,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Pirates of the Caribbean: Dead Man's Chest",
+        "Troy"
+      ],
+      "birthday": "1977-01-13",
+      "placeOfBirth": "Canterbury, Kent, England, UK",
+      "bio": "Orlando Jonathan Blanchard Copeland Bloom (born 13 January 1977) is an English actor. He made his breakthrough as the character Legolas in The Lord of the Rings film series (2001–03). He reprised his role in The Hobbit film series (2013–14)."
     },
     "tmdb": {
       "personId": 114,
@@ -1809,6 +3013,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Star Wars: The Force Awakens",
+        "Dune",
+        "Ex Machina"
+      ],
+      "birthday": "1979-03-09",
+      "placeOfBirth": "Guatemala City, Guatemala",
+      "bio": "Óscar Isaac Hernández Estrada (born March 9, 1979) is an American actor. Recognized for his versatility, he has been credited with breaking stereotypes about Latino characters in Hollywood."
+    },
     "tmdb": {
       "personId": 25072,
       "profilePath": "/dW5U5yrIIPmMjRThR9KT2xH6nTz.jpg"
@@ -1823,6 +3037,16 @@
     "color": "#a66a5b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Cars",
+        "Midnight in Paris",
+        "Cars 3"
+      ],
+      "birthday": "1968-11-18",
+      "placeOfBirth": "Dallas, Texas, USA",
+      "bio": "Owen Cunningham Wilson (born November 18, 1968) is an American actor. He has had a long association with filmmaker Wes Anderson with whom he shared writing and acting credits for Bottle Rocket (1996), Rushmore (1998), and The Royal Tenenbaums (2001), the last of which earned him a nomination for the Academy Award and…"
     },
     "tmdb": {
       "personId": 887,
@@ -1839,6 +3063,17 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Logan",
+        "X-Men",
+        "X2"
+      ],
+      "birthday": "1940-07-13",
+      "deathday": "2026-10-28",
+      "placeOfBirth": "Mirfield, West Yorkshire, England, UK",
+      "bio": "Sir Patrick Stewart (13 July 1940 – 28 October 2026) was an English actor. With a career spanning over 60 years on stage and screen, he received various accolades, including two Laurence Olivier Awards and a Grammy Award, as well as nominations for a Tony Award, three Golden Globes, four Emmy Awards, and three Screen…"
+    },
     "tmdb": {
       "personId": 2387,
       "profilePath": "/ufqtnLh3JJjPbEgxEag3MM5nZyv.jpg"
@@ -1853,6 +3088,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Gladiator II",
+        "Aftersun",
+        "Normal People"
+      ],
+      "birthday": "1996-02-02",
+      "placeOfBirth": "Maynooth, County Kildare, Republic of Ireland",
+      "bio": "Paul Colm Michael Mescal (/ˈmɛskəl/ MESS-kəl; born 2 February 1996) is an Irish actor. His accolades include two BAFTA Awards and a Laurence Olivier Award, in addition to nominations for an Academy Award, a Primetime Emmy Award, and a Golden Globe Award."
     },
     "tmdb": {
       "personId": 2326151,
@@ -1869,6 +3114,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Ant-Man",
+        "Ant-Man and the Wasp",
+        "Ant-Man and the Wasp: Quantumania"
+      ],
+      "birthday": "1969-04-06",
+      "placeOfBirth": "Passaic, New Jersey, USA",
+      "bio": "Paul Stephen Rudd (born April 6, 1969) is an American actor. Rudd studied theatre at the University of Kansas and the American Academy of Dramatic Arts before making his acting debut in 1991. He was included on the Forbes Celebrity 100 list in 2019 and was named People magazine's \"Sexiest Man Alive\" in 2021."
+    },
     "tmdb": {
       "personId": 22226,
       "profilePath": "/6jtwNOLKy0LdsRAKwZqgYMAfd5n.jpg"
@@ -1883,6 +3138,16 @@
     "color": "#744b54",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Mandalorian",
+        "The Last of Us",
+        "The Fantastic 4: First Steps"
+      ],
+      "birthday": "1975-04-02",
+      "placeOfBirth": "Santiago, Chile",
+      "bio": "José Pedro Balmaceda Pascal (Spanish: [xoˈseˈpeðɾo βalmaˈseða pasˈkal]; born April 2, 1975) is a Chilean and American actor. Known for his portrayals of parental figures, he has starred in television series and blockbuster films."
     },
     "tmdb": {
       "personId": 1253360,
@@ -1899,6 +3164,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Pirates of the Caribbean: On Stranger Tides",
+        "Vanilla Sky",
+        "Blow"
+      ],
+      "birthday": "1974-04-28",
+      "placeOfBirth": "Madrid, Spain",
+      "bio": "Penélope Cruz Sánchez (born 28 April 1974) is a Spanish actress. Prolific in Spanish and English-language films, her accolades include an Academy Award, a BAFTA Award, a David di Donatello and three Goya Awards."
+    },
     "tmdb": {
       "personId": 955,
       "profilePath": "/n5SFgmvJSENQt8poE4qYacUnKOi.jpg"
@@ -1913,6 +3188,16 @@
     "color": "#6c5b7b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Doctor Strange",
+        "Sherlock Holmes",
+        "The Notebook"
+      ],
+      "birthday": "1978-11-17",
+      "placeOfBirth": "London, Ontario, Canada",
+      "bio": "Rachel Anne McAdams (born November 17, 1978) is a Canadian actress. A graduate of York University in 2001 with a BFA in theatre, she is known for her starring roles in comedy and drama films as well as her work in television and theater."
     },
     "tmdb": {
       "personId": 53714,
@@ -1929,6 +3214,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Bohemian Rhapsody",
+        "No Time to Die",
+        "Mr. Robot"
+      ],
+      "birthday": "1981-05-12",
+      "placeOfBirth": "Torrance, California, USA",
+      "bio": "Rami Said Malek (English: /ˈrɑːmi ˈmælɪk/; Arabic: رامي سعيد مالك, Egyptian Arabic: [ˈɾɑːmi sæˈʕiːd ˈmæːlek]; born May 12, 1981) is an American actor."
+    },
     "tmdb": {
       "personId": 17838,
       "profilePath": "/8ykTeTRSYd2MKF5uLBvD93X5KMJ.jpg"
@@ -1943,6 +3238,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Dune",
+        "Dune: Part Two",
+        "The Girl on the Train"
+      ],
+      "birthday": "1983-10-19",
+      "placeOfBirth": "Stockholm, Sweden",
+      "bio": "Rebecca Louisa Ferguson Sundström (born 19 October 1983) is a Swedish actress. She is bilingual and has worked extensively in Sweden, Great Britain, and mainly in the United States."
     },
     "tmdb": {
       "personId": 933238,
@@ -1959,6 +3264,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Sing",
+        "Monsters vs Aliens",
+        "Legally Blonde"
+      ],
+      "birthday": "1976-03-22",
+      "placeOfBirth": "New Orleans, Louisiana, USA",
+      "bio": "Laura Jeanne Reese Witherspoon (born March 22, 1976) is an American actress and producer. She is the recipient of various accolades, including an Academy Award, a Primetime Emmy Award, and two Golden Globe Awards."
+    },
     "tmdb": {
       "personId": 368,
       "profilePath": "/mfjunuTHrd0wnh8UG1ImMN9FSws.jpg"
@@ -1973,6 +3288,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Joker",
+        "GoodFellas",
+        "Taxi Driver"
+      ],
+      "birthday": "1943-08-17",
+      "placeOfBirth": "Greenwich Village, New York City, New York, USA",
+      "bio": "Robert Anthony De Niro (born August 17, 1943) is an American actor and film producer. Considered one of his generation's greatest and most influential actors, De Niro has received various accolades, including two Academy Awards and a Golden Globe Award, as well as nominations for eight BAFTA Awards and four Emmy…"
     },
     "tmdb": {
       "personId": 380,
@@ -1989,6 +3314,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Avengers",
+        "Avengers: Infinity War",
+        "Avengers: Endgame"
+      ],
+      "birthday": "1965-04-04",
+      "placeOfBirth": "New York City, New York, USA",
+      "bio": "Robert John Downey Jr. (born April 4, 1965) is an American actor. His films as a leading actor have grossed over $14.3 billion worldwide, making him one of the highest-grossing actors of all time. Downey was the highest-paid actor in the world annually from 2013 to 2015."
+    },
     "tmdb": {
       "personId": 3223,
       "profilePath": "/5qHNjhtjMD4YWH3UP0rm4tKwxCL.jpg"
@@ -2003,6 +3338,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Harry Potter and the Philosopher's Stone",
+        "Harry Potter and the Chamber of Secrets",
+        "Harry Potter and the Prisoner of Azkaban"
+      ],
+      "birthday": "1988-08-24",
+      "placeOfBirth": "Harlow, Essex, England, UK",
+      "bio": "Rupert Alexander Lloyd Grint (born August 24, 1988) is an English actor. Grint rose to fame for his role as Ron Weasley in the Harry Potter film series. He was cast as Weasley at age eleven, having previously acted only in school plays and his local theatre group."
     },
     "tmdb": {
       "personId": 10989,
@@ -2019,6 +3364,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Gladiator",
+        "A Beautiful Mind",
+        "The Nice Guys"
+      ],
+      "birthday": "1964-04-07",
+      "placeOfBirth": "Wellington, North Island, New Zealand",
+      "bio": "Russell Ira Crowe (born April 7, 1964) is a New Zealand actor and film director. His work on screen has earned him various accolades, including an Academy Award, two Golden Globe Awards, and a British Academy Film Award."
+    },
     "tmdb": {
       "personId": 934,
       "profilePath": "/3IBZF0qCZMZ7zJYlgrH0sQzNZV.jpg"
@@ -2033,6 +3388,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "La La Land",
+        "Blade Runner 2049",
+        "Drive"
+      ],
+      "birthday": "1980-11-12",
+      "placeOfBirth": "London, Ontario, Canada",
+      "bio": "Ryan Thomas Gosling (/ˈɡɒslɪŋ/ GOSS-ling; born November 12, 1980) is a Canadian actor, singer, and musician. Known for his work in both independent films and major studio features, his films as a leading actor have grossed over US$4 billion worldwide."
     },
     "tmdb": {
       "personId": 30614,
@@ -2049,6 +3414,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Deadpool",
+        "Deadpool 2",
+        "Free Guy"
+      ],
+      "birthday": "1976-10-23",
+      "placeOfBirth": "Vancouver, British Columbia, Canada",
+      "bio": "Ryan Rodney Reynolds (born October 23, 1976) is a Canadian and American actor, entrepreneur, and film producer. Known for starring in comedic and superhero films, he was the world's second-highest-paid actor in 2020 and 2024."
+    },
     "tmdb": {
       "personId": 10859,
       "profilePath": "/trzgptffGvAlAT6MEu01fz47cLW.jpg"
@@ -2063,6 +3438,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Eternals",
+        "Puss in Boots: The Last Wish",
+        "Puss in Boots"
+      ],
+      "birthday": "1966-09-02",
+      "placeOfBirth": "Coatzacoalcos, Veracruz, Mexico",
+      "bio": "Salma Valgarma Hayek Pinault is a Mexican and American actress and film producer. She began her career in Mexico by starring in the telenovela Teresa (1989–1991) and the romantic drama Midaq Alley (1995)."
     },
     "tmdb": {
       "personId": 3136,
@@ -2079,6 +3464,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Pulp Fiction",
+        "Captain America: The Winter Soldier",
+        "The Hateful Eight"
+      ],
+      "birthday": "1948-12-21",
+      "placeOfBirth": "Washington, D.C., USA",
+      "bio": "Samuel Leroy Jackson (born December 21, 1948) is an American actor and producer. One of the most widely recognized actors of his generation, the films in which he has appeared have collectively grossed over $27 billion worldwide, making him the second highest-grossing actor of all time."
+    },
     "tmdb": {
       "personId": 2231,
       "profilePath": "/AiAYAqwpM5xmiFrAIeQvUXDCVvo.jpg"
@@ -2093,6 +3488,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Gravity",
+        "Bird Box",
+        "Ocean's Eight"
+      ],
+      "birthday": "1964-07-26",
+      "placeOfBirth": "Arlington County, Virginia, USA",
+      "bio": "Sandra Annette Bullock (/ˈbʊlək/; born July 26, 1964) is an American actress and film producer. The highest-paid actress of 2010 and 2014, Bullock's filmography spans both comedy and drama, and her accolades include an Academy Award and a Golden Globe Award."
     },
     "tmdb": {
       "personId": 18277,
@@ -2109,6 +3514,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Lady Bird",
+        "Little Women",
+        "The Lovely Bones"
+      ],
+      "birthday": "1994-04-12",
+      "placeOfBirth": "The Bronx, New York City, New York, USA",
+      "bio": "Saoirse Una Ronan (/ˈsɜːrʃə ˈuːnə ˈroʊnən/ SUR-shə OO-nə ROH-nən; born 12 April 1994) is an American-born Irish actress. Primarily known for her work in period dramas since adolescence, she has received various accolades, including a Golden Globe Award and nominations for four Academy Awards and seven British Academy…"
+    },
     "tmdb": {
       "personId": 36592,
       "profilePath": "/9buDPdqKN9vbnQLLkHEinDtMrCG.jpg"
@@ -2123,6 +3538,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Sex and the City",
+        "Sex and the City",
+        "Sex and the City 2"
+      ],
+      "birthday": "1965-03-25",
+      "placeOfBirth": "Nelsonville, Ohio, USA",
+      "bio": "Sarah Jessica Parker (born March 25, 1965) is an American actress and television producer. She is the recipient of numerous accolades, including six Golden Globe Awards and two Primetime Emmy Awards. Time magazine named her one of the 100 most influential people in the world in 2022."
     },
     "tmdb": {
       "personId": 520,
@@ -2139,6 +3564,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Lucy",
+        "Black Widow",
+        "Ghost in the Shell"
+      ],
+      "birthday": "1984-11-22",
+      "placeOfBirth": "New York City, New York, USA",
+      "bio": "Scarlett Ingrid Johansson (born November 22, 1984) is an American actress. The world's highest-paid actress in 2018 and 2019, she has featured multiple times on the Forbes Celebrity 100 list. Her films have grossed over $14.3 billion worldwide, making Johansson the ninth-highest-grossing box office star of all time."
+    },
     "tmdb": {
       "personId": 1245,
       "profilePath": "/TiJIJGNWk0r1Y4bYuB50clneUd.jpg"
@@ -2153,6 +3588,16 @@
     "color": "#9a795e",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Avatar",
+        "Alien",
+        "Aliens"
+      ],
+      "birthday": "1949-10-08",
+      "placeOfBirth": "Manhattan, New York City, New York, USA",
+      "bio": "Susan Alexandra \"Sigourney\" Weaver (born October 8, 1949) is an American actress. Weaver is considered to be a pioneer of action heroines in science fiction films."
     },
     "tmdb": {
       "personId": 10205,
@@ -2169,6 +3614,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Game of Thrones",
+        "X-Men: Apocalypse",
+        "Dark Phoenix"
+      ],
+      "birthday": "1996-02-21",
+      "placeOfBirth": "Northampton, Northamptonshire, England, UK",
+      "bio": "Sophie Belinda Turner (born 21 February 1996) is an English actress. She made her acting debut as Sansa Stark in the HBO epic fantasy television series Game of Thrones (2011–2019), for which she received an Emmy Award nomination for Outstanding Supporting Actress in a Drama Series in 2019."
+    },
     "tmdb": {
       "personId": 1001657,
       "profilePath": "/8ur4aHFakVCinWk0cvrGO8qAUhv.jpg"
@@ -2183,6 +3638,16 @@
     "color": "#806344",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Despicable Me",
+        "Despicable Me 2",
+        "The Big Short"
+      ],
+      "birthday": "1962-08-16",
+      "placeOfBirth": "Concord, Massachusetts, USA",
+      "bio": "Steven John Carell (born August 16, 1962) is an American actor and comedian. He played Michael Scott in The Office (2005–2011), NBC’s adaptation of the British series created by Stephen Merchant and Ricky Gervais, where Carell also worked as an occasional producer, writer and director."
     },
     "tmdb": {
       "personId": 4495,
@@ -2199,6 +3664,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Euphoria",
+        "The Housemaid",
+        "Anyone but You"
+      ],
+      "birthday": "1997-09-12",
+      "placeOfBirth": "Spokane, Washington, USA",
+      "bio": "Sydney Bernice Sweeney (born September 12, 1997) is an American actress. She gained early recognition for her roles in Everything Sucks!, The Handmaid's Tale, and Sharp Objects in 2018."
+    },
     "tmdb": {
       "personId": 115440,
       "profilePath": "/qYiaSl0Eb7G3VaxOg8PxExCFwon.jpg"
@@ -2213,6 +3688,16 @@
     "color": "#92613d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Rocky",
+        "The Expendables",
+        "The Expendables 2"
+      ],
+      "birthday": "1946-07-06",
+      "placeOfBirth": "New York City, New York, USA",
+      "bio": "Sylvester Gardenzio Stallone (born July 6, 1946) is an American actor and filmmaker. In a film career spanning more than fifty years, Stallone has received numerous accolades, including a Golden Globe Award and a Critics' Choice Award, as well as nominations for three Academy Awards and two BAFTA Awards."
     },
     "tmdb": {
       "personId": 16483,
@@ -2229,6 +3714,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "The Curious Case of Benjamin Button",
+        "Hidden Figures",
+        "The Karate Kid"
+      ],
+      "birthday": "1970-09-11",
+      "placeOfBirth": "Washington, D.C., USA",
+      "bio": "Taraji P. Henson (born September 11, 1970) is an American actress, producer and singer. She studied acting at Howard University and began her Hollywood career as guest star on several television shows before making her breakthrough in the movie Baby Boy (2001)."
+    },
     "tmdb": {
       "personId": 40036,
       "profilePath": "/jUU2X9mDwJaAniEmJOfvImBS9qb.jpg"
@@ -2243,6 +3738,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Thor: Ragnarok",
+        "Creed",
+        "Men in Black: International"
+      ],
+      "birthday": "1983-10-03",
+      "placeOfBirth": "Los Angeles, California, USA",
+      "bio": "Tessa Lynne Thompson (born October 3, 1983) is an American actress. Known for her roles in both blockbusters and independent dramas, her accolades include nominations for two BAFTA Awards, a Golden Globe Award, and a Primetime Emmy Award."
     },
     "tmdb": {
       "personId": 62561,
@@ -2259,6 +3764,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Doctor Strange",
+        "We Need to Talk About Kevin",
+        "Only Lovers Left Alive"
+      ],
+      "birthday": "1960-11-05",
+      "placeOfBirth": "London, England, UK",
+      "bio": "Katherine Matilda Swinton (born November 5, 1960) is an award-winning British actress of Scottish descent, known for her versatile roles in independent films and blockbusters."
+    },
     "tmdb": {
       "personId": 3063,
       "profilePath": "/dzjT4LKgs7eOma84GsPy78DsGNH.jpg"
@@ -2273,6 +3788,16 @@
     "color": "#4b6584",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Dune",
+        "Call Me by Your Name",
+        "Dune: Part Two"
+      ],
+      "birthday": "1995-12-27",
+      "placeOfBirth": "Manhattan, New York City, New York, USA",
+      "bio": "Timothée Hal Chalamet (born December 27, 1995) is an American actor. He began his career in television, appearing in the series Homeland. In 2014, he made his film debut in Men, Women & Children and appeared in Interstellar. In 2017, he had a leading role in Call Me by Your Name."
     },
     "tmdb": {
       "personId": 1190668,
@@ -2289,6 +3814,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man",
+        "Spider-Man 2",
+        "Spider-Man 3"
+      ],
+      "birthday": "1975-06-27",
+      "placeOfBirth": "Santa Monica, California, USA",
+      "bio": "Tobias \"Tobey\" Vincent Maguire (born June 27, 1975) is an American actor and film producer. He began his career in supporting roles before gaining international recognition and critical acclaim for his portrayal of Spider-Man in Sam Raimi's 2002 film."
+    },
     "tmdb": {
       "personId": 2219,
       "profilePath": "/s6PwSvq6gC7PGEjIku69tPbvR8M.jpg"
@@ -2303,6 +3838,16 @@
     "color": "#355c7d",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Edge of Tomorrow",
+        "Oblivion",
+        "Top Gun: Maverick"
+      ],
+      "birthday": "1962-07-03",
+      "placeOfBirth": "Syracuse, New York, USA",
+      "bio": "Thomas Cruise Mapother IV (/ˈmeɪˌpɒθər/ MAY-poth-ər; born July 3, 1962) is an American actor and film producer. Regarded as a Hollywood icon, he has received various accolades, including an Honorary Palme d'Or, an Academy Honorary Award, and three Golden Globes, in addition to nominations for four competitive Academy…"
     },
     "tmdb": {
       "personId": 500,
@@ -2319,6 +3864,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Forrest Gump",
+        "Toy Story",
+        "The Green Mile"
+      ],
+      "birthday": "1956-07-09",
+      "placeOfBirth": "Concord, California, USA",
+      "bio": "Thomas Jeffrey Hanks (born July 9, 1956) is an American actor and filmmaker. Known for both his comedic and dramatic roles, Hanks is one of the most popular and recognizable film stars worldwide, and is widely regarded as an American cultural icon."
+    },
     "tmdb": {
       "personId": 31,
       "profilePath": "/oFvZoKI6lvU03n4YoNGAll9rkas.jpg"
@@ -2333,6 +3888,16 @@
     "color": "#9b3c38",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "Thor",
+        "Loki",
+        "Kong: Skull Island"
+      ],
+      "birthday": "1981-02-09",
+      "placeOfBirth": "Westminster, London, England, UK",
+      "bio": "Thomas William Hiddleston (born 9 February 1981) is an English actor. He gained international fame portraying Loki in the Marvel Cinematic Universe (MCU), beginning with Thor in 2011 and including the Disney+ series Loki (2021–2023)."
     },
     "tmdb": {
       "personId": 91606,
@@ -2349,6 +3914,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man: Homecoming",
+        "Spider-Man: No Way Home",
+        "Spider-Man: Far From Home"
+      ],
+      "birthday": "1996-06-01",
+      "placeOfBirth": "Kingston-upon-Thames, London, England",
+      "bio": "Thomas Stanley Holland (born 1 June 1996) is an English actor. His accolades include a BAFTA Award as well as two Critics' Choice Awards nominations. His films as a lead actor have grossed over $9.9 billion worldwide. He was featured on the Forbes 30 Under 30 Europe list of 2019."
+    },
     "tmdb": {
       "personId": 1136406,
       "profilePath": "/tH8bNDcjiS399DlcnC5oubxNh23.jpg"
@@ -2363,6 +3938,16 @@
     "color": "#4f6d58",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Pulp Fiction",
+        "Kill Bill: Vol. 1",
+        "Kill Bill: Vol. 2"
+      ],
+      "birthday": "1970-04-29",
+      "placeOfBirth": "Boston, Massachusetts, USA",
+      "bio": "Uma Karuna Thurman (born April 29, 1970) is an American actress, writer, producer and model. She has acted in a variety of films, from romantic comedies and dramas to science fiction and action films."
     },
     "tmdb": {
       "personId": 139,
@@ -2379,6 +3964,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Furious 7",
+        "Fast & Furious 6",
+        "The Fate of the Furious"
+      ],
+      "birthday": "1967-07-18",
+      "placeOfBirth": "Alameda County, California, USA",
+      "bio": "Mark Sinclair (born July 18, 1967), known professionally as Vin Diesel, is an American actor and film producer. One of the world's highest-grossing actors, he is best known for portraying Dominic \"Dom\" Toretto in the Fast & Furious franchise."
+    },
     "tmdb": {
       "personId": 12835,
       "profilePath": "/nZdVry7lnUkE24PnXakok9okvL4.jpg"
@@ -2393,6 +3988,16 @@
     "color": "#4b6584",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Suicide Squad",
+        "Prisoners",
+        "The Help"
+      ],
+      "birthday": "1965-08-11",
+      "placeOfBirth": "St. Matthews, South Carolina, USA",
+      "bio": "Viola Davis (/vaɪˈoʊlə/ vy-OH-lə; born August 11, 1965) is an American actress and film producer. Her accolades include both the Triple Crown of Acting and EGOT. Time named her one of the 100 most influential people in the world in 2012 and 2017."
     },
     "tmdb": {
       "personId": 19492,
@@ -2409,6 +4014,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "Suicide Squad",
+        "I Am Legend",
+        "I, Robot"
+      ],
+      "birthday": "1968-09-25",
+      "placeOfBirth": "Philadelphia, Pennsylvania, USA",
+      "bio": "Willard Carroll Smith II (born September 25, 1968) is an American actor, rapper, and film producer. Known for his work in both the screen and music industries, his accolades include an Academy Award, a Golden Globe Award, a BAFTA Award, and four Grammy Awards."
+    },
     "tmdb": {
       "personId": 2888,
       "profilePath": "/8TlKqbXYgHmmaEoPBJ7djJ8Rxxa.jpg"
@@ -2423,6 +4038,16 @@
     "color": "#414b5b",
     "attributes": {
       "gender": "MAN"
+    },
+    "details": {
+      "knownFor": [
+        "The Hunger Games",
+        "Now You See Me",
+        "Zombieland"
+      ],
+      "birthday": "1961-07-23",
+      "placeOfBirth": "Midland, Texas, USA",
+      "bio": "Woodrow Tracy \"Woody\" Harrelson (born July 23, 1961) is an American actor. He first became known for his role as bartender Woody Boyd on the NBC sitcom Cheers (1985–1993), for which he won a Primetime Emmy Award for Outstanding Supporting Actor in a Comedy Series from five nominations."
     },
     "tmdb": {
       "personId": 57755,
@@ -2439,6 +4064,16 @@
     "attributes": {
       "gender": "MAN"
     },
+    "details": {
+      "knownFor": [
+        "The Greatest Showman",
+        "17 Again",
+        "High School Musical"
+      ],
+      "birthday": "1987-10-18",
+      "placeOfBirth": "San Luis Obispo, California, USA",
+      "bio": "Zachary David Alexander Efron (born October 18, 1987) is an American actor. Efron began acting professionally in the early 2000s and rose to prominence as a teen idol for his leading role as Troy Bolton in the High School Musical trilogy (2006–2008)."
+    },
     "tmdb": {
       "personId": 29222,
       "profilePath": "/6yL3AGhT3QBQBY6SSWIFWwdQySl.jpg"
@@ -2454,6 +4089,16 @@
     "attributes": {
       "gender": "WOMAN"
     },
+    "details": {
+      "knownFor": [
+        "Spider-Man: No Way Home",
+        "Euphoria",
+        "Dune: Part Two"
+      ],
+      "birthday": "1996-09-01",
+      "placeOfBirth": "Oakland, California, USA",
+      "bio": "Zendaya Maree Stoermer Coleman (born September 1, 1996), known mononymously as Zendaya, is an American actress. Her accolades include two Primetime Emmy Awards and a Golden Globe. In 2022, Time named her one of the 100 most influential people in the world."
+    },
     "tmdb": {
       "personId": 505710,
       "profilePath": "/1qup8tSt95HLbcy2c2xrx4iJNxv.jpg"
@@ -2468,6 +4113,16 @@
     "color": "#4b6584",
     "attributes": {
       "gender": "WOMAN"
+    },
+    "details": {
+      "knownFor": [
+        "Avatar",
+        "Guardians of the Galaxy",
+        "Guardians of the Galaxy Vol. 2"
+      ],
+      "birthday": "1978-06-19",
+      "placeOfBirth": "Passaic, New Jersey, USA",
+      "bio": "Zoë Yadira Saldaña-Perego (/sɑːlˈdænjə/ sahl-DAN-yə, Latin American Spanish: [ˈso.e salˈdaɲa]; née Saldaña Nazario; born June 19, 1978) is an American actress."
     },
     "tmdb": {
       "personId": 8691,
