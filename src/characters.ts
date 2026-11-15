@@ -1,8 +1,9 @@
 export type CharacterKind = "ACTOR" | "CHARACTER";
 
 export type CharacterAttributes = {
-  // Only populate these when they are manually researched/curated.
+  // From the actor's TMDB person record (the importer stores only female/male).
   gender?: "WOMAN" | "MAN";
+  // The fields below aren't imported; only populate them when manually curated.
   hair?: "DARK" | "BLONDE" | "RED" | "BROWN" | "OTHER";
   fictional?: boolean;
   universe?: "MATRIX" | "MARVEL" | "DC" | "HARRY_POTTER" | "OTHER";

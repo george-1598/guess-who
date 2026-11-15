@@ -580,17 +580,27 @@ function useEliminated(storageKey: string) {
     }
   });
 
-  const toggle = useCallback((id: string) => {
+  const update = useCallback((change: (next: Set<string>) => void) => {
     setEliminated((current) => {
       const next = new Set(current);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
+      change(next);
       storageSet(storageKey, JSON.stringify([...next]));
       return next;
     });
   }, [storageKey]);
 
-  return [eliminated, toggle] as const;
+  const toggle = useCallback((id: string) => {
+    update((next) => { if (next.has(id)) next.delete(id); else next.add(id); });
+  }, [update]);
+
+  /** Flip a whole group down (out = true) or back up (out = false). */
+  const setMany = useCallback((ids: string[], out: boolean) => {
+    update((next) => { for (const id of ids) { if (out) next.add(id); else next.delete(id); } });
+  }, [update]);
+
+  const reset = useCallback(() => update((next) => next.clear()), [update]);
+
+  return { eliminated, toggle, setMany, reset };
 }
 
 function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
@@ -612,7 +622,11 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
     [room.board_ids, byId],
   );
 
-  const [eliminated, toggleEliminated] = useEliminated(`guesswho:elim:${room.id}:${room.round}`);
+  const { eliminated, toggle: toggleEliminated, setMany, reset: resetBoard } = useEliminated(`guesswho:elim:${room.id}:${room.round}`);
+  const genderGroups = useMemo(() => ([
+    { key: "women", label: "women", ids: board.filter((c) => c.attributes?.gender === "WOMAN").map((c) => c.id) },
+    { key: "men", label: "men", ids: board.filter((c) => c.attributes?.gender === "MAN").map((c) => c.id) },
+  ]).filter((group) => group.ids.length > 0), [board]);
   const [showSecret, setShowSecret] = useState(true);
   const [question, setQuestion] = useState("");
   const [guessId, setGuessId] = useState("");
@@ -765,6 +779,26 @@ function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
             <h2>Meet the suspects</h2>
           </div>
           <div className="remaining-count"><strong>{remaining.length}</strong><span> / {board.length} left</span></div>
+        </div>
+
+        <div className="board-tools" aria-label="Board shortcuts">
+          {genderGroups.map((group) => {
+            const allOut = group.ids.every((id) => eliminated.has(id));
+            return (
+              <button
+                key={group.key}
+                className={`tool-chip ${allOut ? "is-on" : ""}`}
+                aria-pressed={allOut}
+                onClick={() => setMany(group.ids, !allOut)}
+              >
+                {allOut ? <Eye size={14} /> : <EyeOff size={14} />}
+                {allOut ? `Show ${group.label}` : `Hide ${group.label}`} ({group.ids.length})
+              </button>
+            );
+          })}
+          <button className="tool-chip" onClick={resetBoard} disabled={eliminated.size === 0}>
+            <RotateCcw size={14} /> Reset board
+          </button>
         </div>
 
         <div className="character-grid">

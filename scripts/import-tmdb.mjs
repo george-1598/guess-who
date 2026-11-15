@@ -107,8 +107,13 @@ function knownFor(person) {
   return top ? `Known for ${top.title ?? top.name}` : 'Actor';
 }
 
-function makeRecord(personId, name, subtitle, profilePath) {
+// TMDB person gender codes: 0 = not set, 1 = female, 2 = male, 3 = non-binary.
+// Only 1 and 2 are stored; anyone else is never affected by the "hide women/men" buttons.
+const TMDB_GENDERS = { 1: 'WOMAN', 2: 'MAN' };
+
+function makeRecord(personId, name, subtitle, profilePath, tmdbGender) {
   const id = `tmdb:actor:${personId}`;
+  const gender = TMDB_GENDERS[tmdbGender];
   return {
     id,
     name,
@@ -116,6 +121,7 @@ function makeRecord(personId, name, subtitle, profilePath) {
     subtitle,
     initials: initials(name),
     color: colorFor(id),
+    ...(gender ? { attributes: { gender } } : {}),
     tmdb: { personId, profilePath },
   };
 }
@@ -140,7 +146,7 @@ async function buildRandomPool() {
         if (person.adult || person.known_for_department !== 'Acting') continue;
         // Movies arrive most-voted first, so the first movie we see is the best "Known for".
         if (!people.has(person.id)) {
-          people.set(person.id, makeRecord(person.id, person.name.trim(), `Known for ${movie.title}`, person.profile_path));
+          people.set(person.id, makeRecord(person.id, person.name.trim(), `Known for ${movie.title}`, person.profile_path, person.gender));
         }
       }
       await sleep(60);
@@ -171,7 +177,7 @@ async function main() {
     seenPeople.add(person.id);
 
     // Show the name as written in actors.txt (e.g. "Salma Hayek", not TMDB's "Salma Hayek Pinault").
-    records.push(makeRecord(person.id, name, knownFor(person), person.profile_path));
+    records.push(makeRecord(person.id, name, knownFor(person), person.profile_path, person.gender));
   }
 
   if (records.length < 12) throw new Error(`Only ${records.length} actors were found; a board needs at least 12.`);
