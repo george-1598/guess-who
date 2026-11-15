@@ -1,5 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
+export type Deck = "famous" | "random";
+
 export type Room = {
   id: string;
   code: string;
@@ -7,6 +9,7 @@ export type Room = {
   status: "waiting" | "playing" | "finished";
   phase: "ask" | "answer";
   board_ids: string[];
+  deck: Deck;
   round: number;
   current_turn: string | null;
   winner_id: string | null;
@@ -46,11 +49,12 @@ function fail(error: { message: string } | null): void {
   if (error) throw new Error(error.message);
 }
 
-export async function createRoom(client: SupabaseClient, name: string, boardIds: string[], code?: string) {
+export async function createRoom(client: SupabaseClient, name: string, boardIds: string[], code: string, deck: Deck) {
   const { data, error } = await client.rpc("create_room", {
     p_name: name,
     p_board_ids: boardIds,
-    p_code: code?.trim() || null,
+    p_code: code.trim() || null,
+    p_deck: deck,
   });
   fail(error);
   return data as string;

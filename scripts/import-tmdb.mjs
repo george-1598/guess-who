@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * Builds public/data/characters.json from the curated actor list in scripts/actors.txt.
- * Each name is looked up on TMDB to get a stable person id, a profile photo path and a
- * "Known for" title. The deployed site never calls TMDB's API; only image URLs are used.
+ * Builds the two actor pools the game offers:
+ *   - public/data/characters.json     "Famous": the curated list in scripts/actors.txt.
+ *   - public/data/random-actors.json  "Random": main cast of TMDB's most-voted movies.
+ * Each actor gets a stable TMDB person id, a profile photo path and a "Known for" title.
+ * The deployed site never calls TMDB's API; only image URLs are used.
  *
  * Usage: TMDB_READ_ACCESS_TOKEN=... node scripts/import-tmdb.mjs
  * (Normally run by the "Import actors" GitHub Actions workflow.)
@@ -17,6 +19,10 @@ const API_BASE = 'https://api.themoviedb.org/3';
 const TOKEN = process.env.TMDB_READ_ACCESS_TOKEN;
 const INPUT = resolve(ROOT, 'scripts/actors.txt');
 const OUTPUT = resolve(ROOT, 'public/data/characters.json');
+const RANDOM_OUTPUT = resolve(ROOT, 'public/data/random-actors.json');
+// Random pool: top-billed cast of the most-voted movies (20 movies per page).
+const RANDOM_MOVIE_PAGES = 10;
+const RANDOM_CAST_LIMIT = 6;
 const PALETTE = ['#355c7d', '#6c5b7b', '#4b6584', '#a66a5b', '#9b3c38', '#744b54', '#414b5b', '#92613d', '#806344', '#4f6d58', '#9a795e'];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -101,6 +107,48 @@ function knownFor(person) {
   return top ? `Known for ${top.title ?? top.name}` : 'Actor';
 }
 
+function makeRecord(personId, name, subtitle, profilePath) {
+  const id = `tmdb:actor:${personId}`;
+  return {
+    id,
+    name,
+    kind: 'ACTOR',
+    subtitle,
+    initials: initials(name),
+    color: colorFor(id),
+    tmdb: { personId, profilePath },
+  };
+}
+
+async function writeRecords(path, records) {
+  records.sort((a, b) => a.name.localeCompare(b.name));
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, `${JSON.stringify(records, null, 2)}\n`, 'utf8');
+}
+
+async function buildRandomPool() {
+  console.log(`\nBuilding the random pool from ${RANDOM_MOVIE_PAGES * 20} most-voted movies...`);
+  const people = new Map();
+  for (let page = 1; page <= RANDOM_MOVIE_PAGES; page += 1) {
+    const list = await tmdb(`/discover/movie?include_adult=false&sort_by=vote_count.desc&page=${page}`);
+    for (const movie of Array.isArray(list.results) ? list.results : []) {
+      if (!Number.isInteger(movie.id) || !movie.title) continue;
+      const credits = await tmdb(`/movie/${movie.id}/credits`);
+      const cast = Array.isArray(credits.cast) ? credits.cast.slice(0, RANDOM_CAST_LIMIT) : [];
+      for (const person of cast) {
+        if (!Number.isInteger(person.id) || !person.name || !person.profile_path) continue;
+        if (person.adult || person.known_for_department !== 'Acting') continue;
+        // Movies arrive most-voted first, so the first movie we see is the best "Known for".
+        if (!people.has(person.id)) {
+          people.set(person.id, makeRecord(person.id, person.name.trim(), `Known for ${movie.title}`, person.profile_path));
+        }
+      }
+      await sleep(60);
+    }
+  }
+  return [...people.values()];
+}
+
 async function main() {
   if (!TOKEN) throw new Error('Missing TMDB_READ_ACCESS_TOKEN.');
 
@@ -123,28 +171,21 @@ async function main() {
     seenPeople.add(person.id);
 
     // Show the name as written in actors.txt (e.g. "Salma Hayek", not TMDB's "Salma Hayek Pinault").
-    const id = `tmdb:actor:${person.id}`;
-    records.push({
-      id,
-      name,
-      kind: 'ACTOR',
-      subtitle: knownFor(person),
-      initials: initials(name),
-      color: colorFor(id),
-      tmdb: { personId: person.id, profilePath: person.profile_path },
-    });
+    records.push(makeRecord(person.id, name, knownFor(person), person.profile_path));
   }
 
   if (records.length < 12) throw new Error(`Only ${records.length} actors were found; a board needs at least 12.`);
+  await writeRecords(OUTPUT, records);
 
-  records.sort((a, b) => a.name.localeCompare(b.name));
-  await mkdir(dirname(OUTPUT), { recursive: true });
-  await writeFile(OUTPUT, `${JSON.stringify(records, null, 2)}\n`, 'utf8');
+  const randomRecords = await buildRandomPool();
+  if (randomRecords.length < 12) throw new Error(`Only ${randomRecords.length} random actors were found.`);
+  await writeRecords(RANDOM_OUTPUT, randomRecords);
 
   const summary = [
     `## Actor import`,
     ``,
-    `Wrote **${records.length}** actors to \`public/data/characters.json\`.`,
+    `- **Famous:** ${records.length} actors → \`public/data/characters.json\``,
+    `- **Random:** ${randomRecords.length} actors → \`public/data/random-actors.json\``,
     ``,
     problems.length ? `### Needs a look (${problems.length})` : `No problems found.`,
     ...problems.map((p) => `- ${p}`),

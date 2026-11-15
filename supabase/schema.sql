@@ -21,6 +21,7 @@ create table public.rooms (
   status       text not null default 'waiting' check (status in ('waiting', 'playing', 'finished')),
   phase        text not null default 'ask' check (phase in ('ask', 'answer')),
   board_ids    text[] not null,
+  deck         text not null default 'famous' check (deck in ('famous', 'random')),
   round        int  not null default 1,
   current_turn uuid,
   winner_id    uuid,
@@ -186,9 +187,15 @@ $$;
 ------------------------------------------------------------------------------
 
 -- Create a room. Returns the new room id.
+-- p_deck is 'famous' (curated list) or 'random' (big pool); rematches reuse it.
 -- p_code is optional (e.g. 'LOVE2026'); a random 6-character code is used otherwise.
 -- A custom code that belongs to a room older than 12 hours is recycled.
-create or replace function public.create_room(p_name text, p_board_ids text[], p_code text default null)
+create or replace function public.create_room(
+  p_name text,
+  p_board_ids text[],
+  p_code text default null,
+  p_deck text default 'famous'
+)
 returns uuid
 language plpgsql
 security definer
@@ -198,12 +205,14 @@ declare
   v_uid      uuid := auth.uid();
   v_name     text;
   v_code     text;
+  v_deck     text := coalesce(p_deck, 'famous');
   v_room_id  uuid;
   v_alphabet constant text := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 begin
   if v_uid is null then raise exception 'You are not signed in.'; end if;
   v_name := public._validate_name(p_name);
   perform public._validate_board(p_board_ids);
+  if v_deck not in ('famous', 'random') then raise exception 'Unknown actor pool.'; end if;
 
   if p_code is not null and btrim(p_code) <> '' then
     v_code := upper(btrim(p_code));
@@ -224,8 +233,8 @@ begin
     end loop;
   end if;
 
-  insert into public.rooms (code, host_id, board_ids)
-  values (v_code, v_uid, p_board_ids)
+  insert into public.rooms (code, host_id, board_ids, deck)
+  values (v_code, v_uid, p_board_ids, v_deck)
   returning id into v_room_id;
 
   insert into public.room_players (room_id, user_id, name, seat)
@@ -395,7 +404,7 @@ revoke execute on function public._validate_board(text[]) from public, anon, aut
 revoke execute on function public._deal_round(uuid)       from public, anon, authenticated;
 
 revoke execute on function public.is_room_member(uuid)                  from public, anon;
-revoke execute on function public.create_room(text, text[], text)       from public, anon;
+revoke execute on function public.create_room(text, text[], text, text) from public, anon;
 revoke execute on function public.join_room(text, text)                 from public, anon;
 revoke execute on function public.ask_question(uuid, text)              from public, anon;
 revoke execute on function public.answer_question(uuid, text)           from public, anon;
@@ -403,7 +412,7 @@ revoke execute on function public.make_guess(uuid, text)                from pub
 revoke execute on function public.rematch(uuid, text[])                 from public, anon;
 
 grant execute on function public.is_room_member(uuid)            to authenticated;
-grant execute on function public.create_room(text, text[], text) to authenticated;
+grant execute on function public.create_room(text, text[], text, text) to authenticated;
 grant execute on function public.join_room(text, text)           to authenticated;
 grant execute on function public.ask_question(uuid, text)        to authenticated;
 grant execute on function public.answer_question(uuid, text)     to authenticated;

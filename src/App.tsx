@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { Check, CircleHelp, Clapperboard, Copy, Eye, EyeOff, LogOut, RotateCcw, Send, Sparkles, Users } from "lucide-react";
+import { Check, CircleHelp, Clapperboard, Copy, Eye, EyeOff, LogOut, RotateCcw, Send, Shuffle, Sparkles, Star, Users } from "lucide-react";
 import type { Character } from "./characters";
 import { ensureSession, supabase } from "./lib/supabase";
 import { pickBoardIds } from "./lib/board";
@@ -13,9 +13,19 @@ import {
   makeGuess,
   rematch,
   subscribeToRoom,
+  type Deck,
   type RoomEvent,
   type RoomSnapshot,
 } from "./lib/room";
+
+type Decks = Record<Deck, Character[]>;
+
+const DECK_LABELS: Record<Deck, string> = { famous: "FAMOUS ACTORS", random: "RANDOM ACTORS" };
+
+/** The pool a room deals from; falls back to the famous list if the random one isn't available. */
+function deckPool(decks: Decks, deck: Deck | undefined): Character[] {
+  return deck === "random" && decks.random.length > 0 ? decks.random : decks.famous;
+}
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 const ROOM_KEY = "guesswho:room";
@@ -57,6 +67,16 @@ function isCharacter(value: unknown): value is Character {
     && typeof item.color === "string"
     && !!item.tmdb
     && Number.isInteger(item.tmdb.personId);
+}
+
+async function loadDeck(file: string, signal: AbortSignal): Promise<Character[]> {
+  const response = await fetch(`${import.meta.env.BASE_URL}data/${file}`, { signal });
+  if (!response.ok) throw new Error(`Could not load ${file} (HTTP ${response.status}).`);
+  const data: unknown = await response.json();
+  if (!Array.isArray(data) || data.length === 0 || !data.every(isCharacter)) {
+    throw new Error(`${file} is empty or contains records with an invalid shape.`);
+  }
+  return data;
 }
 
 function imageUrl(character: Character) {
@@ -138,7 +158,7 @@ function StateMessage({ eyebrow, title, children }: { eyebrow: string; title: st
 // ---------------------------------------------------------------------------
 
 function App() {
-  const [characters, setCharacters] = useState<Character[]>([]);
+  const [decks, setDecks] = useState<Decks | null>(null);
   const [userId, setUserId] = useState("");
   const [fatalError, setFatalError] = useState("");
   const [roomId, setRoomId] = useState(() => storageGet(ROOM_KEY));
@@ -147,15 +167,17 @@ function App() {
     const controller = new AbortController();
     (async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/characters.json`, { signal: controller.signal });
-        if (!response.ok) throw new Error(`Could not load the character dataset (HTTP ${response.status}).`);
-        const data: unknown = await response.json();
-        if (!Array.isArray(data) || data.length === 0 || !data.every(isCharacter)) {
-          throw new Error("The character dataset is empty or contains records with an invalid shape.");
-        }
-        setCharacters(data);
+        const [famous, random] = await Promise.all([
+          loadDeck("characters.json", controller.signal),
+          // The random pool is optional: until it's imported, only "Famous" is offered.
+          loadDeck("random-actors.json", controller.signal).catch((error: unknown) => {
+            if (controller.signal.aborted) throw error;
+            return [] as Character[];
+          }),
+        ]);
+        setDecks({ famous, random });
       } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") return;
+        if (controller.signal.aborted) return;
         setFatalError(errorMessage(error));
       }
     })();
@@ -169,7 +191,10 @@ function App() {
       .catch((error) => setFatalError(`Could not sign in: ${errorMessage(error)}`));
   }, []);
 
-  const byId = useMemo(() => new Map(characters.map((c) => [c.id, c])), [characters]);
+  const byId = useMemo(
+    () => new Map([...(decks?.famous ?? []), ...(decks?.random ?? [])].map((c) => [c.id, c])),
+    [decks],
+  );
 
   const enterRoom = useCallback((id: string) => {
     storageSet(ROOM_KEY, id);
@@ -206,7 +231,7 @@ function App() {
     );
   }
 
-  if (characters.length === 0 || !userId) {
+  if (!decks || !userId) {
     return (
       <Shell pill="LOADING">
         <StateMessage eyebrow="GETTING THE BOARD READY" title="Loading…" />
@@ -217,7 +242,7 @@ function App() {
   if (!roomId) {
     return (
       <Shell pill="MULTIPLAYER">
-        <Home client={supabase} characters={characters} onEnter={enterRoom} />
+        <Home client={supabase} decks={decks} onEnter={enterRoom} />
       </Shell>
     );
   }
@@ -228,7 +253,7 @@ function App() {
       client={supabase}
       roomId={roomId}
       userId={userId}
-      characters={characters}
+      decks={decks}
       byId={byId}
       onLeave={leaveRoom}
     />
@@ -239,11 +264,12 @@ function App() {
 // Home: create or join a room
 // ---------------------------------------------------------------------------
 
-function Home({ client, characters, onEnter }: {
+function Home({ client, decks, onEnter }: {
   client: SupabaseClient;
-  characters: Character[];
+  decks: Decks;
   onEnter: (roomId: string) => void;
 }) {
+  const [deck, setDeck] = useState<Deck>("famous");
   const [name, setName] = useState(() => storageGet(NAME_KEY));
   const [joinCode, setJoinCode] = useState(
     () => (new URLSearchParams(window.location.search).get("room") ?? "").toUpperCase(),
@@ -270,7 +296,7 @@ function Home({ client, characters, onEnter }: {
 
   function handleCreate(event: FormEvent) {
     event.preventDefault();
-    void run(() => createRoom(client, name.trim(), pickBoardIds(characters), customCode));
+    void run(() => createRoom(client, name.trim(), pickBoardIds(deckPool(decks, deck)), customCode, deck));
   }
 
   function handleJoin(event: FormEvent) {
@@ -306,6 +332,32 @@ function Home({ client, characters, onEnter }: {
         <form className="panel" onSubmit={handleCreate}>
           <div className="panel-label">NEW GAME</div>
           <h3>Create a room</h3>
+          <p>Choose who's on the board:</p>
+          <div className="deck-picker" role="radiogroup" aria-label="Actor pool">
+            <button
+              type="button"
+              role="radio"
+              aria-checked={deck === "famous"}
+              className={`deck-option ${deck === "famous" ? "is-selected" : ""}`}
+              onClick={() => setDeck("famous")}
+            >
+              <Star size={16} />
+              <strong>Famous</strong>
+              <span>{decks.famous.length} well-known stars</span>
+            </button>
+            <button
+              type="button"
+              role="radio"
+              aria-checked={deck === "random"}
+              className={`deck-option ${deck === "random" ? "is-selected" : ""}`}
+              disabled={decks.random.length === 0}
+              onClick={() => setDeck("random")}
+            >
+              <Shuffle size={16} />
+              <strong>Random</strong>
+              <span>{decks.random.length > 0 ? `${decks.random.length} actors from top movies` : "Not imported yet"}</span>
+            </button>
+          </div>
           <p>You'll get a code to send to the other player. Want your own code? Type it here (optional).</p>
           <input
             className="text-input code-input"
@@ -397,11 +449,11 @@ function useRoomSnapshot(client: SupabaseClient, roomId: string) {
   return { snapshot, missing, error, refresh };
 }
 
-function RoomView({ client, roomId, userId, characters, byId, onLeave }: {
+function RoomView({ client, roomId, userId, decks, byId, onLeave }: {
   client: SupabaseClient;
   roomId: string;
   userId: string;
-  characters: Character[];
+  decks: Decks;
   byId: Map<string, Character>;
   onLeave: () => void;
 }) {
@@ -440,7 +492,7 @@ function RoomView({ client, roomId, userId, characters, byId, onLeave }: {
           client={client}
           snapshot={snapshot}
           userId={userId}
-          characters={characters}
+          decks={decks}
           byId={byId}
           onChanged={refresh}
           onLeave={onLeave}
@@ -516,11 +568,11 @@ function useEliminated(storageKey: string) {
   return [eliminated, toggle] as const;
 }
 
-function Game({ client, snapshot, userId, characters, byId, onChanged, onLeave }: {
+function Game({ client, snapshot, userId, decks, byId, onChanged, onLeave }: {
   client: SupabaseClient;
   snapshot: RoomSnapshot;
   userId: string;
-  characters: Character[];
+  decks: Decks;
   byId: Map<string, Character>;
   onChanged: () => Promise<void>;
   onLeave: () => void;
@@ -611,7 +663,7 @@ function Game({ client, snapshot, userId, characters, byId, onChanged, onLeave }
         <button
           className="primary-button full-button"
           disabled={busy}
-          onClick={() => void act(() => rematch(client, room.id, pickBoardIds(characters)))}
+          onClick={() => void act(() => rematch(client, room.id, pickBoardIds(deckPool(decks, room.deck))))}
         >
           <RotateCcw size={16} /> Play again with a new board
         </button>
@@ -682,7 +734,9 @@ function Game({ client, snapshot, userId, characters, byId, onChanged, onLeave }
       <div className="board-column">
         <div className="board-heading">
           <div>
-            <div className="section-kicker">ROUND {room.round} · YOU VS {opponentName.toUpperCase()}</div>
+            <div className="section-kicker">
+              ROUND {room.round} · {DECK_LABELS[room.deck] ?? DECK_LABELS.famous} · YOU VS {opponentName.toUpperCase()}
+            </div>
             <h2>Meet the suspects</h2>
           </div>
           <div className="remaining-count"><strong>{remaining.length}</strong><span> / {board.length} left</span></div>

@@ -107,6 +107,13 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .text-input:focus, .turn-panel select:focus { outline: 2px solid #e8b66a88; outline-offset: 1px; }
 .name-panel .text-input { margin: 12px 0 0; }
 .code-input { text-transform: uppercase; letter-spacing: 3px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+.deck-picker { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0 14px; }
+.deck-option { display: grid; justify-items: start; gap: 3px; padding: 11px 12px; text-align: left; color: #c9d1dc; background: #101722; border: 1px solid #ffffff20; border-radius: 10px; }
+.deck-option svg { color: #8390a1; }
+.deck-option strong { font-size: 13px; }
+.deck-option span { font-size: 10px; color: #8390a1; }
+.deck-option.is-selected { border-color: #e8b66a; background: #e8b66a14; box-shadow: 0 0 0 3px #e8b66a1f; }
+.deck-option.is-selected svg, .deck-option.is-selected strong { color: #e8b66a; }
 .form-error { color: #f3a18f; background: #f3a18f14; border: 1px solid #f3a18f44; border-radius: 8px; padding: 10px 12px; font-size: 13px; text-align: center; max-width: 760px; margin: 14px auto; }
 
 .lobby { text-align: center; max-width: 520px; margin: 60px auto; }

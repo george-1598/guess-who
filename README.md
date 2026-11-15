@@ -27,7 +27,12 @@ Never deploy Supabase secret/service-role keys to GitHub Pages. Only the publish
 
 ## The actor list
 
-The board uses a hand-picked list of actors in `scripts/actors.txt` (one name per line, `#` for comments).
+When creating a room, players choose an actor pool:
+
+- **Famous** — the hand-picked list in `scripts/actors.txt` (one name per line, `#` for comments) → `public/data/characters.json`.
+- **Random** — top-billed cast of TMDB's 200 most-voted movies → `public/data/random-actors.json`. Size is controlled by `RANDOM_MOVIE_PAGES` / `RANDOM_CAST_LIMIT` in `scripts/import-tmdb.mjs`.
+
+The room stores its pool (`rooms.deck`), so rematches deal from the same one. Existing Supabase projects need `supabase/migrations/002_deck.sql` run once.
 
 To change it:
 
