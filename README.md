@@ -25,7 +25,15 @@ The portrait blocks are intentional placeholders, not final character photograph
 
 The Vite base path is currently `/guess-who/`. Change it in `vite.config.ts` if your repository has a different name.
 
-This project does not yet include Supabase or multiplayer. Do not deploy Supabase secret/service-role keys to GitHub Pages. Only a Supabase publishable/anon key belongs in a browser app, protected by strict RLS policies.
+Deployment runs from `.github/workflows/deploy.yml` on every push to `main`. It needs two repository **variables** (Settings → Secrets and variables → Actions → Variables): `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+
+## Multiplayer (Supabase)
+
+- Database schema, security rules and game functions: `supabase/schema.sql` (run once in the Supabase SQL Editor).
+- Anonymous sign-ins must be enabled in Supabase (Authentication → Sign In / Providers).
+- Each room deals a random board of 48 distinct faces (`src/lib/board.ts`); each player's secret is readable only by them until the game ends, and guesses are checked in the database.
+
+Never deploy Supabase secret/service-role keys to GitHub Pages. Only the publishable (or legacy anon) key belongs in a browser app.
 
 ## Import a starter character dataset from TMDB
 
