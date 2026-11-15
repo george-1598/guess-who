@@ -6,6 +6,9 @@
     "subtitle": "Known for Star Wars: The Force Awakens",
     "initials": "AD",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1023139,
       "profilePath": "/fsbGQ1eZFgdsG1XnKlhNSvHsiGo.jpg"
@@ -18,6 +21,9 @@
     "subtitle": "Known for Hotel Transylvania",
     "initials": "AS",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 19292,
       "profilePath": "/iTMnXrPfC1rmom6a9q4hy6YSJWG.jpg"
@@ -30,6 +36,9 @@
     "subtitle": "Known for The Godfather",
     "initials": "AP",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1158,
       "profilePath": "/m8HAAjq1T75JypKk0v1FFQn4ysZ.jpg"
@@ -42,6 +51,9 @@
     "subtitle": "Known for Arrival",
     "initials": "AA",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 9273,
       "profilePath": "/gn0K6c6d1L6qQrRc86iL8uyIqiF.jpg"
@@ -54,6 +66,9 @@
     "subtitle": "Known for Blade Runner 2049",
     "initials": "AA",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 224513,
       "profilePath": "/ngHnBOofQzCO3AvMyuW3UMRWg1B.jpg"
@@ -66,6 +81,9 @@
     "subtitle": "Known for The Amazing Spider-Man",
     "initials": "AG",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 37625,
       "profilePath": "/beO5YvbTjrr5yy8hW26KVDMSr35.jpg"
@@ -78,6 +96,9 @@
     "subtitle": "Known for Maleficent",
     "initials": "AJ",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 11701,
       "profilePath": "/bXNxIKcJ5cNNW8QFrBPWcfTSu9x.jpg"
@@ -90,6 +111,9 @@
     "subtitle": "Known for Interstellar",
     "initials": "AH",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1813,
       "profilePath": "/dUnrbrn2FeqfdpGRArPZeWPsS2g.jpg"
@@ -102,6 +126,9 @@
     "subtitle": "Known for Thor",
     "initials": "AH",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 4173,
       "profilePath": "/iaf7SHSkGDpnyrDh1Jolilwk2TD.jpg"
@@ -114,6 +141,9 @@
     "subtitle": "Known for Puss in Boots: The Last Wish",
     "initials": "AB",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3131,
       "profilePath": "/lpzfDt22374NPhOXZpUq74e9mfw.jpg"
@@ -126,6 +156,9 @@
     "subtitle": "Known for Split",
     "initials": "AT",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1397778,
       "profilePath": "/qYNofOjlRke2MlJVihmJmEdQI4v.jpg"
@@ -138,6 +171,9 @@
     "subtitle": "Known for The Terminator",
     "initials": "AS",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1100,
       "profilePath": "/4jM3vsHIEQVeNFifiTAUDVAmiUo.jpg"
@@ -150,6 +186,9 @@
     "subtitle": "Known for Once Upon a Time in... Hollywood",
     "initials": "AB",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 86654,
       "profilePath": "/atdAs4pFGjUQ4m2W8kJYly7N6cC.jpg"
@@ -162,6 +201,9 @@
     "subtitle": "Known for Gone Girl",
     "initials": "BA",
     "color": "#92613d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 880,
       "profilePath": "/aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
@@ -174,6 +216,9 @@
     "subtitle": "Known for Madagascar",
     "initials": "BS",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 7399,
       "profilePath": "/scgpxhI05JpdNXXfmpK6z0rPOWN.jpg"
@@ -186,6 +231,9 @@
     "subtitle": "Known for Doctor Strange",
     "initials": "BC",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 71580,
       "profilePath": "/wz3MRiMmoz6b5X3oSzMRC9nLxY1.jpg"
@@ -198,6 +246,9 @@
     "subtitle": "Known for Fight Club",
     "initials": "BP",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 287,
       "profilePath": "/ajNaPmXVVMJFg9GWmu6MJzTaXdV.jpg"
@@ -210,6 +261,9 @@
     "subtitle": "Known for The Hangover",
     "initials": "BC",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 51329,
       "profilePath": "/5Dhy50qOMOHfR1NZifKIfffjV9X.jpg"
@@ -222,6 +276,9 @@
     "subtitle": "Known for Captain Marvel",
     "initials": "BL",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 60073,
       "profilePath": "/xSGvMwNNJcEQvVcjiIUTyxyMfkZ.jpg"
@@ -234,6 +291,9 @@
     "subtitle": "Known for The Sixth Sense",
     "initials": "BW",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 62,
       "profilePath": "/w3aXr1e7gQCn8MSp1vW4sXHn99P.jpg"
@@ -246,6 +306,9 @@
     "subtitle": "Known for Shrek",
     "initials": "CD",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 6941,
       "profilePath": "/tIWUyvmJayu8gtbrzCWC0L3H8kH.jpg"
@@ -258,6 +321,9 @@
     "subtitle": "Known for Thor: Ragnarok",
     "initials": "CB",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 112,
       "profilePath": "/1Rd567YFdGfkJjSlhNPR8joYkaX.jpg"
@@ -270,6 +336,9 @@
     "subtitle": "Known for Avengers: Infinity War",
     "initials": "CB",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 172069,
       "profilePath": "/nL16SKfyP1b7Hk6LsuWiqMfbdb8.jpg"
@@ -282,6 +351,9 @@
     "subtitle": "Known for Mad Max: Fury Road",
     "initials": "CT",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 6885,
       "profilePath": "/gd7ShD0yt4bsR2STeQ19KQ6hvXL.jpg"
@@ -294,6 +366,9 @@
     "subtitle": "Known for Captain America: Civil War",
     "initials": "CE",
     "color": "#92613d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 16828,
       "profilePath": "/3bOGNsHlrswhyW79uvIHH1V43JI.jpg"
@@ -306,6 +381,9 @@
     "subtitle": "Known for Thor",
     "initials": "CH",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 74568,
       "profilePath": "/piQGdoIQOF3C1EI5cbYZLAW1gfj.jpg"
@@ -318,6 +396,9 @@
     "subtitle": "Known for Guardians of the Galaxy",
     "initials": "CP",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 73457,
       "profilePath": "/cRH6HPAQ98PlOwwEvhYO4CM9lwu.jpg"
@@ -330,6 +411,9 @@
     "subtitle": "Known for The Dark Knight",
     "initials": "CB",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3894,
       "profilePath": "/7Pxez9J8fuPd2Mn9kex13YALrCQ.jpg"
@@ -342,6 +426,9 @@
     "subtitle": "Known for Oppenheimer",
     "initials": "CM",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2037,
       "profilePath": "/2lKs67r7FI4bPu0AXxMUJZxmUXn.jpg"
@@ -354,6 +441,9 @@
     "subtitle": "Known for Kingsman: The Secret Service",
     "initials": "CF",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 5472,
       "profilePath": "/z6wxnkqSTnzO1tcBui0ss7ehdm9.jpg"
@@ -366,6 +456,9 @@
     "subtitle": "Known for Friends",
     "initials": "CC",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 14405,
       "profilePath": "/cSOORhCRPJiwKghozXVXrOBi3Tp.jpg"
@@ -378,6 +471,9 @@
     "subtitle": "Known for Fifty Shades of Grey",
     "initials": "DJ",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 118545,
       "profilePath": "/bSfVBJ8S3F1MPpCmIWb8UJcUZGP.jpg"
@@ -390,6 +486,9 @@
     "subtitle": "Known for Skyfall",
     "initials": "DC",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 8784,
       "profilePath": "/iFerDZUmC5Fu26i4qI8xnUVEHc7.jpg"
@@ -402,6 +501,9 @@
     "subtitle": "Known for Harry Potter and the Philosopher's Stone",
     "initials": "DR",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 10980,
       "profilePath": "/uUFfo8RANo7tuckB6AZAnESne55.jpg"
@@ -414,6 +516,9 @@
     "subtitle": "Known for The Equalizer",
     "initials": "DW",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 5292,
       "profilePath": "/jj2Gcobpopokal0YstuCQW0ldJ4.jpg"
@@ -426,6 +531,9 @@
     "subtitle": "Known for The Godfather",
     "initials": "DK",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 3092,
       "profilePath": "/A8B3BsFgbmw2WEmJuQX38qeU9eR.jpg"
@@ -438,6 +546,9 @@
     "subtitle": "Known for Donnie Darko",
     "initials": "DB",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 69597,
       "profilePath": "/8qvMFslwrC3w1OwJYqE3mHPvffr.jpg"
@@ -450,6 +561,9 @@
     "subtitle": "Known for Jumanji: Welcome to the Jungle",
     "initials": "DJ",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 18918,
       "profilePath": "/5QApZVV8FUFlVxQpIK3Ew6cqotq.jpg"
@@ -462,6 +576,9 @@
     "subtitle": "Known for Shrek",
     "initials": "EM",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 776,
       "profilePath": "/qgjMfefsKwSYsyCaIX46uyOXIpy.jpg"
@@ -474,6 +591,9 @@
     "subtitle": "Known for Fantastic Beasts and Where to Find Them",
     "initials": "ER",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 37632,
       "profilePath": "/fSvG7qzoBBnJUmgtIuMgrK3EQPN.jpg"
@@ -486,6 +606,9 @@
     "subtitle": "Known for WandaVision",
     "initials": "EO",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 550843,
       "profilePath": "/vXz0E5lQKZS1RnlmcHSGbdR0CzG.jpg"
@@ -498,6 +621,9 @@
     "subtitle": "Known for Maleficent",
     "initials": "EF",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 18050,
       "profilePath": "/ucC5faqfEYVhoC25M6Hi3znZmab.jpg"
@@ -510,6 +636,9 @@
     "subtitle": "Known for Game of Thrones",
     "initials": "EC",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1223786,
       "profilePath": "/iFY6t7Ux9r70WB7Sp0TTVz6eGtm.jpg"
@@ -522,6 +651,9 @@
     "subtitle": "Known for A Quiet Place",
     "initials": "EB",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 5081,
       "profilePath": "/5nCSG5TL1bP1geD8aaBfaLnLLCD.jpg"
@@ -534,6 +666,9 @@
     "subtitle": "Known for The Amazing Spider-Man",
     "initials": "ES",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 54693,
       "profilePath": "/ak2Y9wOI3wi2pNQU6OWSvVvWPj5.jpg"
@@ -546,6 +681,9 @@
     "subtitle": "Known for Brave",
     "initials": "ET",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 7056,
       "profilePath": "/zQ0hWHh3tzaOOziPbABQI8s9WCu.jpg"
@@ -558,6 +696,9 @@
     "subtitle": "Known for Harry Potter and the Deathly Hallows: Part 2",
     "initials": "EW",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 10990,
       "profilePath": "/mf0OANvWYSzU1d8yggrhyw8IbIz.jpg"
@@ -570,6 +711,9 @@
     "subtitle": "Known for Star Wars: Episode I - The Phantom Menace",
     "initials": "EM",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3061,
       "profilePath": "/q2UDxfwWnmXTB7khOUF3J9puBVP.jpg"
@@ -582,6 +726,9 @@
     "subtitle": "Known for Black Widow",
     "initials": "FP",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1373737,
       "profilePath": "/nyRW28rq1PJhygm25D4gJKFfPjc.jpg"
@@ -594,6 +741,9 @@
     "subtitle": "Known for Wonder Woman",
     "initials": "GG",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 90633,
       "profilePath": "/AbXKtWQwuDiwhoQLh34VRglwuBE.jpg"
@@ -606,6 +756,9 @@
     "subtitle": "Known for The Dark Knight",
     "initials": "GO",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 64,
       "profilePath": "/yhaSM5habNNI1Tf4ALRwRk3VvSZ.jpg"
@@ -618,6 +771,9 @@
     "subtitle": "Known for Gravity",
     "initials": "GC",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1461,
       "profilePath": "/dt0a7DT0SQeHb7NpURD6ifyEzsN.jpg"
@@ -630,6 +786,9 @@
     "subtitle": "Known for What Happened to Monday",
     "initials": "GC",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 515,
       "profilePath": "/4VHZ1GfLwN7MUgApy0LCBzdDF9L.jpg"
@@ -642,6 +801,9 @@
     "subtitle": "Known for Se7en",
     "initials": "GP",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 12052,
       "profilePath": "/r4wbWWEEjmtRFZ0GU10XbLTgp47.jpg"
@@ -654,6 +816,9 @@
     "subtitle": "Known for Spider-Man: Into the Spider-Verse",
     "initials": "HS",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 130640,
       "profilePath": "/qDInsG0cxWNxS1X4t59TBZ5S6x5.jpg"
@@ -666,6 +831,9 @@
     "subtitle": "Known for John Wick: Chapter 3 - Parabellum",
     "initials": "HB",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 4587,
       "profilePath": "/84HRDZodRCuBSpYGSc3ow8WucI4.jpg"
@@ -678,6 +846,9 @@
     "subtitle": "Known for Star Wars",
     "initials": "HF",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3,
       "profilePath": "/pjBMJVPpcZK23Vt1nzr1zEBTWrP.jpg"
@@ -690,6 +861,9 @@
     "subtitle": "Known for The Dark Knight",
     "initials": "HL",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1810,
       "profilePath": "/p2z2bURSg7nuMsN9P2s61e2RvNz.jpg"
@@ -702,6 +876,9 @@
     "subtitle": "Known for Monsters University",
     "initials": "HM",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 15735,
       "profilePath": "/1reKRrsdsHXJaRVHVyOEg4oPTcZ.jpg"
@@ -714,6 +891,9 @@
     "subtitle": "Known for Batman v Superman: Dawn of Justice",
     "initials": "HC",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 73968,
       "profilePath": "/dgTD7Q9owL3DyX9uYoSX9KZeUUz.jpg"
@@ -726,6 +906,9 @@
     "subtitle": "Known for Love Actually",
     "initials": "HG",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3291,
       "profilePath": "/dvV843fOuzsEPXHtFvdzsHpy1rC.jpg"
@@ -738,6 +921,9 @@
     "subtitle": "Known for Logan",
     "initials": "HJ",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 6968,
       "profilePath": "/4Xujtewxqt6aU0Y81tsS9gkjizk.jpg"
@@ -750,6 +936,9 @@
     "subtitle": "Known for The Lord of the Rings: The Fellowship of the Ring",
     "initials": "IM",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1327,
       "profilePath": "/5cnnnpnJG6TiYUSS7qgJheUZgnv.jpg"
@@ -762,6 +951,9 @@
     "subtitle": "Known for Zootopia",
     "initials": "IE",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 17605,
       "profilePath": "/be1bVF7qGX91a6c5WeRPs5pKXln.jpg"
@@ -774,6 +966,9 @@
     "subtitle": "Known for Kung Fu Panda",
     "initials": "JB",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 70851,
       "profilePath": "/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg"
@@ -786,6 +981,9 @@
     "subtitle": "Known for Rush Hour",
     "initials": "JC",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 18897,
       "profilePath": "/nraZoTzwJQPHspAVsKfgl3RXKKa.jpg"
@@ -798,6 +996,9 @@
     "subtitle": "Known for Euphoria",
     "initials": "JE",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2034418,
       "profilePath": "/9FGS8AGjVNtpWuUeoipYWR23sRZ.jpg"
@@ -810,6 +1011,9 @@
     "subtitle": "Known for Donnie Darko",
     "initials": "JG",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 131,
       "profilePath": "/ct2Gh2sJSxd4yaMrSsqSt1HpIC3.jpg"
@@ -822,6 +1026,9 @@
     "subtitle": "Known for Knives Out",
     "initials": "JC",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 8944,
       "profilePath": "/eWKubKAAssRzmFwCZKh1mdYqGCH.jpg"
@@ -834,6 +1041,9 @@
     "subtitle": "Known for Fight Club",
     "initials": "JL",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 7499,
       "profilePath": "/ca3x0OfIKbJppZh8S1Alx3GfUZO.jpg"
@@ -846,6 +1056,9 @@
     "subtitle": "Known for Dune",
     "initials": "JM",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 117642,
       "profilePath": "/3troAR6QbSb6nUFMDu61YCCWLKa.jpg"
@@ -858,6 +1071,9 @@
     "subtitle": "Known for Snatch",
     "initials": "JS",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 976,
       "profilePath": "/8l6lmrmKFDvhDjMJPj6tBpJdhaA.jpg"
@@ -870,6 +1086,9 @@
     "subtitle": "Known for Skyfall",
     "initials": "JB",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3810,
       "profilePath": "/zfRID0jx8DKBluPGU9xtk9sZWUt.jpg"
@@ -882,6 +1101,9 @@
     "subtitle": "Known for Jurassic Park",
     "initials": "JG",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 4785,
       "profilePath": "/kcyEPgYtBP5Pm6LLeLGfXKjYovL.jpg"
@@ -894,6 +1116,9 @@
     "subtitle": "Known for Wednesday",
     "initials": "JO",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 974169,
       "profilePath": "/yiL1tWLHwYrJznkjT2NKmR2YLMs.jpg"
@@ -906,6 +1131,9 @@
     "subtitle": "Known for We're the Millers",
     "initials": "JA",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 4491,
       "profilePath": "/PBSCmHDFdCMBhjx0EbXpTw4Z94.jpg"
@@ -918,6 +1146,9 @@
     "subtitle": "Known for The Hunger Games",
     "initials": "JL",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 72129,
       "profilePath": "/6WTY6HjXMGxnHilJRVC3eLnu43F.jpg"
@@ -930,6 +1161,9 @@
     "subtitle": "Known for Anaconda",
     "initials": "JL",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 16866,
       "profilePath": "/aTUyQzZ9w6EJq5VXWX3C2ewZTAF.jpg"
@@ -942,6 +1176,9 @@
     "subtitle": "Known for Interstellar",
     "initials": "JC",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 83002,
       "profilePath": "/lodMzLKSdrPcBry6TdoDsMN3Vge.jpg"
@@ -954,6 +1191,9 @@
     "subtitle": "Known for The Truman Show",
     "initials": "JC",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 206,
       "profilePath": "/y3U9QfPN6sJaGl6l68xjwWj28ig.jpg"
@@ -966,6 +1206,9 @@
     "subtitle": "Known for Joker",
     "initials": "JP",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 73421,
       "profilePath": "/u38k3hQBDwNX0VA22aQceDp9Iyv.jpg"
@@ -978,6 +1221,9 @@
     "subtitle": "Known for Free Guy",
     "initials": "JC",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1388593,
       "profilePath": "/AfsBpnfw0E2h8NZK4zkFcOjYlEb.jpg"
@@ -990,6 +1236,9 @@
     "subtitle": "Known for Pirates of the Caribbean: The Curse of the Black Pearl",
     "initials": "JD",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 85,
       "profilePath": "/k2xt6EUxQDwYRKIyI4IBdZxfs8n.jpg"
@@ -1002,6 +1251,9 @@
     "subtitle": "Known for Skyfall",
     "initials": "JD",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 5309,
       "profilePath": "/cpna5VGvAxuKuC31xJPBKy9zbnv.jpg"
@@ -1014,6 +1266,9 @@
     "subtitle": "Known for Pretty Woman",
     "initials": "JR",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1204,
       "profilePath": "/fQacAdIa1WUNChQ6FgEko13eqOA.jpg"
@@ -1026,6 +1281,9 @@
     "subtitle": "Known for The Big Lebowski",
     "initials": "JM",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1231,
       "profilePath": "/3YF19rWusxWfEI59ZM33dFhasRq.jpg"
@@ -1038,6 +1296,9 @@
     "subtitle": "Known for How to Lose a Guy in 10 Days",
     "initials": "KH",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 11661,
       "profilePath": "/s79lH1QzEg2fkXULKBxRmU9aNr8.jpg"
@@ -1050,6 +1311,9 @@
     "subtitle": "Known for Titanic",
     "initials": "KW",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 204,
       "profilePath": "/surklDlLW6g2D7EqycEQwHXsoD1.jpg"
@@ -1062,6 +1326,9 @@
     "subtitle": "Known for The Matrix",
     "initials": "KR",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 6384,
       "profilePath": "/8RZLOyYGsoRe9p44q3xin9QkMHv.jpg"
@@ -1074,6 +1341,9 @@
     "subtitle": "Known for The Imitation Game",
     "initials": "KK",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 116,
       "profilePath": "/bRC1B2VwV0wK3ElciFAK6QZf2wD.jpg"
@@ -1086,6 +1356,9 @@
     "subtitle": "Known for Django Unchained",
     "initials": "KW",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 11703,
       "profilePath": "/zgyjYlxmHG6Ntbg16JcTp8Vu8M3.jpg"
@@ -1098,6 +1371,9 @@
     "subtitle": "Known for Jumanji: Welcome to the Jungle",
     "initials": "KH",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 55638,
       "profilePath": "/byiNydUlM6oP8diA7WMvYbNM7a1.jpg"
@@ -1110,6 +1386,9 @@
     "subtitle": "Known for Spider-Man",
     "initials": "KD",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 205,
       "profilePath": "/yhLKGjuiMMdbGnFrR8AREkCZcVF.jpg"
@@ -1122,6 +1401,9 @@
     "subtitle": "Known for Twilight",
     "initials": "KS",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 37917,
       "profilePath": "/ryhCjTGqS6G6OprbR0qUEH355lA.jpg"
@@ -1134,6 +1416,9 @@
     "subtitle": "Known for Inception",
     "initials": "LD",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 6193,
       "profilePath": "/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg"
@@ -1146,6 +1431,9 @@
     "subtitle": "Known for Schindler's List",
     "initials": "LN",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3896,
       "profilePath": "/sRLev3wJioBgun3ZoeAUFpkLy0D.jpg"
@@ -1158,6 +1446,9 @@
     "subtitle": "Known for Love, Rosie",
     "initials": "LC",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 112561,
       "profilePath": "/5bhcp0CyTdHgfW8x45ZKewDnjMc.jpg"
@@ -1170,6 +1461,9 @@
     "subtitle": "Known for Friends",
     "initials": "LK",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 14406,
       "profilePath": "/ziatnwJRiBJIcc8jlk6xoClhfOy.jpg"
@@ -1182,6 +1476,9 @@
     "subtitle": "Known for Black Panther",
     "initials": "LN",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1267329,
       "profilePath": "/y40Wu1T742kynOqtwXASc5Qgm49.jpg"
@@ -1194,6 +1491,9 @@
     "subtitle": "Known for Harry Potter and the Philosopher's Stone",
     "initials": "MS",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 10978,
       "profilePath": "/hjoWy2WB7RayROumynH3wuCa9aL.jpg"
@@ -1206,6 +1506,9 @@
     "subtitle": "Known for Spider-Man: Into the Spider-Verse",
     "initials": "MA",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 932967,
       "profilePath": "/9ZmSejm5lnUVY5IJ1iNx2QEjnHb.jpg"
@@ -1218,6 +1521,9 @@
     "subtitle": "Known for Barbie",
     "initials": "MR",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 234352,
       "profilePath": "/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg"
@@ -1230,6 +1536,9 @@
     "subtitle": "Known for Star Wars",
     "initials": "MH",
     "color": "#92613d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2,
       "profilePath": "/zMQ93JTLW8KxusKhOlHFZhih3YQ.jpg"
@@ -1242,6 +1551,9 @@
     "subtitle": "Known for The Avengers",
     "initials": "MR",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 103,
       "profilePath": "/5GilHMOt5PAQh6rlUKZzGmaKEI7.jpg"
@@ -1254,6 +1566,9 @@
     "subtitle": "Known for The Martian",
     "initials": "MD",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1892,
       "profilePath": "/aCvBXTAR9B1qRjIRzMBYhhbm1fR.jpg"
@@ -1266,6 +1581,9 @@
     "subtitle": "Known for Interstellar",
     "initials": "MM",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 10297,
       "profilePath": "/lCySuYjhXix3FzQdS4oceDDrXKI.jpg"
@@ -1278,6 +1596,9 @@
     "subtitle": "Known for Ghostbusters",
     "initials": "MM",
     "color": "#806344",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 55536,
       "profilePath": "/yl0qva0O4u92fvtItakdvKmKrW9.jpg"
@@ -1290,6 +1611,9 @@
     "subtitle": "Known for The Devil Wears Prada",
     "initials": "MS",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 5064,
       "profilePath": "/g5cVxQBAQ3AXt3LhdBXtbbN47Uc.jpg"
@@ -1302,6 +1626,9 @@
     "subtitle": "Known for Black Panther",
     "initials": "MJ",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 135651,
       "profilePath": "/sMBpav8cK7t7Nk0yf4tuNOqNUyW.jpg"
@@ -1314,6 +1641,9 @@
     "subtitle": "Known for Interstellar",
     "initials": "MC",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3895,
       "profilePath": "/bVZRMlpjTAO2pJK6v90buFgVbSW.jpg"
@@ -1326,6 +1656,9 @@
     "subtitle": "Known for Scarface",
     "initials": "MP",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1160,
       "profilePath": "/8qwNMFzmM3BxGKIj1iIqiHHBpx3.jpg"
@@ -1338,6 +1671,9 @@
     "subtitle": "Known for Shang-Chi and the Legend of the Ten Rings",
     "initials": "MY",
     "color": "#744b54",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1620,
       "profilePath": "/i6fHvGt7Rb8oVyjjdQVV6vEHB94.jpg"
@@ -1350,6 +1686,9 @@
     "subtitle": "Known for Black Swan",
     "initials": "MK",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 18973,
       "profilePath": "/cJAHQWX9hVadDFx5WTSBIW0VjvP.jpg"
@@ -1362,6 +1701,9 @@
     "subtitle": "Known for Stranger Things",
     "initials": "MB",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1356210,
       "profilePath": "/kHO7hdNEVuTnQ0OjjrxP1RcAa0e.jpg"
@@ -1374,6 +1716,9 @@
     "subtitle": "Known for The Shawshank Redemption",
     "initials": "MF",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 192,
       "profilePath": "/jPsLqiYGSofU4s6BjrxnefMfabb.jpg"
@@ -1386,6 +1731,9 @@
     "subtitle": "Known for Thor",
     "initials": "NP",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 524,
       "profilePath": "/edPU5HxncLWa1YkgRPNkSd68ONG.jpg"
@@ -1398,6 +1746,9 @@
     "subtitle": "Known for Aquaman",
     "initials": "NK",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 2227,
       "profilePath": "/4KSQDodyBtTDMaREYgMdWD1LbH1.jpg"
@@ -1410,6 +1761,9 @@
     "subtitle": "Known for The Shape of Water",
     "initials": "OS",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 6944,
       "profilePath": "/zDGydyM1fmvNWzQlTAns9IZjNxT.jpg"
@@ -1422,6 +1776,9 @@
     "subtitle": "Known for The Lobster",
     "initials": "OC",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 39187,
       "profilePath": "/lawJUdbLb1YW0niaYjiVGR9IBG8.jpg"
@@ -1434,6 +1791,9 @@
     "subtitle": "Known for Pirates of the Caribbean: The Curse of the Black Pearl",
     "initials": "OB",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 114,
       "profilePath": "/lwQoA0qJTCZ6l2FH6PjmhRQjiaB.jpg"
@@ -1446,6 +1806,9 @@
     "subtitle": "Known for Star Wars: The Force Awakens",
     "initials": "OI",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 25072,
       "profilePath": "/dW5U5yrIIPmMjRThR9KT2xH6nTz.jpg"
@@ -1458,6 +1821,9 @@
     "subtitle": "Known for Cars",
     "initials": "OW",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 887,
       "profilePath": "/5A46lNOwmpX77jAdhyKxU7e2Hub.jpg"
@@ -1470,6 +1836,9 @@
     "subtitle": "Known for Logan",
     "initials": "PS",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2387,
       "profilePath": "/ufqtnLh3JJjPbEgxEag3MM5nZyv.jpg"
@@ -1482,6 +1851,9 @@
     "subtitle": "Known for Gladiator II",
     "initials": "PM",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2326151,
       "profilePath": "/vrzZ41TGNAFgfmZjC2sOJySzBLd.jpg"
@@ -1494,6 +1866,9 @@
     "subtitle": "Known for Ant-Man",
     "initials": "PR",
     "color": "#92613d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 22226,
       "profilePath": "/6jtwNOLKy0LdsRAKwZqgYMAfd5n.jpg"
@@ -1506,6 +1881,9 @@
     "subtitle": "Known for The Mandalorian",
     "initials": "PP",
     "color": "#744b54",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1253360,
       "profilePath": "/cuhkTL3MezjArl80MnYl6QJQ4PQ.jpg"
@@ -1518,6 +1896,9 @@
     "subtitle": "Known for Pirates of the Caribbean: On Stranger Tides",
     "initials": "PC",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 955,
       "profilePath": "/n5SFgmvJSENQt8poE4qYacUnKOi.jpg"
@@ -1530,6 +1911,9 @@
     "subtitle": "Known for Doctor Strange",
     "initials": "RM",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 53714,
       "profilePath": "/2DPh6KoNg0p57vvGc6N468zr3ct.jpg"
@@ -1542,6 +1926,9 @@
     "subtitle": "Known for Bohemian Rhapsody",
     "initials": "RM",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 17838,
       "profilePath": "/8ykTeTRSYd2MKF5uLBvD93X5KMJ.jpg"
@@ -1554,6 +1941,9 @@
     "subtitle": "Known for Dune",
     "initials": "RF",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 933238,
       "profilePath": "/ty8ZPzaCBBlqIr5qzpOXI24iC8j.jpg"
@@ -1566,6 +1956,9 @@
     "subtitle": "Known for Sing",
     "initials": "RW",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 368,
       "profilePath": "/mfjunuTHrd0wnh8UG1ImMN9FSws.jpg"
@@ -1578,6 +1971,9 @@
     "subtitle": "Known for Joker",
     "initials": "RN",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 380,
       "profilePath": "/cT8htcckIuyI1Lqwt1CvD02ynTh.jpg"
@@ -1590,6 +1986,9 @@
     "subtitle": "Known for The Avengers",
     "initials": "RJ",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 3223,
       "profilePath": "/5qHNjhtjMD4YWH3UP0rm4tKwxCL.jpg"
@@ -1602,6 +2001,9 @@
     "subtitle": "Known for Harry Potter and the Philosopher's Stone",
     "initials": "RG",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 10989,
       "profilePath": "/iFlkpTaOF6fGLqxz8b0PhI0i0zN.jpg"
@@ -1614,6 +2016,9 @@
     "subtitle": "Known for Gladiator",
     "initials": "RC",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 934,
       "profilePath": "/3IBZF0qCZMZ7zJYlgrH0sQzNZV.jpg"
@@ -1626,6 +2031,9 @@
     "subtitle": "Known for La La Land",
     "initials": "RG",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 30614,
       "profilePath": "/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg"
@@ -1638,6 +2046,9 @@
     "subtitle": "Known for Deadpool",
     "initials": "RR",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 10859,
       "profilePath": "/trzgptffGvAlAT6MEu01fz47cLW.jpg"
@@ -1650,6 +2061,9 @@
     "subtitle": "Known for Eternals",
     "initials": "SH",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 3136,
       "profilePath": "/3j8MpAjyopkAc8mbNiDeXyqBmcS.jpg"
@@ -1662,6 +2076,9 @@
     "subtitle": "Known for Pulp Fiction",
     "initials": "SJ",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2231,
       "profilePath": "/AiAYAqwpM5xmiFrAIeQvUXDCVvo.jpg"
@@ -1674,6 +2091,9 @@
     "subtitle": "Known for Gravity",
     "initials": "SB",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 18277,
       "profilePath": "/4rfjISL3Flx16jfiusXoHbpt87X.jpg"
@@ -1686,6 +2106,9 @@
     "subtitle": "Known for Lady Bird",
     "initials": "SR",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 36592,
       "profilePath": "/9buDPdqKN9vbnQLLkHEinDtMrCG.jpg"
@@ -1698,6 +2121,9 @@
     "subtitle": "Known for Sex and the City",
     "initials": "SP",
     "color": "#92613d",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 520,
       "profilePath": "/tEhHY7Uyn8VktwLhawBRuR0tdaJ.jpg"
@@ -1710,6 +2136,9 @@
     "subtitle": "Known for Lucy",
     "initials": "SJ",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1245,
       "profilePath": "/TiJIJGNWk0r1Y4bYuB50clneUd.jpg"
@@ -1722,6 +2151,9 @@
     "subtitle": "Known for Avatar",
     "initials": "SW",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 10205,
       "profilePath": "/wTSnfktNBLd6kwQxgvkqYw6vEon.jpg"
@@ -1734,6 +2166,9 @@
     "subtitle": "Known for Game of Thrones",
     "initials": "ST",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 1001657,
       "profilePath": "/8ur4aHFakVCinWk0cvrGO8qAUhv.jpg"
@@ -1746,6 +2181,9 @@
     "subtitle": "Known for Despicable Me",
     "initials": "SC",
     "color": "#806344",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 4495,
       "profilePath": "/sSxw69G0znJuettMYGDCAXfSwSY.jpg"
@@ -1758,6 +2196,9 @@
     "subtitle": "Known for Euphoria",
     "initials": "SS",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 115440,
       "profilePath": "/qYiaSl0Eb7G3VaxOg8PxExCFwon.jpg"
@@ -1770,6 +2211,9 @@
     "subtitle": "Known for Rocky",
     "initials": "SS",
     "color": "#92613d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 16483,
       "profilePath": "/gn3pDWthJqR0VDYGViGD3048og7.jpg"
@@ -1782,6 +2226,9 @@
     "subtitle": "Known for The Curious Case of Benjamin Button",
     "initials": "TH",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 40036,
       "profilePath": "/jUU2X9mDwJaAniEmJOfvImBS9qb.jpg"
@@ -1794,6 +2241,9 @@
     "subtitle": "Known for Thor: Ragnarok",
     "initials": "TT",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 62561,
       "profilePath": "/19ze60jXlb2j7dXc2UpA3MujXA8.jpg"
@@ -1806,6 +2256,9 @@
     "subtitle": "Known for Doctor Strange",
     "initials": "TS",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 3063,
       "profilePath": "/dzjT4LKgs7eOma84GsPy78DsGNH.jpg"
@@ -1818,6 +2271,9 @@
     "subtitle": "Known for Dune",
     "initials": "TC",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1190668,
       "profilePath": "/dFxpwRpmzpVfP1zjluH68DeQhyj.jpg"
@@ -1830,6 +2286,9 @@
     "subtitle": "Known for Spider-Man",
     "initials": "TM",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2219,
       "profilePath": "/s6PwSvq6gC7PGEjIku69tPbvR8M.jpg"
@@ -1842,6 +2301,9 @@
     "subtitle": "Known for Edge of Tomorrow",
     "initials": "TC",
     "color": "#355c7d",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 500,
       "profilePath": "/eOh4ubpOm2Igdg0QH2ghj0mFtC.jpg"
@@ -1854,6 +2316,9 @@
     "subtitle": "Known for Forrest Gump",
     "initials": "TH",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 31,
       "profilePath": "/oFvZoKI6lvU03n4YoNGAll9rkas.jpg"
@@ -1866,6 +2331,9 @@
     "subtitle": "Known for Thor",
     "initials": "TH",
     "color": "#9b3c38",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 91606,
       "profilePath": "/mclHxMm8aPlCPKptP67257F5GPo.jpg"
@@ -1878,6 +2346,9 @@
     "subtitle": "Known for Spider-Man: Homecoming",
     "initials": "TH",
     "color": "#a66a5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 1136406,
       "profilePath": "/tH8bNDcjiS399DlcnC5oubxNh23.jpg"
@@ -1890,6 +2361,9 @@
     "subtitle": "Known for Pulp Fiction",
     "initials": "UT",
     "color": "#4f6d58",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 139,
       "profilePath": "/sBgAZWi3o4FsnaTvnTNtK6jpQcF.jpg"
@@ -1902,6 +2376,9 @@
     "subtitle": "Known for Furious 7",
     "initials": "VD",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 12835,
       "profilePath": "/nZdVry7lnUkE24PnXakok9okvL4.jpg"
@@ -1914,6 +2391,9 @@
     "subtitle": "Known for Suicide Squad",
     "initials": "VD",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 19492,
       "profilePath": "/xDssw6vpYNRjsybvMPRE30e0dPN.jpg"
@@ -1926,6 +2406,9 @@
     "subtitle": "Known for Suicide Squad",
     "initials": "WS",
     "color": "#6c5b7b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 2888,
       "profilePath": "/8TlKqbXYgHmmaEoPBJ7djJ8Rxxa.jpg"
@@ -1938,6 +2421,9 @@
     "subtitle": "Known for The Hunger Games",
     "initials": "WH",
     "color": "#414b5b",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 57755,
       "profilePath": "/igxYDQBbTEdAqaJxaW6ffqswmUU.jpg"
@@ -1950,6 +2436,9 @@
     "subtitle": "Known for The Greatest Showman",
     "initials": "ZE",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "MAN"
+    },
     "tmdb": {
       "personId": 29222,
       "profilePath": "/6yL3AGhT3QBQBY6SSWIFWwdQySl.jpg"
@@ -1962,6 +2451,9 @@
     "subtitle": "Known for Spider-Man: No Way Home",
     "initials": "ZE",
     "color": "#9a795e",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 505710,
       "profilePath": "/1qup8tSt95HLbcy2c2xrx4iJNxv.jpg"
@@ -1974,6 +2466,9 @@
     "subtitle": "Known for Avatar",
     "initials": "ZS",
     "color": "#4b6584",
+    "attributes": {
+      "gender": "WOMAN"
+    },
     "tmdb": {
       "personId": 8691,
       "profilePath": "/vQBwmsSOAd0JDaEcZ5p43J9xzsY.jpg"
